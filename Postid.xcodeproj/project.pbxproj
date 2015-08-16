@@ -9,11 +9,28 @@
 /* Begin PBXBuildFile section */
 		D48B21421B7FFF8500F8D659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21411B7FFF8500F8D659 /* main.m */; };
 		D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21441B7FFF8500F8D659 /* AppDelegate.m */; };
-		D48B21481B7FFF8500F8D659 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21471B7FFF8500F8D659 /* ViewController.m */; };
 		D48B214B1B7FFF8500F8D659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48B21491B7FFF8500F8D659 /* Main.storyboard */; };
 		D48B214D1B7FFF8500F8D659 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48B214C1B7FFF8500F8D659 /* Images.xcassets */; };
 		D48B21501B7FFF8500F8D659 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48B214E1B7FFF8500F8D659 /* LaunchScreen.xib */; };
 		D48B215C1B7FFF8500F8D659 /* PostidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B215B1B7FFF8500F8D659 /* PostidTests.m */; };
+		D48B21731B804A8D00F8D659 /* Minimo-Bold-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216B1B804A8D00F8D659 /* Minimo-Bold-Oblique.otf */; };
+		D48B21741B804A8D00F8D659 /* Minimo-Bold-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216B1B804A8D00F8D659 /* Minimo-Bold-Oblique.otf */; };
+		D48B21751B804A8D00F8D659 /* Minimo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216C1B804A8D00F8D659 /* Minimo-Bold.otf */; };
+		D48B21761B804A8D00F8D659 /* Minimo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216C1B804A8D00F8D659 /* Minimo-Bold.otf */; };
+		D48B21771B804A8D00F8D659 /* Minimo-Light-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216D1B804A8D00F8D659 /* Minimo-Light-Oblique.otf */; };
+		D48B21781B804A8D00F8D659 /* Minimo-Light-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216D1B804A8D00F8D659 /* Minimo-Light-Oblique.otf */; };
+		D48B21791B804A8D00F8D659 /* Minimo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216E1B804A8D00F8D659 /* Minimo-Light.otf */; };
+		D48B217A1B804A8D00F8D659 /* Minimo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216E1B804A8D00F8D659 /* Minimo-Light.otf */; };
+		D48B217B1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216F1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf */; };
+		D48B217C1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B216F1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf */; };
+		D48B217D1B804A8D00F8D659 /* Minimo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21701B804A8D00F8D659 /* Minimo-Medium.otf */; };
+		D48B217E1B804A8D00F8D659 /* Minimo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21701B804A8D00F8D659 /* Minimo-Medium.otf */; };
+		D48B217F1B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */; };
+		D48B21801B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */; };
+		D48B21811B804A8D00F8D659 /* Minimo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */; };
+		D48B21821B804A8D00F8D659 /* Minimo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */; };
+		D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
+		D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +49,23 @@
 		D48B21411B7FFF8500F8D659 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D48B21431B7FFF8500F8D659 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D48B21441B7FFF8500F8D659 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D48B21461B7FFF8500F8D659 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D48B21471B7FFF8500F8D659 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D48B214A1B7FFF8500F8D659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D48B214C1B7FFF8500F8D659 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D48B214F1B7FFF8500F8D659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D48B21551B7FFF8500F8D659 /* PostidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48B215A1B7FFF8500F8D659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D48B215B1B7FFF8500F8D659 /* PostidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostidTests.m; sourceTree = "<group>"; };
+		D48B21681B80487F00F8D659 /* Postid-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Postid-PrefixHeader.pch"; path = "../../postid/Postid/Postid-PrefixHeader.pch"; sourceTree = "<group>"; };
+		D48B216B1B804A8D00F8D659 /* Minimo-Bold-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Bold-Oblique.otf"; sourceTree = "<group>"; };
+		D48B216C1B804A8D00F8D659 /* Minimo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Bold.otf"; sourceTree = "<group>"; };
+		D48B216D1B804A8D00F8D659 /* Minimo-Light-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Light-Oblique.otf"; sourceTree = "<group>"; };
+		D48B216E1B804A8D00F8D659 /* Minimo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Light.otf"; sourceTree = "<group>"; };
+		D48B216F1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Medium-Oblique.otf"; sourceTree = "<group>"; };
+		D48B21701B804A8D00F8D659 /* Minimo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Medium.otf"; sourceTree = "<group>"; };
+		D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Regular-Oblique.otf"; sourceTree = "<group>"; };
+		D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Regular.otf"; sourceTree = "<group>"; };
+		D48B21841B804DCD00F8D659 /* AppEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppEntryViewController.h; path = ../../postid/Postid/AppEntryViewController.h; sourceTree = "<group>"; };
+		D48B21851B804DCD00F8D659 /* AppEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppEntryViewController.m; path = ../../postid/Postid/AppEntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +107,10 @@
 		D48B213E1B7FFF8500F8D659 /* Postid */ = {
 			isa = PBXGroup;
 			children = (
-				D48B21431B7FFF8500F8D659 /* AppDelegate.h */,
-				D48B21441B7FFF8500F8D659 /* AppDelegate.m */,
-				D48B21461B7FFF8500F8D659 /* ViewController.h */,
-				D48B21471B7FFF8500F8D659 /* ViewController.m */,
-				D48B21491B7FFF8500F8D659 /* Main.storyboard */,
-				D48B214C1B7FFF8500F8D659 /* Images.xcassets */,
-				D48B214E1B7FFF8500F8D659 /* LaunchScreen.xib */,
+				D48B21651B80459900F8D659 /* Core */,
+				D48B21671B8045B600F8D659 /* Managers */,
+				D48B21661B8045A300F8D659 /* UI */,
+				D48B21691B804A3A00F8D659 /* Resources */,
 				D48B213F1B7FFF8500F8D659 /* Supporting Files */,
 			);
 			path = Postid;
@@ -117,6 +140,74 @@
 				D48B215A1B7FFF8500F8D659 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D48B21651B80459900F8D659 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D48B21431B7FFF8500F8D659 /* AppDelegate.h */,
+				D48B21441B7FFF8500F8D659 /* AppDelegate.m */,
+				D48B21681B80487F00F8D659 /* Postid-PrefixHeader.pch */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D48B21661B8045A300F8D659 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D48B21831B804D8400F8D659 /* View Controllers */,
+				D48B21491B7FFF8500F8D659 /* Main.storyboard */,
+				D48B214E1B7FFF8500F8D659 /* LaunchScreen.xib */,
+				D48B214C1B7FFF8500F8D659 /* Images.xcassets */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D48B21671B8045B600F8D659 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		D48B21691B804A3A00F8D659 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D48B216A1B804A5900F8D659 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D48B216A1B804A5900F8D659 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D48B216B1B804A8D00F8D659 /* Minimo-Bold-Oblique.otf */,
+				D48B216C1B804A8D00F8D659 /* Minimo-Bold.otf */,
+				D48B216D1B804A8D00F8D659 /* Minimo-Light-Oblique.otf */,
+				D48B216E1B804A8D00F8D659 /* Minimo-Light.otf */,
+				D48B216F1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf */,
+				D48B21701B804A8D00F8D659 /* Minimo-Medium.otf */,
+				D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */,
+				D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D48B21831B804D8400F8D659 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D48B21881B804DD100F8D659 /* Login */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D48B21881B804DD100F8D659 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D48B21841B804DCD00F8D659 /* AppEntryViewController.h */,
+				D48B21851B804DCD00F8D659 /* AppEntryViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +290,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B21791B804A8D00F8D659 /* Minimo-Light.otf in Resources */,
+				D48B21751B804A8D00F8D659 /* Minimo-Bold.otf in Resources */,
+				D48B21771B804A8D00F8D659 /* Minimo-Light-Oblique.otf in Resources */,
 				D48B214B1B7FFF8500F8D659 /* Main.storyboard in Resources */,
+				D48B21811B804A8D00F8D659 /* Minimo-Regular.otf in Resources */,
 				D48B21501B7FFF8500F8D659 /* LaunchScreen.xib in Resources */,
+				D48B217B1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf in Resources */,
+				D48B217D1B804A8D00F8D659 /* Minimo-Medium.otf in Resources */,
 				D48B214D1B7FFF8500F8D659 /* Images.xcassets in Resources */,
+				D48B21731B804A8D00F8D659 /* Minimo-Bold-Oblique.otf in Resources */,
+				D48B217F1B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +308,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B21741B804A8D00F8D659 /* Minimo-Bold-Oblique.otf in Resources */,
+				D48B21821B804A8D00F8D659 /* Minimo-Regular.otf in Resources */,
+				D48B217A1B804A8D00F8D659 /* Minimo-Light.otf in Resources */,
+				D48B21781B804A8D00F8D659 /* Minimo-Light-Oblique.otf in Resources */,
+				D48B217E1B804A8D00F8D659 /* Minimo-Medium.otf in Resources */,
+				D48B21761B804A8D00F8D659 /* Minimo-Bold.otf in Resources */,
+				D48B217C1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf in Resources */,
+				D48B21801B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48B21481B7FFF8500F8D659 /* ViewController.m in Sources */,
+				D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 			);
@@ -230,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48B215C1B7FFF8500F8D659 /* PostidTests.m in Sources */,
+				D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +526,7 @@
 				D48B21611B7FFF8500F8D659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D48B21621B7FFF8500F8D659 /* Build configuration list for PBXNativeTarget "PostidTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +535,7 @@
 				D48B21641B7FFF8500F8D659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
