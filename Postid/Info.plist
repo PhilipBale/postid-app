@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Minimo-Bold-Oblique.otf</string>
-		<string>Minimo-Bold.otf</string>
-		<string>Minimo-Light-Oblique.otf</string>
-		<string>Minimo-Light.otf</string>
-		<string>Minimo-Medium.otf</string>
-		<string>Minimo-Medium-Oblique.otf</string>
-		<string>Minimo-Regular-Oblique.otf</string>
-		<string>Minimo-Regular.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -31,8 +20,33 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>9341b20f47a3a523ec0b40d17388fa594df9e94b</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Minimo-Bold-Oblique.otf</string>
+		<string>Minimo-Bold.otf</string>
+		<string>Minimo-Light-Oblique.otf</string>
+		<string>Minimo-Light.otf</string>
+		<string>Minimo-Medium.otf</string>
+		<string>Minimo-Medium-Oblique.otf</string>
+		<string>Minimo-Regular-Oblique.otf</string>
+		<string>Minimo-Regular.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

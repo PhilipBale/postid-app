@@ -31,6 +31,14 @@
 		D48B21821B804A8D00F8D659 /* Minimo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */; };
 		D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
 		D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
+		D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218A1B810A8000F8D659 /* LoginViewController.m */; };
+		D48B218C1B810A8000F8D659 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218A1B810A8000F8D659 /* LoginViewController.m */; };
+		D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218E1B810CB300F8D659 /* AppEntryTextField.m */; };
+		D48B21901B810CB300F8D659 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218E1B810CB300F8D659 /* AppEntryTextField.m */; };
+		D48B21941B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
+		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
+		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
+		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +74,14 @@
 		D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Regular.otf"; sourceTree = "<group>"; };
 		D48B21841B804DCD00F8D659 /* AppEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppEntryViewController.h; path = ../../postid/Postid/AppEntryViewController.h; sourceTree = "<group>"; };
 		D48B21851B804DCD00F8D659 /* AppEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppEntryViewController.m; path = ../../postid/Postid/AppEntryViewController.m; sourceTree = "<group>"; };
+		D48B21891B810A8000F8D659 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../postid/Postid/LoginViewController.h; sourceTree = "<group>"; };
+		D48B218A1B810A8000F8D659 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../postid/Postid/LoginViewController.m; sourceTree = "<group>"; };
+		D48B218D1B810CB300F8D659 /* AppEntryTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppEntryTextField.h; path = ../../postid/Postid/AppEntryTextField.h; sourceTree = "<group>"; };
+		D48B218E1B810CB300F8D659 /* AppEntryTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppEntryTextField.m; path = ../../postid/Postid/AppEntryTextField.m; sourceTree = "<group>"; };
+		D48B21921B8114CA00F8D659 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = "../../postid/Postid/View Controllers/SignUpViewController.h"; sourceTree = "<group>"; };
+		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
+		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */,
+				D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +107,8 @@
 		D48B21331B7FFF8500F8D659 = {
 			isa = PBXGroup;
 			children = (
+				D48B21971B81194100F8D659 /* Fabric.framework */,
+				D48B21981B81194100F8D659 /* Crashlytics.framework */,
 				D48B213E1B7FFF8500F8D659 /* Postid */,
 				D48B21581B7FFF8500F8D659 /* PostidTests */,
 				D48B213D1B7FFF8500F8D659 /* Products */,
@@ -155,6 +175,7 @@
 		D48B21661B8045A300F8D659 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D48B21911B810D0400F8D659 /* Views */,
 				D48B21831B804D8400F8D659 /* View Controllers */,
 				D48B21491B7FFF8500F8D659 /* Main.storyboard */,
 				D48B214E1B7FFF8500F8D659 /* LaunchScreen.xib */,
@@ -206,8 +227,21 @@
 			children = (
 				D48B21841B804DCD00F8D659 /* AppEntryViewController.h */,
 				D48B21851B804DCD00F8D659 /* AppEntryViewController.m */,
+				D48B21891B810A8000F8D659 /* LoginViewController.h */,
+				D48B218A1B810A8000F8D659 /* LoginViewController.m */,
+				D48B21921B8114CA00F8D659 /* SignUpViewController.h */,
+				D48B21931B8114CA00F8D659 /* SignUpViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		D48B21911B810D0400F8D659 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D48B218D1B810CB300F8D659 /* AppEntryTextField.h */,
+				D48B218E1B810CB300F8D659 /* AppEntryTextField.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +254,7 @@
 				D48B21381B7FFF8500F8D659 /* Sources */,
 				D48B21391B7FFF8500F8D659 /* Frameworks */,
 				D48B213A1B7FFF8500F8D659 /* Resources */,
+				D48B21961B8118E700F8D659 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -321,11 +356,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D48B21961B8118E700F8D659 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 9341b20f47a3a523ec0b40d17388fa594df9e94b a748eb2e34b275d469c11a473c767e444d1ade23965a5f882def33eaa6970952";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D48B21381B7FFF8500F8D659 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */,
+				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
+				D48B21941B8114CA00F8D659 /* SignUpViewController.m in Sources */,
 				D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
@@ -337,7 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48B215C1B7FFF8500F8D659 /* PostidTests.m in Sources */,
+				D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */,
 				D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
+				D48B21901B810CB300F8D659 /* AppEntryTextField.m in Sources */,
+				D48B218C1B810A8000F8D659 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +514,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,6 +528,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
