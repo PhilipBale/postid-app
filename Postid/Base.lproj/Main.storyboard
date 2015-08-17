@@ -57,7 +57,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
                                         <state key="normal" title="SIGN UP">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="BzS-dX-3Cm" kind="show" id="p2G-IE-Yzx"/>
@@ -68,7 +68,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
                                         <state key="normal" title="LOG IN">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
