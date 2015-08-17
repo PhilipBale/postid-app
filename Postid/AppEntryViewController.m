@@ -17,8 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.loginButton.layer.cornerRadius = 10;
+    self.loginButton.layer.borderColor = [UIColor lightTextColor].CGColor;
+    self.loginButton.layer.borderWidth = 1;
     self.signupButton.layer.cornerRadius = 10;
-    // Do any additional setup after loading the view.
+    self.signupButton.layer.borderColor = [UIColor lightTextColor].CGColor;
+    self.signupButton.layer.borderWidth = 1;
 }
 
 - (void)didReceiveMemoryWarning {

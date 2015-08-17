@@ -10,9 +10,6 @@
             <string>Minimo-Medium</string>
             <string>Minimo-Medium</string>
             <string>Minimo-Medium</string>
-            <string>Minimo-Medium</string>
-            <string>Minimo-Medium</string>
-            <string>Minimo-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -28,36 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-hN-i3r">
-                                <rect key="frame" x="96" y="406.5" width="128" height="53.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="e9T-hN-i3r" secondAttribute="height" multiplier="12:5" id="uqZ-sm-PZ6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Minimo-Medium" family="Minimo" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
-                                <state key="normal" title="SIGN UP">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BzS-dX-3Cm" kind="show" id="p2G-IE-Yzx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-mr-9b5">
-                                <rect key="frame" x="96" y="338.5" width="128" height="53"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Minimo-Medium" family="Minimo" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
-                                <state key="normal" title="LOG IN">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="NAG-LT-Tnw" kind="show" id="h8j-Ld-7Wp"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-hY-zvi">
-                                <rect key="frame" x="16" y="66" width="288" height="49"/>
+                                <rect key="frame" x="16" y="76" width="288" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="TZw-WY-SNV"/>
                                 </constraints>
@@ -70,40 +39,71 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="yKV-6h-zgA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Minimo-Medium" family="Minimo" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-R2-hZo">
-                                <rect key="frame" x="16" y="115" width="288" height="213.5"/>
+                                <rect key="frame" x="31" y="125" width="258" height="272"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu0-MR-Ajd">
+                                <rect key="frame" x="26" y="412" width="268" height="53"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-hN-i3r">
+                                        <rect key="frame" x="141" y="0.0" width="126.5" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="e9T-hN-i3r" secondAttribute="height" multiplier="12:5" id="uqZ-sm-PZ6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
+                                        <state key="normal" title="SIGN UP">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BzS-dX-3Cm" kind="show" id="p2G-IE-Yzx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-mr-9b5">
+                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="53"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="14" maxX="10" maxY="10"/>
+                                        <state key="normal" title="LOG IN">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="NAG-LT-Tnw" kind="show" id="h8j-Ld-7Wp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xfU-mr-9b5" firstAttribute="leading" secondItem="Eu0-MR-Ajd" secondAttribute="leading" id="2UU-Ym-tUS"/>
+                                    <constraint firstAttribute="bottom" secondItem="e9T-hN-i3r" secondAttribute="bottom" id="AlQ-tJ-r9G"/>
+                                    <constraint firstItem="e9T-hN-i3r" firstAttribute="width" secondItem="xfU-mr-9b5" secondAttribute="width" id="VA0-yo-DEO"/>
+                                    <constraint firstAttribute="trailing" secondItem="e9T-hN-i3r" secondAttribute="trailing" id="aoi-8G-QD8"/>
+                                    <constraint firstItem="xfU-mr-9b5" firstAttribute="top" secondItem="Eu0-MR-Ajd" secondAttribute="top" id="cmc-Rp-UA6"/>
+                                    <constraint firstAttribute="bottom" secondItem="xfU-mr-9b5" secondAttribute="bottom" id="jp0-2S-vdu"/>
+                                    <constraint firstItem="e9T-hN-i3r" firstAttribute="top" secondItem="Eu0-MR-Ajd" secondAttribute="top" id="wgB-RH-OaL"/>
+                                    <constraint firstItem="e9T-hN-i3r" firstAttribute="leading" secondItem="xfU-mr-9b5" secondAttribute="trailing" constant="15" id="xym-iJ-9sX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.36078431370000003" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="e9T-hN-i3r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="0T2-To-cSw"/>
                             <constraint firstItem="lnN-eS-4QE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1T7-Jk-4td"/>
-                            <constraint firstItem="e9T-hN-i3r" firstAttribute="top" secondItem="xfU-mr-9b5" secondAttribute="bottom" constant="15" id="1Zh-Fp-bAC"/>
-                            <constraint firstItem="xfU-mr-9b5" firstAttribute="leading" secondItem="e9T-hN-i3r" secondAttribute="leading" id="1iG-AC-QpC"/>
+                            <constraint firstItem="Eu0-MR-Ajd" firstAttribute="top" secondItem="dIG-R2-hZo" secondAttribute="bottom" constant="15" id="3Q9-wC-FGG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lnN-eS-4QE" secondAttribute="trailing" id="6J8-fJ-loA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9T-hN-i3r" secondAttribute="bottom" constant="20" id="7Xf-mm-WAI"/>
-                            <constraint firstItem="xfU-mr-9b5" firstAttribute="top" secondItem="dIG-R2-hZo" secondAttribute="bottom" constant="10" id="Bcs-qP-STo"/>
-                            <constraint firstItem="xfU-mr-9b5" firstAttribute="trailing" secondItem="e9T-hN-i3r" secondAttribute="trailing" id="HA3-La-5Ev"/>
                             <constraint firstItem="lnN-eS-4QE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="JR9-1M-rff"/>
-                            <constraint firstItem="xfU-mr-9b5" firstAttribute="width" secondItem="xfU-mr-9b5" secondAttribute="height" multiplier="11:5" id="KyS-Bm-JgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0KS-hY-zvi" secondAttribute="trailing" id="NVi-PF-SaD"/>
-                            <constraint firstItem="xfU-mr-9b5" firstAttribute="height" secondItem="e9T-hN-i3r" secondAttribute="height" id="PAd-ba-Dva"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dIG-R2-hZo" secondAttribute="trailing" id="agH-QF-exd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eu0-MR-Ajd" secondAttribute="trailing" constant="10" id="Qpl-V9-Kfc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dIG-R2-hZo" secondAttribute="trailing" constant="15" id="agH-QF-exd"/>
                             <constraint firstItem="dIG-R2-hZo" firstAttribute="top" secondItem="0KS-hY-zvi" secondAttribute="bottom" id="bPg-nv-Vp4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Eu0-MR-Ajd" secondAttribute="bottom" constant="15" id="cQW-QH-TFP"/>
                             <constraint firstItem="0KS-hY-zvi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d2Q-6A-SA2"/>
-                            <constraint firstItem="0KS-hY-zvi" firstAttribute="top" secondItem="lnN-eS-4QE" secondAttribute="bottom" constant="10" id="pch-rQ-pNk"/>
-                            <constraint firstItem="dIG-R2-hZo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ru6-WW-seV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e9T-hN-i3r" secondAttribute="trailing" constant="80" id="xYa-Yt-BLu"/>
+                            <constraint firstItem="0KS-hY-zvi" firstAttribute="top" secondItem="lnN-eS-4QE" secondAttribute="bottom" constant="20" id="pch-rQ-pNk"/>
+                            <constraint firstItem="dIG-R2-hZo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="ru6-WW-seV"/>
+                            <constraint firstItem="Eu0-MR-Ajd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="sLs-FI-yvc"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="KyS-Bm-JgD"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
