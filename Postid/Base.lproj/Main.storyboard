@@ -159,6 +159,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOw-pd-VM4">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="GUd-7V-Euj"/>
+                                    <constraint firstAttribute="height" constant="30" id="ryw-DO-ozM"/>
+                                </constraints>
+                                <state key="normal" image="back arrow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="NAG-LT-Tnw" eventType="touchUpInside" id="1Tv-SD-Qd8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.97647058823529409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -169,10 +182,12 @@
                             <constraint firstItem="JsW-Iw-Jsg" firstAttribute="top" secondItem="w6k-ez-1Qr" secondAttribute="bottom" constant="15" id="QKg-oi-iuf"/>
                             <constraint firstItem="AvV-Fc-aJ6" firstAttribute="top" secondItem="zAP-4O-QLA" secondAttribute="bottom" constant="-1" id="RfY-OV-P5K"/>
                             <constraint firstItem="AvV-Fc-aJ6" firstAttribute="leading" secondItem="zAP-4O-QLA" secondAttribute="leading" id="UtW-L9-rmY"/>
+                            <constraint firstItem="yOw-pd-VM4" firstAttribute="leading" secondItem="RDA-6X-ijO" secondAttribute="leadingMargin" id="XA4-S2-foe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JsW-Iw-Jsg" secondAttribute="trailing" id="atG-cl-Sqh"/>
                             <constraint firstItem="CDY-Ad-00T" firstAttribute="leading" secondItem="RDA-6X-ijO" secondAttribute="leadingMargin" constant="75" id="f9z-5f-Qac"/>
                             <constraint firstItem="zAP-4O-QLA" firstAttribute="leading" secondItem="RDA-6X-ijO" secondAttribute="leading" constant="-2" id="fBE-tt-uQr"/>
                             <constraint firstAttribute="trailing" secondItem="zAP-4O-QLA" secondAttribute="trailing" constant="-2" id="hVC-89-bgr"/>
+                            <constraint firstItem="yOw-pd-VM4" firstAttribute="top" secondItem="w6k-ez-1Qr" secondAttribute="bottom" id="pLy-uS-QBT"/>
                             <constraint firstItem="zAP-4O-QLA" firstAttribute="top" secondItem="JsW-Iw-Jsg" secondAttribute="bottom" constant="25" id="z45-cg-z7S"/>
                             <constraint firstItem="JsW-Iw-Jsg" firstAttribute="leading" secondItem="RDA-6X-ijO" secondAttribute="leadingMargin" id="zuG-SK-SZg"/>
                         </constraints>
@@ -228,7 +243,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-fJ-itE" customClass="AppEntryTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-fJ-itE" customClass="AppEntryTextField">
                                 <rect key="frame" x="-2" y="229" width="324" height="45"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -244,6 +259,9 @@
                                 <state key="normal" title="add photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPhotoButton:" destination="BzS-dX-3Cm" eventType="touchUpInside" id="PEx-vv-gPG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOf-WL-saA">
                                 <rect key="frame" x="91" y="403" width="138" height="57.5"/>
@@ -256,6 +274,20 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cu-Zw-FU2">
+                                <rect key="frame" x="0.0" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="dZN-R9-T15"/>
+                                    <constraint firstAttribute="height" constant="30" id="eMk-1v-hUH"/>
+                                </constraints>
+                                <state key="normal" image="back arrow">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="BzS-dX-3Cm" eventType="touchUpInside" id="ffe-DV-zpl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.97647058819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -266,6 +298,7 @@
                             <constraint firstItem="NHp-Wh-1hO" firstAttribute="top" secondItem="b9c-Uh-rLD" secondAttribute="bottom" constant="-1" id="Jwd-ol-Qco"/>
                             <constraint firstItem="b6Q-GL-AhL" firstAttribute="leading" secondItem="NHp-Wh-1hO" secondAttribute="leading" id="L4i-4g-hok"/>
                             <constraint firstItem="aMZ-fJ-itE" firstAttribute="leading" secondItem="b6Q-GL-AhL" secondAttribute="leading" id="L7U-sv-l88"/>
+                            <constraint firstItem="1cu-Zw-FU2" firstAttribute="leading" secondItem="Iyy-6q-BKm" secondAttribute="leading" id="MK9-TR-VKy"/>
                             <constraint firstItem="o0n-QQ-dYU" firstAttribute="leading" secondItem="Iyy-6q-BKm" secondAttribute="leadingMargin" id="Pr7-fp-eoy"/>
                             <constraint firstItem="b9c-Uh-rLD" firstAttribute="leading" secondItem="Iyy-6q-BKm" secondAttribute="leading" constant="-2" id="SVi-An-Nkb"/>
                             <constraint firstItem="NHp-Wh-1hO" firstAttribute="height" secondItem="b9c-Uh-rLD" secondAttribute="height" id="U5S-Qm-gGI"/>
@@ -276,6 +309,7 @@
                             <constraint firstItem="o0n-QQ-dYU" firstAttribute="top" secondItem="d6Q-z8-aSo" secondAttribute="bottom" constant="15" id="fJW-Oq-2jn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o0n-QQ-dYU" secondAttribute="trailing" id="iCK-dh-qwk"/>
                             <constraint firstItem="cJu-ON-Z6L" firstAttribute="top" secondItem="aMZ-fJ-itE" secondAttribute="bottom" constant="25" id="jC7-pM-vdv"/>
+                            <constraint firstItem="1cu-Zw-FU2" firstAttribute="top" secondItem="d6Q-z8-aSo" secondAttribute="bottom" id="k2s-SA-J5L"/>
                             <constraint firstItem="b6Q-GL-AhL" firstAttribute="trailing" secondItem="NHp-Wh-1hO" secondAttribute="trailing" id="p1F-yx-YYL"/>
                             <constraint firstItem="NHp-Wh-1hO" firstAttribute="trailing" secondItem="b9c-Uh-rLD" secondAttribute="trailing" id="qKj-kh-iAh"/>
                             <constraint firstItem="NHp-Wh-1hO" firstAttribute="leading" secondItem="b9c-Uh-rLD" secondAttribute="leading" id="v0j-d1-dmw"/>
@@ -286,8 +320,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="photoButton" destination="cJu-ON-Z6L" id="qAj-ZM-wje"/>
-                        <outlet property="signupButton" destination="FOf-WL-saA" id="hpa-vK-MG0"/>
+                        <outlet property="photoButton" destination="cJu-ON-Z6L" id="7Di-5I-7Pt"/>
+                        <outlet property="signupButton" destination="FOf-WL-saA" id="tGl-QK-pMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d78-GT-PXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -296,6 +330,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back arrow" width="256" height="256"/>
         <image name="logo" width="271" height="271"/>
     </resources>
 </document>
