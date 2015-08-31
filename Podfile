@@ -7,6 +7,6 @@ target 'Postid' do
 end
 
 target 'PostidTests' do
-
+	pod 'Realm'
 end
 

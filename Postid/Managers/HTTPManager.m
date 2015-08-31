@@ -13,17 +13,18 @@
 #if TARGET_IPHONE_SIMULATOR
 #define BASE_API_URL @"http:localhost:3000"
 #else
-#define BASE_API_URL @"http://www.logikapps.com"
+#define BASE_API_URL @"http://postid-prod.elasticbeanstalk.com/"
 #endif
 
 #define API_VERSION @"1"
-#define API_PATH(PATH) (BASE_API_URL @"/fake_phone_call/api/v" API_VERSION @"/" #PATH)
+#define API_PATH(PATH) (BASE_API_URL @"/api/v" API_VERSION @"/" #PATH)
 
 #define kAPIAttempts 5
 #define kAPIAttemptDelay 0.25
 
 NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
 NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
+NSString * const kApiUpdatePhoneNumber = API_PATH(update_phone_number);
 
 @implementation HTTPManager
 

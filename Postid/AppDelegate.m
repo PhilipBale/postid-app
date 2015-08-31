@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <DigitsKit/DigitsKit.h>
+#import <Realm/Realm.h>
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [Fabric with:@[CrashlyticsKit]];
+    [Fabric with:@[CrashlyticsKit, DigitsKit]];
+    
+    [self handleMigrations];
+    
     return YES;
+}
+
+- (void)handleMigrations
+{
+    [RLMRealm setSchemaVersion:2 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
+        [migration enumerateObjects:User.className
+                              block:^(RLMObject *oldUser, RLMObject *newUser) {
+                                  if (oldSchemaVersion < 2) {
+                                      newUser[@"phoneNumber"] = @"";
+                                  }
+                              }];
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -20,6 +20,16 @@
     return _sharedManager;
 }
 
+-(void)setCurrentUser:(User *)currentUser
+{
+    if (!currentUser) return;
+    _currentUser = currentUser;
+    
+    [self expressDefaultRealmWrite:currentUser];
+    [self saveTokenToKeychain:currentUser.token];
+    [[HTTPManager sharedManager] setRequestHeadersForAPIToken:currentUser.token];
+}
+
 - (void)logout
 {
     self.currentUser = nil;

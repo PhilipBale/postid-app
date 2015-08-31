@@ -7,6 +7,8 @@
 //
 
 #import "AppEntryViewController.h"
+#import "PostidManager.h"
+#import "PostidApi.h"
 
 @interface AppEntryViewController ()
 
@@ -16,6 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString *token = [[PostidManager sharedManager] loadTokenFromKeychain];
+    if (token) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self attemptAutoLoginWithToken:token];
+        });
+    }
+    
     self.loginButton.layer.cornerRadius = 10;
     self.loginButton.layer.borderColor = [UIColor lightTextColor].CGColor;
     self.loginButton.layer.borderWidth = 1;
@@ -29,14 +39,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)attemptAutoLoginWithToken:(NSString *)token {
+    [self.autoLoginIndicator startAnimating];
+    [self setButtonsEnabled:NO];
+    
+    __weak typeof(self) weakSelf = self;
+    [PostidApi loginWithToken:token completion:^(BOOL success, User *user) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.autoLoginIndicator stopAnimating];
+            [self setButtonsEnabled:YES];
+        });
+        
+        if (success)
+        {
+            [[PostidManager sharedManager] setCurrentUser:user];
+            [self performSegueWithIdentifier:@"login" sender:self];
+        }
+    }];
 }
-*/
 
+- (void)setButtonsEnabled:(BOOL)enabled
+{
+    self.loginButton.enabled = enabled;
+    self.signupButton.enabled = enabled;
+}
 @end

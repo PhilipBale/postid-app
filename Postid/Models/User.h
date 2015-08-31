@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Philip Bale. All rights reserved.
 //
 
-#import <Realm/Realm.h>
+#import "Realm/Realm.h"
 
 @interface User : RLMObject
 
@@ -16,6 +16,7 @@
 @property NSString *firstName;
 @property NSString *lastName;
 @property NSString *username;
+@property NSString *phoneNumber;
 @property NSInteger postsCreated;
 @property BOOL admin;
 

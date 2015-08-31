@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.2</string>
+	<string>0.0.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -31,6 +31,17 @@
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>bOo9ndOfgmxPAEWDvVOISQCV0</string>
+					<key>consumerSecret</key>
+					<string>2jvwMvDudHaeiMGDEHeRFPIxYniv7r5hWgpax4EZSuwu7SHagC</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
 			</dict>
 		</array>
 	</dict>

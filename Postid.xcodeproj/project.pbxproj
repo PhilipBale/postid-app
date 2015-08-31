@@ -8,10 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0A6EBFC5010BAF7C9EA68C43 /* libPods-Postid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE7C13E299049ACF2795577 /* libPods-Postid.a */; };
+		D296F597D57F6D06772E222F /* libPods-PostidTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D1180256A4FD99C03E62DB /* libPods-PostidTests.a */; };
 		D41615E11B88297800320977 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615E01B88297800320977 /* HTTPManager.m */; };
 		D41615E41B882B8E00320977 /* PostidManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615E31B882B8E00320977 /* PostidManager.m */; };
 		D41615E71B882BA100320977 /* PostidApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615E61B882BA100320977 /* PostidApi.m */; };
 		D41615EB1B882BF400320977 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615EA1B882BF400320977 /* User.m */; };
+		D41615EE1B8AA02600320977 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615ED1B8AA02600320977 /* CameraViewController.m */; };
+		D41615F01B8AD3F300320977 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41615EF1B8AD3F300320977 /* AVFoundation.framework */; };
+		D416160D1B8AD4F700320977 /* CameraSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615F41B8AD4F700320977 /* CameraSessionView.m */; };
+		D416160E1B8AD4F700320977 /* CameraDismissButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615F81B8AD4F700320977 /* CameraDismissButton.m */; };
+		D416160F1B8AD4F700320977 /* CameraFlashButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615FA1B8AD4F700320977 /* CameraFlashButton.m */; };
+		D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615FC1B8AD4F700320977 /* CameraFocalReticule.m */; };
+		D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D41615FE1B8AD4F700320977 /* CameraShutterButton.m */; };
+		D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616001B8AD4F700320977 /* CameraToggleButton.m */; };
+		D41616131B8AD4F700320977 /* LaunchCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616021B8AD4F700320977 /* LaunchCameraButton.m */; };
+		D41616141B8AD4F700320977 /* Cool Camera Mockup.sketch in Resources */ = {isa = PBXBuildFile; fileRef = D41616031B8AD4F700320977 /* Cool Camera Mockup.sketch */; };
+		D41616151B8AD4F700320977 /* PaintCodeFile.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = D41616041B8AD4F700320977 /* PaintCodeFile.pcvd */; };
+		D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616071B8AD4F700320977 /* CameraStyleKitClass.m */; };
+		D41616171B8AD4F700320977 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160A1B8AD4F700320977 /* CaptureSessionManager.m */; };
+		D41616181B8AD4F700320977 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160C1B8AD4F700320977 /* Constants.m */; };
+		D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */; };
+		D47431A51B8BAAE60014C6CF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D47431A41B8BAAE60014C6CF /* libc++.dylib */; };
 		D48B21421B7FFF8500F8D659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21411B7FFF8500F8D659 /* main.m */; };
 		D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21441B7FFF8500F8D659 /* AppDelegate.m */; };
 		D48B214B1B7FFF8500F8D659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48B21491B7FFF8500F8D659 /* Main.storyboard */; };
@@ -44,6 +61,11 @@
 		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
+		D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */; };
+		D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */; };
+		D4DA20B71B93D07F00C2E37C /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA20B41B93D07F00C2E37C /* DigitsKit.framework */; };
+		D4DA20B81B93D07F00C2E37C /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4DA20B51B93D07F00C2E37C /* DigitsKitResources.bundle */; };
+		D4DA20B91B93D07F00C2E37C /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA20B61B93D07F00C2E37C /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +82,8 @@
 		1FE7C13E299049ACF2795577 /* libPods-Postid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Postid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		633EB326B9B49333F5F283CD /* Pods-Postid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Postid.release.xcconfig"; path = "Pods/Target Support Files/Pods-Postid/Pods-Postid.release.xcconfig"; sourceTree = "<group>"; };
 		7586DEB558736E01C184A878 /* Pods-Postid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Postid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Postid/Pods-Postid.debug.xcconfig"; sourceTree = "<group>"; };
+		97D1180256A4FD99C03E62DB /* libPods-PostidTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PostidTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3BBBD31B7A355742133AE36 /* Pods-PostidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostidTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D41615DF1B88297800320977 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPManager.h; path = Managers/HTTPManager.h; sourceTree = "<group>"; };
 		D41615E01B88297800320977 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPManager.m; path = Managers/HTTPManager.m; sourceTree = "<group>"; };
 		D41615E21B882B8E00320977 /* PostidManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostidManager.h; path = Managers/PostidManager.h; sourceTree = "<group>"; };
@@ -68,6 +92,35 @@
 		D41615E61B882BA100320977 /* PostidApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostidApi.m; sourceTree = "<group>"; };
 		D41615E91B882BF400320977 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		D41615EA1B882BF400320977 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		D41615EC1B8AA02600320977 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = "View Controllers/CameraViewController.h"; sourceTree = "<group>"; };
+		D41615ED1B8AA02600320977 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = "View Controllers/CameraViewController.m"; sourceTree = "<group>"; };
+		D41615EF1B8AD3F300320977 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D41615F31B8AD4F700320977 /* CameraSessionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSessionView.h; sourceTree = "<group>"; };
+		D41615F41B8AD4F700320977 /* CameraSessionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSessionView.m; sourceTree = "<group>"; };
+		D41615F71B8AD4F700320977 /* CameraDismissButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDismissButton.h; sourceTree = "<group>"; };
+		D41615F81B8AD4F700320977 /* CameraDismissButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDismissButton.m; sourceTree = "<group>"; };
+		D41615F91B8AD4F700320977 /* CameraFlashButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFlashButton.h; sourceTree = "<group>"; };
+		D41615FA1B8AD4F700320977 /* CameraFlashButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFlashButton.m; sourceTree = "<group>"; };
+		D41615FB1B8AD4F700320977 /* CameraFocalReticule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFocalReticule.h; sourceTree = "<group>"; };
+		D41615FC1B8AD4F700320977 /* CameraFocalReticule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocalReticule.m; sourceTree = "<group>"; };
+		D41615FD1B8AD4F700320977 /* CameraShutterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraShutterButton.h; sourceTree = "<group>"; };
+		D41615FE1B8AD4F700320977 /* CameraShutterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraShutterButton.m; sourceTree = "<group>"; };
+		D41615FF1B8AD4F700320977 /* CameraToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToggleButton.h; sourceTree = "<group>"; };
+		D41616001B8AD4F700320977 /* CameraToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToggleButton.m; sourceTree = "<group>"; };
+		D41616011B8AD4F700320977 /* LaunchCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchCameraButton.h; sourceTree = "<group>"; };
+		D41616021B8AD4F700320977 /* LaunchCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchCameraButton.m; sourceTree = "<group>"; };
+		D41616031B8AD4F700320977 /* Cool Camera Mockup.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cool Camera Mockup.sketch"; sourceTree = "<group>"; };
+		D41616041B8AD4F700320977 /* PaintCodeFile.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = PaintCodeFile.pcvd; sourceTree = "<group>"; };
+		D41616061B8AD4F700320977 /* CameraStyleKitClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraStyleKitClass.h; sourceTree = "<group>"; };
+		D41616071B8AD4F700320977 /* CameraStyleKitClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraStyleKitClass.m; sourceTree = "<group>"; };
+		D41616091B8AD4F700320977 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		D416160A1B8AD4F700320977 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		D416160B1B8AD4F700320977 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		D416160C1B8AD4F700320977 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D44EE92C1B8BED3F0091D1D5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = "View Controllers/ProfileViewController.h"; sourceTree = "<group>"; };
+		D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "View Controllers/ProfileViewController.m"; sourceTree = "<group>"; };
+		D4533EE01B8AD9DF00D2BFF4 /* Postid-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Postid-PrefixHeader.pch"; path = "Core/Postid-PrefixHeader.pch"; sourceTree = "<group>"; };
+		D47431A41B8BAAE60014C6CF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		D48B213C1B7FFF8500F8D659 /* Postid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Postid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48B21401B7FFF8500F8D659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D48B21411B7FFF8500F8D659 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,7 +132,6 @@
 		D48B21551B7FFF8500F8D659 /* PostidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48B215A1B7FFF8500F8D659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D48B215B1B7FFF8500F8D659 /* PostidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostidTests.m; sourceTree = "<group>"; };
-		D48B21681B80487F00F8D659 /* Postid-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Postid-PrefixHeader.pch"; path = "../../postid/Postid/Postid-PrefixHeader.pch"; sourceTree = "<group>"; };
 		D48B216B1B804A8D00F8D659 /* Minimo-Bold-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Bold-Oblique.otf"; sourceTree = "<group>"; };
 		D48B216C1B804A8D00F8D659 /* Minimo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Bold.otf"; sourceTree = "<group>"; };
 		D48B216D1B804A8D00F8D659 /* Minimo-Light-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Light-Oblique.otf"; sourceTree = "<group>"; };
@@ -98,6 +150,14 @@
 		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D4C7D0B81B8AE3F3002F23B8 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
+		D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtilities.m; sourceTree = "<group>"; };
+		D4DA20B11B93CEFF00C2E37C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "View Controllers/SearchViewController.h"; sourceTree = "<group>"; };
+		D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = "View Controllers/SearchViewController.m"; sourceTree = "<group>"; };
+		D4DA20B41B93D07F00C2E37C /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		D4DA20B51B93D07F00C2E37C /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		D4DA20B61B93D07F00C2E37C /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		E4EE125FEFF727592DD7ADDC /* Pods-PostidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostidTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +165,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47431A51B8BAAE60014C6CF /* libc++.dylib in Frameworks */,
+				D41615F01B8AD3F300320977 /* AVFoundation.framework in Frameworks */,
+				D4DA20B91B93D07F00C2E37C /* TwitterCore.framework in Frameworks */,
 				D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */,
+				D4DA20B71B93D07F00C2E37C /* DigitsKit.framework in Frameworks */,
 				D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */,
 				0A6EBFC5010BAF7C9EA68C43 /* libPods-Postid.a in Frameworks */,
 			);
@@ -115,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D296F597D57F6D06772E222F /* libPods-PostidTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +189,10 @@
 		73A7624E53729B435916426C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D47431A41B8BAAE60014C6CF /* libc++.dylib */,
+				D41615EF1B8AD3F300320977 /* AVFoundation.framework */,
 				1FE7C13E299049ACF2795577 /* libPods-Postid.a */,
+				97D1180256A4FD99C03E62DB /* libPods-PostidTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,6 +202,8 @@
 			children = (
 				7586DEB558736E01C184A878 /* Pods-Postid.debug.xcconfig */,
 				633EB326B9B49333F5F283CD /* Pods-Postid.release.xcconfig */,
+				C3BBBD31B7A355742133AE36 /* Pods-PostidTests.debug.xcconfig */,
+				E4EE125FEFF727592DD7ADDC /* Pods-PostidTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -147,9 +217,82 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		D41615F11B8AD4F700320977 /* CustomizableCamera */ = {
+			isa = PBXGroup;
+			children = (
+				D41615F21B8AD4F700320977 /* Camera View */,
+				D41615F51B8AD4F700320977 /* Graphical Assets */,
+				D41616081B8AD4F700320977 /* Model Classes */,
+			);
+			path = CustomizableCamera;
+			sourceTree = "<group>";
+		};
+		D41615F21B8AD4F700320977 /* Camera View */ = {
+			isa = PBXGroup;
+			children = (
+				D41615F31B8AD4F700320977 /* CameraSessionView.h */,
+				D41615F41B8AD4F700320977 /* CameraSessionView.m */,
+			);
+			path = "Camera View";
+			sourceTree = "<group>";
+		};
+		D41615F51B8AD4F700320977 /* Graphical Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D41615F61B8AD4F700320977 /* CameraViewComponents */,
+				D41616031B8AD4F700320977 /* Cool Camera Mockup.sketch */,
+				D41616041B8AD4F700320977 /* PaintCodeFile.pcvd */,
+				D41616051B8AD4F700320977 /* UI Assets */,
+			);
+			path = "Graphical Assets";
+			sourceTree = "<group>";
+		};
+		D41615F61B8AD4F700320977 /* CameraViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D41615F71B8AD4F700320977 /* CameraDismissButton.h */,
+				D41615F81B8AD4F700320977 /* CameraDismissButton.m */,
+				D41615F91B8AD4F700320977 /* CameraFlashButton.h */,
+				D41615FA1B8AD4F700320977 /* CameraFlashButton.m */,
+				D41615FB1B8AD4F700320977 /* CameraFocalReticule.h */,
+				D41615FC1B8AD4F700320977 /* CameraFocalReticule.m */,
+				D41615FD1B8AD4F700320977 /* CameraShutterButton.h */,
+				D41615FE1B8AD4F700320977 /* CameraShutterButton.m */,
+				D41615FF1B8AD4F700320977 /* CameraToggleButton.h */,
+				D41616001B8AD4F700320977 /* CameraToggleButton.m */,
+				D41616011B8AD4F700320977 /* LaunchCameraButton.h */,
+				D41616021B8AD4F700320977 /* LaunchCameraButton.m */,
+			);
+			path = CameraViewComponents;
+			sourceTree = "<group>";
+		};
+		D41616051B8AD4F700320977 /* UI Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D41616061B8AD4F700320977 /* CameraStyleKitClass.h */,
+				D41616071B8AD4F700320977 /* CameraStyleKitClass.m */,
+			);
+			path = "UI Assets";
+			sourceTree = "<group>";
+		};
+		D41616081B8AD4F700320977 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D41616091B8AD4F700320977 /* CaptureSessionManager.h */,
+				D416160A1B8AD4F700320977 /* CaptureSessionManager.m */,
+				D416160B1B8AD4F700320977 /* Constants.h */,
+				D416160C1B8AD4F700320977 /* Constants.m */,
+			);
+			path = "Model Classes";
+			sourceTree = "<group>";
+		};
 		D48B21331B7FFF8500F8D659 = {
 			isa = PBXGroup;
 			children = (
+				D4DA20B41B93D07F00C2E37C /* DigitsKit.framework */,
+				D4DA20B51B93D07F00C2E37C /* DigitsKitResources.bundle */,
+				D4DA20B61B93D07F00C2E37C /* TwitterCore.framework */,
+				D41615F11B8AD4F700320977 /* CustomizableCamera */,
 				D48B21971B81194100F8D659 /* Fabric.framework */,
 				D48B21981B81194100F8D659 /* Crashlytics.framework */,
 				D48B213E1B7FFF8500F8D659 /* Postid */,
@@ -172,6 +315,7 @@
 		D48B213E1B7FFF8500F8D659 /* Postid */ = {
 			isa = PBXGroup;
 			children = (
+				D4C7D0B71B8AE3C5002F23B8 /* Utilities */,
 				D48B21651B80459900F8D659 /* Core */,
 				D48B21671B8045B600F8D659 /* Managers */,
 				D41615E81B882BCD00320977 /* Models */,
@@ -211,9 +355,9 @@
 		D48B21651B80459900F8D659 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D4533EE01B8AD9DF00D2BFF4 /* Postid-PrefixHeader.pch */,
 				D48B21431B7FFF8500F8D659 /* AppDelegate.h */,
 				D48B21441B7FFF8500F8D659 /* AppDelegate.m */,
-				D48B21681B80487F00F8D659 /* Postid-PrefixHeader.pch */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -270,6 +414,12 @@
 			isa = PBXGroup;
 			children = (
 				D48B21881B804DD100F8D659 /* Login */,
+				D41615EC1B8AA02600320977 /* CameraViewController.h */,
+				D41615ED1B8AA02600320977 /* CameraViewController.m */,
+				D44EE92C1B8BED3F0091D1D5 /* ProfileViewController.h */,
+				D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */,
+				D4DA20B11B93CEFF00C2E37C /* SearchViewController.h */,
+				D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +444,15 @@
 				D48B218E1B810CB300F8D659 /* AppEntryTextField.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D4C7D0B71B8AE3C5002F23B8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D4C7D0B81B8AE3F3002F23B8 /* GeneralUtilities.h */,
+				D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,9 +482,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D48B21621B7FFF8500F8D659 /* Build configuration list for PBXNativeTarget "PostidTests" */;
 			buildPhases = (
+				5C982C6337A0C0BA39AFD53F /* Check Pods Manifest.lock */,
 				D48B21511B7FFF8500F8D659 /* Sources */,
 				D48B21521B7FFF8500F8D659 /* Frameworks */,
 				D48B21531B7FFF8500F8D659 /* Resources */,
+				8975B17072101353BECDB890 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,10 +547,13 @@
 				D48B214B1B7FFF8500F8D659 /* Main.storyboard in Resources */,
 				D48B21811B804A8D00F8D659 /* Minimo-Regular.otf in Resources */,
 				D48B21501B7FFF8500F8D659 /* LaunchScreen.xib in Resources */,
+				D4DA20B81B93D07F00C2E37C /* DigitsKitResources.bundle in Resources */,
 				D48B217B1B804A8D00F8D659 /* Minimo-Medium-Oblique.otf in Resources */,
 				D48B217D1B804A8D00F8D659 /* Minimo-Medium.otf in Resources */,
+				D41616151B8AD4F700320977 /* PaintCodeFile.pcvd in Resources */,
 				D48B214D1B7FFF8500F8D659 /* Images.xcassets in Resources */,
 				D48B21731B804A8D00F8D659 /* Minimo-Bold-Oblique.otf in Resources */,
+				D41616141B8AD4F700320977 /* Cool Camera Mockup.sketch in Resources */,
 				D48B217F1B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +589,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Postid/Pods-Postid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C982C6337A0C0BA39AFD53F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8975B17072101353BECDB890 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A917DC496C4C65526E4A6CC7 /* Check Pods Manifest.lock */ = {
@@ -463,15 +657,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41615EB1B882BF400320977 /* User.m in Sources */,
+				D41616171B8AD4F700320977 /* CaptureSessionManager.m in Sources */,
 				D41615E41B882B8E00320977 /* PostidManager.m in Sources */,
 				D41615E71B882BA100320977 /* PostidApi.m in Sources */,
+				D41616131B8AD4F700320977 /* LaunchCameraButton.m in Sources */,
+				D41616181B8AD4F700320977 /* Constants.m in Sources */,
 				D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */,
+				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
+				D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */,
 				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
+				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
+				D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */,
 				D48B21941B8114CA00F8D659 /* SignUpViewController.m in Sources */,
+				D416160E1B8AD4F700320977 /* CameraDismissButton.m in Sources */,
+				D416160D1B8AD4F700320977 /* CameraSessionView.m in Sources */,
+				D41615EE1B8AA02600320977 /* CameraViewController.m in Sources */,
+				D416160F1B8AD4F700320977 /* CameraFlashButton.m in Sources */,
 				D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
 				D41615E11B88297800320977 /* HTTPManager.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
+				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
+				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
+				D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +817,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Postid/Core/Postid-PrefixHeader.pch";
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,6 +835,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Postid/Core/Postid-PrefixHeader.pch";
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,6 +845,7 @@
 		};
 		D48B21631B7FFF8500F8D659 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3BBBD31B7A355742133AE36 /* Pods-PostidTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -652,6 +865,7 @@
 		};
 		D48B21641B7FFF8500F8D659 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EE125FEFF727592DD7ADDC /* Pods-PostidTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
