@@ -22,13 +22,18 @@
     [super viewDidLoad];
     
     if ([[PostidManager sharedManager] currentUser].phoneNumber.length == 0) {
+        [DigitsKit logOut];
         DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
             User *currentUser = [[PostidManager sharedManager] currentUser];
             if ([session.phoneNumber length])
             {
                 [currentUser setPhoneNumber:session.phoneNumber];
                 [PostidApi updatePhoneNumber:session.phoneNumber forToken:currentUser.token completion:^(BOOL success, User *user) {
-                    if (success) [[PostidManager sharedManager] setCurrentUser:user];
+                    if (success)
+                    {
+                      [[PostidManager sharedManager] setCurrentUser:user];
+                        [authenticateButton setHidden:YES];
+                    }
                 }];
             }
         }];
@@ -42,9 +47,6 @@
         [authenticateButton setTitle:@"Authenticate Phone to Search" forState:UIControlStateNormal];
         [self.view addSubview:authenticateButton];
     }
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
