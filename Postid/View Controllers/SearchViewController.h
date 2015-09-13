@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DigitsKit/DigitsKit.h>
+#import "FriendSearchController.h"
 
-@interface SearchViewController : UIViewController
+@interface SearchViewController : UIViewController<UISearchBarDelegate, UITextFieldDelegate>
 
+@property (strong, nonatomic) FriendSearchController *searchController;
+@property (strong, nonatomic) DGTAuthenticateButton *authenticateButton;
 
 @end

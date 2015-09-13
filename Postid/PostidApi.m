@@ -52,6 +52,26 @@
      }];
 }
 
++ (void)searchForFriends:(NSString *)query forToken:(NSString *)token completion:(void (^)(BOOL, NSArray *results))completion
+{
+    NSDictionary *searchForFriendsParams = @{@"friend":@{ @"query":query}};
+    [[HTTPManager sharedManager] GET:kApiSearchForFriends parameters:searchForFriendsParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *results = [responseObject objectForKey:@"search_results"];
+         NSMutableArray *users = [[NSMutableArray alloc] init];
+         for (NSObject *result in results)
+         {
+             User *resultUser = [self userFromDictionary:(NSDictionary *)result];
+             
+             [users addObject:resultUser];
+         }
+         
+         if (completion) completion(YES, users);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil);
+     }];
+}
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];

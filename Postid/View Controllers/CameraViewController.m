@@ -7,6 +7,8 @@
 //
 
 #import "CameraViewController.h"
+#import "PostidManager.h"
+#import "PostidApi.h"
 
 @interface CameraViewController () <CACameraSessionDelegate>
 @property (nonatomic, strong) CameraSessionView *cameraView;
@@ -30,6 +32,10 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissCamera:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
+    
+    [PostidApi searchForFriends:@"" forToken:[PostidManager sharedManager].currentUser.token  completion:^(BOOL success, NSArray *results) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +46,8 @@
 -(void)didCaptureImageWithData:(NSData *)imageData {
     //Use the image's data that is received
     NSLog(@"Image captured");
-    [self performSegueWithIdentifier:@"mainTabBar" sender:self];
+    [[PostidManager sharedManager] setLastImageData:imageData];
+    [self performSegueWithIdentifier:@"previewImage" sender:self];
 }
 
 - (IBAction)dismissCamera:(id)sender

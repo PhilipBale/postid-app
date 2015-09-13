@@ -12,6 +12,7 @@
 @interface PostidManager : NSObject
 
 @property (nonatomic, strong) User *currentUser;
+@property (nonatomic, strong) NSData *lastImageData;
 
 + (PostidManager *)sharedManager;
 
