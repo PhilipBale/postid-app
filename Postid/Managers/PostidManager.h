@@ -21,5 +21,7 @@
 - (NSString *)loadTokenFromKeychain;
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object;
 
+- (User *)currentUserFromRealm;
+- (User *)userFromCacheWithId:(NSInteger)userId;  
 
 @end

@@ -15,4 +15,6 @@
 @property (strong, nonatomic) FriendSearchController *searchController;
 @property (strong, nonatomic) DGTAuthenticateButton *authenticateButton;
 
+@property (strong, nonatomic) IBOutlet UITableView *resultsTableView;
+
 @end

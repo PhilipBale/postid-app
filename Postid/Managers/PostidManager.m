@@ -23,6 +23,15 @@
 -(void)setCurrentUser:(User *)currentUser
 {
     if (!currentUser) return;
+    
+    //Persist non-server variables
+    User *oldUser = [User objectForPrimaryKey:[NSNumber numberWithInteger:currentUser.userId]];
+    if (oldUser)
+    {
+        currentUser.friends = oldUser.friends;
+        currentUser.pendingFriends = oldUser.pendingFriends;
+    }
+    
     _currentUser = currentUser;
     
     [self expressDefaultRealmWrite:currentUser];
@@ -61,6 +70,16 @@
     [[RLMRealm defaultRealm] commitWriteTransaction];
     
     return returnObj;
+}
+
+-(User *)currentUserFromRealm
+{
+    return [User objectForPrimaryKey:[NSNumber numberWithInteger:self.currentUser.userId]];
+}
+
+- (User *)userFromCacheWithId:(NSInteger)userId
+{
+    return [[[self currentUserFromRealm].userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:userId]] firstObject];
 }
 
 

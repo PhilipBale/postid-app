@@ -32,10 +32,6 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissCamera:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
-    
-    [PostidApi searchForFriends:@"" forToken:[PostidManager sharedManager].currentUser.token  completion:^(BOOL success, NSArray *results) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

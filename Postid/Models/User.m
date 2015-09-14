@@ -7,12 +7,42 @@
 //
 
 #import "User.h"
+#import "PostidManager.h"
 
 @implementation User
 
 + (NSString *)primaryKey
 {
     return @"userId";
+}
+
+- (NSString *)name
+{
+    return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+}
+
+-(BOOL)friendsWithPrimaryUser
+{
+    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    RLMResults *matches = [currentUser.friends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
+    
+    return ([matches count] > 0);
+}
+
+-(BOOL)pendingFriendsWithPrimaryUser
+{
+    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    RLMResults *matches = [currentUser.pendingFriends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
+    
+    return ([matches count] > 0);
+}
+
+-(BOOL)inUserCache
+{
+    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    RLMResults *matches = [currentUser.userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
+    
+    return ([matches count] > 0);
 }
 
 @end

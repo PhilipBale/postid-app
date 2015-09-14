@@ -62,6 +62,7 @@
 		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
+		D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B50E781BA5185000DFC644 /* SearchCell.m */; };
 		D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */; };
 		D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */; };
 		D4DA20B71B93D07F00C2E37C /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA20B41B93D07F00C2E37C /* DigitsKit.framework */; };
@@ -157,6 +158,8 @@
 		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D4B50E771BA5185000DFC644 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCell.h; path = Views/SearchCell.h; sourceTree = "<group>"; };
+		D4B50E781BA5185000DFC644 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCell.m; path = Views/SearchCell.m; sourceTree = "<group>"; };
 		D4C7D0B81B8AE3F3002F23B8 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
 		D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralUtilities.m; sourceTree = "<group>"; };
 		D4DA20B11B93CEFF00C2E37C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = "View Controllers/SearchViewController.h"; sourceTree = "<group>"; };
@@ -466,6 +469,8 @@
 				D48B218E1B810CB300F8D659 /* AppEntryTextField.m */,
 				D4DA20BE1B94C80900C2E37C /* FeedCell.h */,
 				D4DA20BF1B94C80900C2E37C /* FeedCell.m */,
+				D4B50E771BA5185000DFC644 /* SearchCell.h */,
+				D4B50E781BA5185000DFC644 /* SearchCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -716,6 +721,7 @@
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
+				D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */,
 				D45A2F3F1B9FB9E800CCB099 /* FriendSearchController.m in Sources */,
 				D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 #import "PostidApi.h"
 #import "HTTPManager.h"
+#import "PostidManager.h"
 
 @implementation PostidApi
 
@@ -59,11 +60,14 @@
      {
          NSDictionary *results = [responseObject objectForKey:@"search_results"];
          NSMutableArray *users = [[NSMutableArray alloc] init];
+         NSInteger currentUserId = [[PostidManager sharedManager] currentUser].userId;
          for (NSObject *result in results)
          {
              User *resultUser = [self userFromDictionary:(NSDictionary *)result];
-             
-             [users addObject:resultUser];
+             if (resultUser.userId != currentUserId)
+             {
+                 [users addObject:resultUser];
+             }
          }
          
          if (completion) completion(YES, users);
@@ -84,6 +88,7 @@
     user.postsCreated = [[dictionary objectForKey:@"posts_created"] integerValue];
     user.admin = [[dictionary objectForKey:@"admin"] integerValue] ? YES : NO;
     user.phoneNumber = [dictionary objectForKey:@"phone_number"];
+    user.imageUrl = [dictionary objectForKey:@"image_url"];
     return user;
 }
 

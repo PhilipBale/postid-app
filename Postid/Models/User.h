@@ -8,6 +8,9 @@
 
 #import "Realm/Realm.h"
 
+@class User;
+@protocol User;
+
 @interface User : RLMObject
 
 @property NSInteger userId;
@@ -19,6 +22,16 @@
 @property NSString *phoneNumber;
 @property NSInteger postsCreated;
 @property BOOL admin;
+@property NSString *imageUrl;
+
+@property RLMArray<User> *friends;
+@property RLMArray<User> *pendingFriends;
+@property RLMArray<User> *userCache;
+
+@property (readonly) NSString *name;
+@property (readonly) BOOL friendsWithPrimaryUser;
+@property (readonly) BOOL pendingFriendsWithPrimaryUser;
+@property (readonly) BOOL inUserCache;
 
 @end
 
