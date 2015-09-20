@@ -37,12 +37,4 @@
     return ([matches count] > 0);
 }
 
--(BOOL)inUserCache
-{
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
-    RLMResults *matches = [currentUser.userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
-    
-    return ([matches count] > 0);
-}
-
 @end

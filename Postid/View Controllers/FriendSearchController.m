@@ -24,10 +24,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NSLog(@"Search controller dissapearing");
+    
+    // Hack to prevent black screen on nav
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 -(void)setActive:(BOOL)active
 {
     [super setActive:active];
-    [self.navigationController setNavigationBarHidden: NO animated: NO];
+    //[self.navigationController setNavigationBarHidden: NO animated: NO];
     [self.parentViewController.navigationController setNavigationBarHidden:NO];
 }
 

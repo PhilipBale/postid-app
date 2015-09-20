@@ -76,6 +76,23 @@
      }];
 }
 
++ (void)addFriend:(NSInteger)userId forToken:(NSString *)token completion:(void (^)(BOOL success, BOOL pending, User *))completion;
+{
+    NSNumber *userIdObject = [NSNumber numberWithInteger:userId];
+    NSDictionary *addFriendParams = @{@"friend":@{ @"id":userIdObject}};
+    [[HTTPManager sharedManager] POST:kApiAddFriend parameters:addFriendParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *response = [responseObject objectForKey:@"user"];
+         BOOL pending = [response objectForKey:@"pending"];
+         User *user = [self userFromDictionary:response];
+         
+         if (completion) completion(YES, pending, user);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, NO, nil);
+     }];
+}
+
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];

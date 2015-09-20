@@ -34,12 +34,19 @@
         return;
     }
     
-    [[RLMRealm defaultRealm] beginWriteTransaction];
-    {
-        [currentUser.pendingFriends addObject:toAdd];
-        [User createOrUpdateInDefaultRealmWithValue:currentUser];
-    }
-    [[RLMRealm defaultRealm] commitWriteTransaction];
+    //TODO attempt friend request
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        {
+            [currentUser.pendingFriends addObject:toAdd];
+            [User createOrUpdateInDefaultRealmWithValue:currentUser];
+        }
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    });
+    
+    [self.rightWidget setTitle:@"Pending" forState:UIControlStateNormal];
+    [self.rightWidget setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 }
 
 @end

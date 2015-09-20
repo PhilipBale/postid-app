@@ -72,7 +72,6 @@ static BOOL phoneAuthenticated;
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.searchController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)generalViewLoad
@@ -88,6 +87,7 @@ static BOOL phoneAuthenticated;
     self.searchController.searchBar.delegate = self;
     self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.searchController.searchBar.showsCancelButton = NO;
+    self.searchController.definesPresentationContext = YES;
     
     
     
@@ -98,6 +98,7 @@ static BOOL phoneAuthenticated;
 }
 
 -(void) viewDidAppear:(BOOL)animated {
+    NSLog(@"Search appeared");
     [super viewDidAppear:animated];
     
     if (phoneAuthenticated)
@@ -145,11 +146,11 @@ static BOOL phoneAuthenticated;
         User *first = obj1;
         User *second = obj2;
         
-        if ([first.name isEqualToString:second.name])
+        if ([[first name] isEqualToString:[second name]])
         {
             return NSOrderedSame;
         } else {
-            return [first.name compare:obj2];
+            return [[first name] compare:[second name]];
         }
     }] mutableCopy];
     
@@ -179,21 +180,18 @@ static BOOL phoneAuthenticated;
     if ([searchString isEqualToString:@""]) return;
     [PostidApi searchForFriends:searchString forToken:[PostidManager sharedManager].currentUser.token  completion:^(BOOL success, NSArray *results) {
         if (success) {
-            User* currentUser = [[PostidManager sharedManager] currentUserFromRealm];
             
+            User* currentUser = [[PostidManager sharedManager] currentUserFromRealm];
             [[RLMRealm defaultRealm] beginWriteTransaction];
             {
                 for (User *user in results)
                 {
                     [User createOrUpdateInDefaultRealmWithValue:user];
-                    if (![user inUserCache] && ![user pendingFriendsWithPrimaryUser]) {
-                        [currentUser.userCache addObject:user];
-                    }
                 }
                 [User createOrUpdateInDefaultRealmWithValue:currentUser];
             }
-            
             [[RLMRealm defaultRealm] commitWriteTransaction];
+            
             self.searchResults = results;
             [self.resultsTableView reloadData];
         }
@@ -206,7 +204,6 @@ static BOOL phoneAuthenticated;
     {
         return [self.searchResults count];
     } else {
-        NSLog(@"Pulling from general");
         return [self.generalSearchResults count];
     }
 }

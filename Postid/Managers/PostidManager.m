@@ -74,12 +74,14 @@
 
 -(User *)currentUserFromRealm
 {
-    return [User objectForPrimaryKey:[NSNumber numberWithInteger:self.currentUser.userId]];
+    return [self userFromCacheWithId:self.currentUser.userId];
+    //return [User objectForPrimaryKey:[NSNumber numberWithInteger:self.currentUser.userId]];
 }
 
 - (User *)userFromCacheWithId:(NSInteger)userId
 {
-    return [[[self currentUserFromRealm].userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:userId]] firstObject];
+    return [User objectForPrimaryKey:[NSNumber numberWithInteger:userId]];
+    //return [[[self currentUserFromRealm].userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:userId]] firstObject];
 }
 
 
