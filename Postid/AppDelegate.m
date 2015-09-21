@@ -11,6 +11,8 @@
 #import <Crashlytics/Crashlytics.h>
 #import <DigitsKit/DigitsKit.h>
 #import <Realm/Realm.h>
+#import <AWSCore/AWSCore.h>
+#import <AWSCognito/AWSCognito.h>
 #import "User.h"
 
 @interface AppDelegate ()
@@ -26,6 +28,14 @@
     [Fabric with:@[CrashlyticsKit, DigitsKit]];
     
     [self handleMigrations];
+    
+    AWSCognitoCredentialsProvider *credentialsProvider = [[AWSCognitoCredentialsProvider alloc]
+                                                          initWithRegionType:AWSRegionUSEast1
+                                                          identityPoolId:@"us-east-1:51691c48-fcd3-4522-bbdc-dd3846c3d75e"];
+    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
+    [AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
+    
+    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     
     return YES;
 }

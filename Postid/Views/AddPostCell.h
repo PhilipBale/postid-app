@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 @property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
+@property (nonatomic) BOOL showingSelected;
 
 @end

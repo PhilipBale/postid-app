@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
+    
     User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
     NSMutableArray *allUsers = [[NSMutableArray alloc] init];
     
@@ -45,6 +48,14 @@
     self.results = allUsers;
     
     [self.tableView reloadData];
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +86,32 @@
 }
 
 - (IBAction)postButtonSelected:(id)sender {
+    NSArray *indexes = [self.tableView indexPathsForSelectedRows];
+    if ([indexes count] == 0)
+        return;
+    [self.activityIndicator startAnimating];
+    
+    NSMutableArray *usersToPostFor = [[NSMutableArray alloc] init];
+    for (NSIndexPath *path in indexes) {
+        User* user = [self.results objectAtIndex:path.row];
+        [usersToPostFor addObject:[NSNumber numberWithInteger:user.userId]];
+    }
+    
+    [[PostidManager sharedManager] makePostForUsers:usersToPostFor withImageData:[[PostidManager sharedManager] lastImageData] completion:^(BOOL success) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityIndicator stopAnimating];
+            if (success)
+            {
+                [self performSegueWithIdentifier:@"mainTabBar" sender:self];
+            }
+        });
+    }];
+}
+
+
+- (IBAction)dismiss:(id)sender
+{
+    NSLog(@"Swiped");
     [self performSegueWithIdentifier:@"mainTabBar" sender:self];
 }
 

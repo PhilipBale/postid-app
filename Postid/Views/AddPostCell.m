@@ -16,6 +16,17 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
+    if (self.showingSelected)
+    {
+        self.showingSelected = NO;
+        self.accessoryType = UITableViewCellAccessoryNone;
+    }
+    else
+    {
+        self.showingSelected = YES;
+        self.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
 
     // Configure the view for the selected state
 }

@@ -4,6 +4,9 @@
 target 'Postid' do
     pod 'AFNetworking'
     pod 'Realm'
+    pod 'AWSCore'
+    pod 'AWSS3'
+    pod 'AWSCognito'
 end
 
 target 'PostidTests' do

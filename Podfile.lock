@@ -20,16 +20,27 @@ PODS:
   - AFNetworking/UIKit (2.6.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AWSCognito (2.2.6):
+    - AWSCore (= 2.2.6)
+  - AWSCore (2.2.6)
+  - AWSS3 (2.2.6):
+    - AWSCore (= 2.2.6)
   - Realm (0.94.1):
     - Realm/Headers (= 0.94.1)
   - Realm/Headers (0.94.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - AWSCognito
+  - AWSCore
+  - AWSS3
   - Realm
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AWSCognito: 4cb0bd389dedf6673048609408577bb6c871422b
+  AWSCore: dd05203bf44d45b58b7667754ce4fa6f1bdb1c3e
+  AWSS3: a8aeb5f8224236c2b1b46fdab14add3eff971fc4
   Realm: d999a6cf0b41577a077349c9cc9d496cc62a7d17
 
 COCOAPODS: 0.37.2

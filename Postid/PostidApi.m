@@ -110,6 +110,19 @@
      }];
 }
 
++ (void)makePost:(NSString *)urlKey userIdArray:(NSArray *)userIdArray completion:(void (^)(BOOL success))completion
+{
+    NSDictionary *makePostParams = @{@"post":@{ @"url_key":urlKey, @"user_id_array":userIdArray}};
+    [[HTTPManager sharedManager] POST:kApiMakePost parameters:makePostParams success:^(NSDictionary *responseObject)
+     {
+         
+         if (completion) completion(YES);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO);
+     }];
+}
+
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];
