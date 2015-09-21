@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (void)logout;
 - (void)saveTokenToKeychain:(NSString *)token;
 - (NSString *)loadTokenFromKeychain;
+- (void)saveMaxPostIdToKeychain:(NSNumber *)maxPostId;
+- (NSNumber *)loadMaxPostIdFromKeychain;
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object;
 
 - (User *)currentUserFromRealm;
@@ -34,6 +36,7 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 
 - (Post *)postFromCacheWithId:(NSNumber *)postId;
 - (Post *)postFromCacheWithIntegerId:(NSInteger)postId;
+- (void)cachePosts:(NSArray *)posts;
 - (void)makePostForUsers:(NSArray *)userIds withImageData:(NSData *)imageData completion:(void (^)(BOOL success))completion;
 
 @end

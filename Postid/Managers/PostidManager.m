@@ -68,6 +68,19 @@
     return [defaults objectForKey:@"token"];
 }
 
+- (void)saveMaxPostIdToKeychain:(NSNumber *)maxPostId
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:maxPostId forKey:@"maxPostId"];
+    [defaults synchronize];
+}
+
+- (NSNumber *)loadMaxPostIdFromKeychain
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"maxPostId"];
+}
+
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object
 {
     
@@ -174,6 +187,28 @@
             });
         }
     }];
+}
+
+- (void)cachePosts:(NSArray *)posts
+{
+    for (Post *post in posts)
+    {
+        Post* localPost = [self postFromCacheWithIntegerId:post.postId];
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        {
+            if (localPost)
+            {
+                [post setHeartPressed:localPost.heartPressed];
+                [post setSmirkPressed:localPost.smirkPressed];
+                [post setFirePressed:localPost.firePressed];
+                [post setLikePressed:localPost.likePressed];
+                
+            }
+            
+            [Post createOrUpdateInDefaultRealmWithValue:post];
+        }
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    }
 }
 
 - (void)makePostForUsers:(NSArray *)userIds withImageData:(NSData *)imageData completion:(void (^)(BOOL success))completion

@@ -126,7 +126,7 @@
 +  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion
 {
     NSDictionary *fetchPostsParams = @{@"post":@{ @"min_id":minId}};
-    [[HTTPManager sharedManager] GET:kApiLoginWithTokenPath parameters:fetchPostsParams success:^(NSDictionary *responseObject)
+    [[HTTPManager sharedManager] GET:kApiFetchPosts parameters:fetchPostsParams success:^(NSDictionary *responseObject)
      {
          NSDictionary *results = [responseObject objectForKey:@"posts"];
          NSNumber *maxId = [responseObject objectForKey:@"max_id"];

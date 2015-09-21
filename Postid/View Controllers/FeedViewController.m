@@ -8,6 +8,8 @@
 
 #import "FeedViewController.h"
 #import "FeedCell.h"
+#import "PostidApi.h"
+#import "PostidManager.h"
 
 @interface FeedViewController ()
 {
@@ -22,6 +24,29 @@
     self.feedTableView.delegate = self;
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
+    
+    [self downloadAndRefreshPosts];
+    // TODO pull data
+}
+
+- (void)downloadAndRefreshPosts
+{
+    NSNumber *minPost = [[PostidManager sharedManager] loadMaxPostIdFromKeychain];
+    if (!minPost) {
+        minPost = [NSNumber numberWithInteger:0];
+    }
+    
+    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray *posts, NSNumber *maxId) {
+        if (success)
+        {
+            // cache posts
+            
+            //TODO set new max post id
+        }
+        
+        
+        [self.feedTableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

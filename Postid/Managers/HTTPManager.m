@@ -29,6 +29,7 @@ NSString * const kApiSearchForFriends = API_PATH(search_for_friends);
 NSString * const kApiAddFriend = API_PATH(add_friend);
 NSString * const kApiDownloadUser = API_PATH(download_user);
 NSString * const kApiMakePost = API_PATH(make_post);
+NSString * const kApiFetchPosts = API_PATH(fetch_posts);
 
 @implementation HTTPManager
 
