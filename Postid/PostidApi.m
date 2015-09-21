@@ -26,6 +26,7 @@
          if (completion) completion(NO, nil, nil);
      }];
 }
+
 +  (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL, User *, NSDictionary *friendData))completion
 {
     NSDictionary *loginWithTokenParams = @{@"user":@{ @"token":token}};
@@ -119,6 +120,28 @@
          if (completion) completion(YES);
      } failure:^(NSError *error) {
          if (completion) completion(NO);
+     }];
+}
+
++  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion
+{
+    NSDictionary *fetchPostsParams = @{@"post":@{ @"min_id":minId}};
+    [[HTTPManager sharedManager] GET:kApiLoginWithTokenPath parameters:fetchPostsParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *results = [responseObject objectForKey:@"posts"];
+         NSNumber *maxId = [responseObject objectForKey:@"max_id"];
+         
+         NSMutableArray *posts = [[NSMutableArray alloc] init];
+         for (NSObject *result in results)
+         {
+             Post *resultPost = [self postFromDictionary:(NSDictionary *)result];
+             [posts addObject:resultPost];
+             
+         }
+         
+         if (completion) completion(YES, posts, maxId);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil, nil);
      }];
 }
 
