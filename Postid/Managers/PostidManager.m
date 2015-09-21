@@ -137,22 +137,22 @@
 
 - (void)downloadAndAddUser:(NSNumber *)userId toFriendGroup:(FriendGroup)group ofCurrentUser:(User *)currentUser
 {
-    [PostidApi downloadUserForId:userId completion:^(BOOL success, User *user) {
+    [PostidApi downloadUserForId:userId completion:^(BOOL success, User *oldUser, User *downloaded) {
         if (success)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[RLMRealm defaultRealm] beginWriteTransaction];
                 {
-                    [User createOrUpdateInDefaultRealmWithValue:user];
+                    User *realmDownloadedUser = [User createOrUpdateInDefaultRealmWithValue:downloaded];
                     switch (group) {
                         case FriendGroupFriends:
-                            [currentUser.friends addObject:user];
+                            [currentUser.friends addObject:realmDownloadedUser];
                             break;
                         case FriendGroupRequest:
-                            [currentUser.requestedFriends addObject:user];
+                            [currentUser.requestedFriends addObject:realmDownloadedUser];
                             break;
                         case FriendGroupPending:
-                            [currentUser.pendingFriends addObject:user];
+                            [currentUser.pendingFriends addObject:realmDownloadedUser];
                             break;
                         default:
                             break;

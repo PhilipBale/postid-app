@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object;
 
 - (User *)currentUserFromRealm;
-- (User *)userFromCacheWithId:(NSInteger)userId;  
+- (User *)userFromCacheWithId:(NSInteger)userId;
+- (void)cacheFriendsData:(NSDictionary *)dictionary;
 
 @end

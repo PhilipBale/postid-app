@@ -27,6 +27,7 @@ NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
 NSString * const kApiUpdatePhoneNumber = API_PATH(update_phone_number);
 NSString * const kApiSearchForFriends = API_PATH(search_for_friends);
 NSString * const kApiAddFriend = API_PATH(add_friend);
+NSString * const kApiDownloadUser = API_PATH(download_user);
 
 @implementation HTTPManager
 

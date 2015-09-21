@@ -14,6 +14,7 @@ extern NSString * const kApiLoginWithTokenPath;
 extern NSString * const kApiUpdatePhoneNumber;
 extern NSString * const kApiSearchForFriends;
 extern NSString * const kApiAddFriend;
+extern NSString * const kApiDownloadUser;
 
 @interface HTTPManager : AFHTTPRequestOperationManager
 

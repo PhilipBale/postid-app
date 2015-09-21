@@ -44,7 +44,7 @@
     [self setButtonsEnabled:NO];
     
     __weak typeof(self) weakSelf = self;
-    [PostidApi loginWithToken:token completion:^(BOOL success, User *user) {
+    [PostidApi loginWithToken:token completion:^(BOOL success, User *user, NSDictionary *friendData) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.autoLoginIndicator stopAnimating];
             [self setButtonsEnabled:YES];
@@ -53,6 +53,7 @@
         if (success)
         {
             [[PostidManager sharedManager] setCurrentUser:user];
+            [[PostidManager sharedManager] cacheFriendsData:friendData];
             [self performSegueWithIdentifier:@"login" sender:self];
         }
     }];

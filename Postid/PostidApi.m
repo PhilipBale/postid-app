@@ -12,20 +12,21 @@
 
 @implementation PostidApi
 
-+ (void)loginOrRegisterWithEmail:(NSString *)email password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName username:(NSString *)username completion:(void (^)(BOOL, User *))completion
++ (void)loginOrRegisterWithEmail:(NSString *)email password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName username:(NSString *)username completion:(void (^)(BOOL, User *, NSDictionary *friendData))completion
 {
     NSDictionary *loginOrRegisterParams = @{@"user":@{ @"email": email, @"password": password, @"first_name": firstName, @"last_name": lastName, @"username": username}};
     [[HTTPManager sharedManager] GET:kApiLoginOrRegisterPath parameters:loginOrRegisterParams success:^(NSDictionary *responseObject)
      {
          NSDictionary *response = [responseObject objectForKey:@"user"];
+         NSDictionary *friendData = [responseObject objectForKey:@"friends"];
          User *user = [self userFromDictionary:response];
          
-         if (completion) completion(YES, user);
+         if (completion) completion(YES, user, friendData);
      } failure:^(NSError *error) {
-         if (completion) completion(NO, nil);
+         if (completion) completion(NO, nil, nil);
      }];
 }
-+  (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL, User *))completion
++  (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL, User *, NSDictionary *friendData))completion
 {
     NSDictionary *loginWithTokenParams = @{@"user":@{ @"token":token}};
     [[HTTPManager sharedManager] GET:kApiLoginWithTokenPath parameters:loginWithTokenParams success:^(NSDictionary *responseObject)
@@ -33,12 +34,10 @@
          NSDictionary *response = [responseObject objectForKey:@"user"];
          NSDictionary *friendData = [responseObject objectForKey:@"friends"];
          User *user = [self userFromDictionary:response];
-         [self cacheFriendsData:friendData];
-        
          
-         if (completion) completion(YES, user);
+         if (completion) completion(YES, user, friendData);
      } failure:^(NSError *error) {
-         if (completion) completion(NO, nil);
+         if (completion) completion(NO, nil, nil);
      }];
 }
 
@@ -95,9 +94,20 @@
      }];
 }
 
-+ (void)downloadUserForId:(NSNumber *)userId completion:(void (^)(BOOL, User *))completion
++ (void)downloadUserForId:(NSNumber *)userId completion:(void (^)(BOOL success, User *currentUser, User *downloaded))completion
 {
-    
+    NSDictionary *downloadUserParams = @{@"user":@{ @"id":userId}};
+    [[HTTPManager sharedManager] GET:kApiDownloadUser parameters:downloadUserParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *response = [responseObject objectForKey:@"user"];
+         NSDictionary *downloadedUserData = [responseObject objectForKey:@"downloaded_user"];
+         User *currentUser = [self userFromDictionary:response];
+         User *downloadedUser = [self userFromDictionary:downloadedUserData];
+         
+         if (completion) completion(YES, currentUser, downloadedUser);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil, nil);
+     }];
 }
 
 + (User *)userFromDictionary:(NSDictionary *)dictionary

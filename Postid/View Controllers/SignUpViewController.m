@@ -73,7 +73,8 @@
         [self.signupButton setEnabled:NO];
         
         __weak typeof(self) weakSelf = self;
-        [PostidApi loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text firstName:self.firstNameTextField.text lastName:self.lastNameTextField.text username:self.usernameTextField.text completion:^(BOOL success, User *user){
+        [PostidApi loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text firstName:self.firstNameTextField.text lastName:self.lastNameTextField.text username:self.usernameTextField.text completion:^(BOOL success, User *user, NSDictionary *friendData) {
+
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.signupActivityIndicatorView stopAnimating];
                 [self.signupButton setEnabled:YES];
@@ -81,6 +82,7 @@
             
             if (success) {
                 [[PostidManager sharedManager] setCurrentUser:user];
+                [[PostidManager sharedManager] cacheFriendsData:friendData];
                 [self performSegueWithIdentifier:@"login" sender:self];
             }
         }];

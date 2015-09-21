@@ -49,7 +49,7 @@
                     else
                     {
                         [currentUser.friends addObject:toAdd];
-                        [self.rightWidget setTitle:@"Friends" forState:UIControlStateNormal];
+                        [self.rightWidget setTitle:@"" forState:UIControlStateNormal];
                     }
                     [User createOrUpdateInDefaultRealmWithValue:currentUser];
                 }

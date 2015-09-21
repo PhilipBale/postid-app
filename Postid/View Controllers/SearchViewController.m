@@ -30,8 +30,6 @@ static BOOL phoneAuthenticated;
 {
     [super viewDidLoad];
     
-    
-    
     if ([[PostidManager sharedManager] currentUser].phoneNumber.length == 0) {
         [DigitsKit logOut];
         self.resultsTableView.hidden = YES;
@@ -133,6 +131,10 @@ static BOOL phoneAuthenticated;
     //self.generalSearchResults = [[User objectsWhere:@"userId != %@", [NSNumber numberWithInteger:currentUser.userId]] sortedResultsUsingProperty:@"firstName" ascending:YES];
     NSMutableArray *allUsers = [[NSMutableArray alloc] init];
     
+    for (User *user in currentUser.requestedFriends)
+    {
+        [allUsers addObject:user];
+    }
     for (User *user in currentUser.pendingFriends)
     {
         [allUsers addObject:user];
@@ -159,7 +161,6 @@ static BOOL phoneAuthenticated;
     [self.resultsTableView reloadData];
     
 }
-
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
@@ -227,6 +228,11 @@ static BOOL phoneAuthenticated;
     {
         [cell.rightWidget setTitle:@"" forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:NO];
+    }
+    else if ([user requestedFriendsWithPrimaryUser])
+    {
+        [cell.rightWidget setTitle:@"Accept" forState:UIControlStateNormal];
+        [cell.rightWidget setEnabled:YES];
     }
     else if ([user pendingFriendsWithPrimaryUser])
     {
