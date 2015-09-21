@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Post.h"
 
 @interface PostidManager : NSObject
 
@@ -31,6 +32,8 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (User *)userFromCacheWithId:(NSInteger)userId;
 - (void)cacheFriendsData:(NSDictionary *)dictionary;
 
+- (Post *)postFromCacheWithId:(NSNumber *)postId;
+- (Post *)postFromCacheWithIntegerId:(NSInteger)postId;
 - (void)makePostForUsers:(NSArray *)userIds withImageData:(NSData *)imageData completion:(void (^)(BOOL success))completion;
 
 @end

@@ -90,6 +90,16 @@
     //return [[[self currentUserFromRealm].userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:userId]] firstObject];
 }
 
+- (Post *)postFromCacheWithId:(NSNumber *)postId
+{
+    return [Post objectForPrimaryKey:postId];
+}
+
+- (Post *)postFromCacheWithIntegerId:(NSInteger)postId
+{
+    return [self postFromCacheWithId:[NSNumber numberWithInteger:postId]];
+}
+
 - (void)cacheFriendsData:(NSDictionary *)dictionary
 {
     User *currentUser = [self currentUserFromRealm];

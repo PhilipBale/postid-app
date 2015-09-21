@@ -64,6 +64,7 @@
 		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
+		D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F01BB04B95008B3C2E /* Post.m */; settings = {ASSET_TAGS = (); }; };
 		D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B50E781BA5185000DFC644 /* SearchCell.m */; };
 		D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */; };
 		D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */; };
@@ -164,6 +165,8 @@
 		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D4ACC8EF1BB04B95008B3C2E /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
+		D4ACC8F01BB04B95008B3C2E /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
 		D4B50E771BA5185000DFC644 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCell.h; path = Views/SearchCell.h; sourceTree = "<group>"; };
 		D4B50E781BA5185000DFC644 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCell.m; path = Views/SearchCell.m; sourceTree = "<group>"; };
 		D4C7D0B81B8AE3F3002F23B8 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 			children = (
 				D41615E91B882BF400320977 /* User.h */,
 				D41615EA1B882BF400320977 /* User.m */,
+				D4ACC8EF1BB04B95008B3C2E /* Post.h */,
+				D4ACC8F01BB04B95008B3C2E /* Post.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 				D416160E1B8AD4F700320977 /* CameraDismissButton.m in Sources */,
 				D4DA20C31B94CC9F00C2E37C /* FeedViewController.m in Sources */,
 				D4EA655E1B9DFCAC0074341E /* PostPreviewViewController.m in Sources */,
+				D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */,
 				D416160D1B8AD4F700320977 /* CameraSessionView.m in Sources */,
 				D41615EE1B8AA02600320977 /* CameraViewController.m in Sources */,
 				D416160F1B8AD4F700320977 /* CameraFlashButton.m in Sources */,

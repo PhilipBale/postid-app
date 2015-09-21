@@ -136,7 +136,6 @@
          {
              Post *resultPost = [self postFromDictionary:(NSDictionary *)result];
              [posts addObject:resultPost];
-             
          }
          
          if (completion) completion(YES, posts, maxId);
@@ -144,7 +143,6 @@
          if (completion) completion(NO, nil, nil);
      }];
 }
-
 
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
@@ -160,6 +158,25 @@
     user.phoneNumber = [dictionary objectForKey:@"phone_number"];
     user.imageUrl = [dictionary objectForKey:@"image_url"];
     return user;
+}
+
++ (Post *)postFromDictionary:(NSDictionary *)dictionary
+{
+    Post *post = [[Post alloc] init];
+    post.postId = [[dictionary objectForKey:@"id"] integerValue];
+    post.userId = [[dictionary objectForKey:@"user_id"] integerValue];
+    post.imageUrl = [dictionary objectForKey:@"image_url"];
+    post.viewCount = [[dictionary objectForKey:@"view_count"] integerValue];
+    post.heartCount = [[dictionary objectForKey:@"heart_count"] integerValue];
+    post.smirkCount = [[dictionary objectForKey:@"smirk_count"] integerValue];
+    post.fireCount = [[dictionary objectForKey:@"fire_count"] integerValue];
+    post.likes = [[dictionary objectForKey:@"likes"] integerValue];
+    post.likesNeeded = [[dictionary objectForKey:@"likes_needed"] integerValue];
+    post.flagged = [[dictionary objectForKey:@"flagged"] boolValue];
+    post.approved = [[dictionary objectForKey:@"approved"] boolValue];
+    post.deleted = [[dictionary objectForKey:@"deleted"] boolValue];
+    
+    return post;
 }
 
 @end
