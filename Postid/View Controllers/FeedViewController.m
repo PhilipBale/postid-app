@@ -10,11 +10,15 @@
 #import "FeedCell.h"
 #import "PostidApi.h"
 #import "PostidManager.h"
+#import "Realm.h"
 
 @interface FeedViewController ()
 {
     CGFloat cellHeight;
 }
+
+@property (nonatomic, strong) RLMResults* results;
+
 @end
 
 @implementation FeedViewController
@@ -25,6 +29,7 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
+    self.results = [[Post allObjects] sortedResultsUsingProperty:@"postId" ascending:NO];
     [self downloadAndRefreshPosts];
     // TODO pull data
 }
@@ -39,7 +44,7 @@
     [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray *posts, NSNumber *maxId) {
         if (success)
         {
-            // cache posts
+            [[PostidManager sharedManager] cachePosts:posts];
             
             //TODO set new max post id
         }
@@ -55,12 +60,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.results count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FeedCell class]) forIndexPath:indexPath];
+    
+    Post* post = [self.results objectAtIndex:indexPath.row];
+    cell.toUserLabel.text = [NSString stringWithFormat:@"%li",post.postId];
     
     return cell;
 }
