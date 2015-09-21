@@ -11,6 +11,6 @@
 @interface PostPreviewViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
-@property (weak, nonatomic) IBOutlet UIImageView *previewImage;
+@property (weak, nonatomic) IBOutlet UIImageView *previewImage; 
 
 @end

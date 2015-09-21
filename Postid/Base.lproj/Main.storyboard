@@ -325,6 +325,7 @@
                         <outlet property="previewImage" destination="N6C-VL-PRl" id="20e-XY-Vag"/>
                         <outlet property="redoButton" destination="zBy-uo-mH9" id="hFY-Tv-6rr"/>
                         <segue destination="uFu-J8-icX" kind="show" identifier="postSelector" id="gqy-WH-7le"/>
+                        <segue destination="yfp-xt-3Ny" kind="show" identifier="mainTabBar" id="QRR-LH-Lan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAg-8k-r58" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -794,10 +795,10 @@
             </objects>
             <point key="canvasLocation" x="3140" y="-406"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Postid Tab Bar Controller-->
         <scene sceneID="3WK-cj-SA3">
             <objects>
-                <tabBarController id="yfp-xt-3Ny" sceneMemberID="viewController">
+                <tabBarController id="yfp-xt-3Ny" customClass="PostidTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ZeB-0O-O62">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -1123,7 +1124,7 @@
         <image name="smirk_gray" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1UI-sh-dGC"/>
         <segue reference="9QB-V0-hlo"/>
-        <segue reference="kn8-Ef-aES"/>
     </inferredMetricsTieBreakers>
 </document>

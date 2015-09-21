@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *postViewButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
 @end

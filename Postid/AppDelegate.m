@@ -33,7 +33,7 @@
                                                           initWithRegionType:AWSRegionUSEast1
                                                           identityPoolId:@"us-east-1:51691c48-fcd3-4522-bbdc-dd3846c3d75e"];
     AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
-    [AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
+    //[AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
     
     [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     

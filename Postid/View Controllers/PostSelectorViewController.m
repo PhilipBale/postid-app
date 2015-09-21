@@ -102,12 +102,20 @@
             [self.activityIndicator stopAnimating];
             if (success)
             {
-                [self performSegueWithIdentifier:@"mainTabBar" sender:self];
+                [self popAndSegue];
             }
         });
     }];
 }
 
+- (void)popAndSegue
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.parentViewController performSegueWithIdentifier:@"mainTabBar" sender:self];
+        });
+    }];
+}
 
 - (IBAction)dismiss:(id)sender
 {
