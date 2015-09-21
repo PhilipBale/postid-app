@@ -8,9 +8,12 @@
 
 #import "PostidManager.h"
 #import "HTTPManager.h"
+#import "PostidApi.h"
 #import "AppDelegate.h"
 
 @implementation PostidManager
+
+
 
 + (PostidManager *)sharedManager
 {
@@ -30,6 +33,7 @@
     {
         currentUser.friends = oldUser.friends;
         currentUser.pendingFriends = oldUser.pendingFriends;
+        currentUser.requestedFriends = oldUser.requestedFriends;
     }
     
     _currentUser = currentUser;
@@ -82,6 +86,82 @@
 {
     return [User objectForPrimaryKey:[NSNumber numberWithInteger:userId]];
     //return [[[self currentUserFromRealm].userCache objectsWhere:@"userId = %@", [NSNumber numberWithInteger:userId]] firstObject];
+}
+
+- (void)cacheFriendsData:(NSDictionary *)dictionary
+{
+    User *currentUser = [self currentUserFromRealm];
+    NSArray *friendIds = [dictionary objectForKey:@"friends"];
+    NSArray *pendingIds = [dictionary objectForKey:@"pending"];
+    NSArray *requestIds = [dictionary objectForKey:@"requests"];
+    
+    [self handleFriends:friendIds forFriendGroup:FriendGroupFriends ofCurrentUser:currentUser];
+    [self handleFriends:pendingIds forFriendGroup:FriendGroupPending ofCurrentUser:currentUser];
+    [self handleFriends:requestIds forFriendGroup:FriendGroupRequest ofCurrentUser:currentUser];
+}
+
+- (void)handleFriends:(NSArray *)userIds forFriendGroup:(FriendGroup)group ofCurrentUser:(User *)currentUser
+{
+    for (NSNumber *userId in userIds)
+    {
+        User *user = [[PostidManager sharedManager] userFromCacheWithId:[userId integerValue]];
+        if (!user)
+        {
+            [self downloadAndAddUser:userId toFriendGroup:group ofCurrentUser:currentUser];
+        }
+        else
+        {
+            [[RLMRealm defaultRealm] beginWriteTransaction];
+            {
+                switch (group) {
+                    case FriendGroupFriends:
+                        if (![user friendsWithPrimaryUser])
+                            [currentUser.friends addObject:user];
+                        break;
+                    case FriendGroupRequest:
+                        if (![user requestedFriendsWithPrimaryUser])
+                            [currentUser.requestedFriends addObject:user];
+                        break;
+                    case FriendGroupPending:
+                        if (![user pendingFriendsWithPrimaryUser])
+                            [currentUser.pendingFriends addObject:user];
+                        break;
+                    default:
+                        break;
+                }
+            }
+            [[RLMRealm defaultRealm] commitWriteTransaction];
+        }
+    }
+}
+
+- (void)downloadAndAddUser:(NSNumber *)userId toFriendGroup:(FriendGroup)group ofCurrentUser:(User *)currentUser
+{
+    [PostidApi downloadUserForId:userId completion:^(BOOL success, User *user) {
+        if (success)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[RLMRealm defaultRealm] beginWriteTransaction];
+                {
+                    [User createOrUpdateInDefaultRealmWithValue:user];
+                    switch (group) {
+                        case FriendGroupFriends:
+                            [currentUser.friends addObject:user];
+                            break;
+                        case FriendGroupRequest:
+                            [currentUser.requestedFriends addObject:user];
+                            break;
+                        case FriendGroupPending:
+                            [currentUser.pendingFriends addObject:user];
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                [[RLMRealm defaultRealm] commitWriteTransaction];
+            });
+        }
+    }];
 }
 
 

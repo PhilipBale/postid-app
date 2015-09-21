@@ -26,10 +26,12 @@
 
 @property RLMArray<User> *friends;
 @property RLMArray<User> *pendingFriends;
+@property RLMArray<User> *requestedFriends;
 
 @property (readonly) NSString *name;
 @property (readonly) BOOL friendsWithPrimaryUser;
 @property (readonly) BOOL pendingFriendsWithPrimaryUser;
+@property (readonly) BOOL requestedFriendsWithPrimaryUser;
 
 @end
 

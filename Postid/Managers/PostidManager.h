@@ -11,6 +11,12 @@
 
 @interface PostidManager : NSObject
 
+typedef NS_ENUM(NSInteger, FriendGroup) {
+    FriendGroupRequest,
+    FriendGroupPending,
+    FriendGroupFriends
+};
+
 @property (nonatomic, strong) User *currentUser;
 @property (nonatomic, strong) NSData *lastImageData;
 

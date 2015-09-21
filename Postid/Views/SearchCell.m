@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Realm.h"
 #import "PostidManager.h"
+#import "PostidApi.h"
 
 @implementation SearchCell
 
@@ -19,7 +20,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     self.userImage.layer.cornerRadius = self.userImage.bounds.size.width / 2;
     // Configure the view for the selected state
 }
@@ -28,25 +29,40 @@
     User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
     User *toAdd = [[PostidManager sharedManager] userFromCacheWithId:self.userId];
     
-
+    
     if ([toAdd pendingFriendsWithPrimaryUser] || [toAdd friendsWithPrimaryUser]) {
         NSLog(@"Already pending friends or friends with this user");
         return;
     }
     
-    //TODO attempt friend request
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[RLMRealm defaultRealm] beginWriteTransaction];
+    [PostidApi addFriend:self.userId completion:^(BOOL success, BOOL pending, User *user) {
+        if (success)
         {
-            [currentUser.pendingFriends addObject:toAdd];
-            [User createOrUpdateInDefaultRealmWithValue:currentUser];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[RLMRealm defaultRealm] beginWriteTransaction];
+                {
+                    if (pending)
+                    {
+                        [currentUser.pendingFriends addObject:toAdd];
+                        [self.rightWidget setTitle:@"Pending" forState:UIControlStateNormal];
+                    }
+                    else
+                    {
+                        [currentUser.friends addObject:toAdd];
+                        [self.rightWidget setTitle:@"Friends" forState:UIControlStateNormal];
+                    }
+                    [User createOrUpdateInDefaultRealmWithValue:currentUser];
+                }
+                [[RLMRealm defaultRealm] commitWriteTransaction];
+                
+                [self.rightWidget setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+            });
         }
-        [[RLMRealm defaultRealm] commitWriteTransaction];
-    });
+    }];
     
-    [self.rightWidget setTitle:@"Pending" forState:UIControlStateNormal];
-    [self.rightWidget setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    
+    
+    
 }
 
 @end

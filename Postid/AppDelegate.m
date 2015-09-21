@@ -44,6 +44,7 @@
                                       newUser[@"friends"] = [[RLMArray alloc] initWithObjectClassName:@"User"]
                                       ;
                                       newUser[@"pendingFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+                                      newUser[@"requestedFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
                                   }
                               }];
     }];

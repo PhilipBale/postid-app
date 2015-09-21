@@ -31,7 +31,10 @@
     [[HTTPManager sharedManager] GET:kApiLoginWithTokenPath parameters:loginWithTokenParams success:^(NSDictionary *responseObject)
      {
          NSDictionary *response = [responseObject objectForKey:@"user"];
+         NSDictionary *friendData = [responseObject objectForKey:@"friends"];
          User *user = [self userFromDictionary:response];
+         [self cacheFriendsData:friendData];
+        
          
          if (completion) completion(YES, user);
      } failure:^(NSError *error) {
@@ -76,14 +79,14 @@
      }];
 }
 
-+ (void)addFriend:(NSInteger)userId forToken:(NSString *)token completion:(void (^)(BOOL success, BOOL pending, User *))completion;
++ (void)addFriend:(NSInteger)userId completion:(void (^)(BOOL success, BOOL pending, User *))completion
 {
     NSNumber *userIdObject = [NSNumber numberWithInteger:userId];
     NSDictionary *addFriendParams = @{@"friend":@{ @"id":userIdObject}};
     [[HTTPManager sharedManager] POST:kApiAddFriend parameters:addFriendParams success:^(NSDictionary *responseObject)
      {
          NSDictionary *response = [responseObject objectForKey:@"user"];
-         BOOL pending = [response objectForKey:@"pending"];
+         BOOL pending = [[response objectForKey:@"pending"] boolValue];
          User *user = [self userFromDictionary:response];
          
          if (completion) completion(YES, pending, user);
@@ -92,6 +95,10 @@
      }];
 }
 
++ (void)downloadUserForId:(NSNumber *)userId completion:(void (^)(BOOL, User *))completion
+{
+    
+}
 
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
