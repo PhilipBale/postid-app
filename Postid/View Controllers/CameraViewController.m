@@ -46,6 +46,20 @@
     [self performSegueWithIdentifier:@"previewImage" sender:self];
 }
 
+-(void)didPressCamera
+{
+    BOOL breakFunc = YES;
+    #if TARGET_IPHONE_SIMULATOR
+    breakFunc = NO;
+    #endif
+    
+    if (breakFunc) return;
+    
+    UIImage *fakeImage = [UIImage imageNamed:@"lebron"];
+    [[PostidManager sharedManager] setLastImageData:UIImageJPEGRepresentation(fakeImage, 0.7)];
+    [self performSegueWithIdentifier:@"previewImage" sender:self];
+}
+
 - (IBAction)dismissCamera:(id)sender
 {
     NSLog(@"Swiped");

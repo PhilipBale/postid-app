@@ -27,6 +27,8 @@
 		D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616071B8AD4F700320977 /* CameraStyleKitClass.m */; };
 		D41616171B8AD4F700320977 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160A1B8AD4F700320977 /* CaptureSessionManager.m */; };
 		D41616181B8AD4F700320977 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160C1B8AD4F700320977 /* Constants.m */; };
+		D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */; settings = {ASSET_TAGS = (); }; };
+		D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */; };
 		D45A2F3F1B9FB9E800CCB099 /* FriendSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45A2F3E1B9FB9E800CCB099 /* FriendSearchController.m */; };
 		D47431A51B8BAAE60014C6CF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D47431A41B8BAAE60014C6CF /* libc++.dylib */; };
@@ -123,6 +125,10 @@
 		D416160A1B8AD4F700320977 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		D416160B1B8AD4F700320977 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D416160C1B8AD4F700320977 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D43A0FE41BAFB95500CCDA07 /* AddPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPostCell.h; path = Views/AddPostCell.h; sourceTree = "<group>"; };
+		D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPostCell.m; path = Views/AddPostCell.m; sourceTree = "<group>"; };
+		D43A0FE71BAFBA8200CCDA07 /* PostSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostSelectorViewController.h; path = "View Controllers/PostSelectorViewController.h"; sourceTree = "<group>"; };
+		D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostSelectorViewController.m; path = "View Controllers/PostSelectorViewController.m"; sourceTree = "<group>"; };
 		D44EE92C1B8BED3F0091D1D5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = "View Controllers/ProfileViewController.h"; sourceTree = "<group>"; };
 		D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "View Controllers/ProfileViewController.m"; sourceTree = "<group>"; };
 		D4533EE01B8AD9DF00D2BFF4 /* Postid-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Postid-PrefixHeader.pch"; path = "Core/Postid-PrefixHeader.pch"; sourceTree = "<group>"; };
@@ -445,6 +451,8 @@
 				D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */,
 				D45A2F3D1B9FB9E800CCB099 /* FriendSearchController.h */,
 				D45A2F3E1B9FB9E800CCB099 /* FriendSearchController.m */,
+				D43A0FE71BAFBA8200CCDA07 /* PostSelectorViewController.h */,
+				D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -471,6 +479,8 @@
 				D4DA20BF1B94C80900C2E37C /* FeedCell.m */,
 				D4B50E771BA5185000DFC644 /* SearchCell.h */,
 				D4B50E781BA5185000DFC644 /* SearchCell.m */,
+				D43A0FE41BAFB95500CCDA07 /* AddPostCell.h */,
+				D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -703,6 +713,7 @@
 				D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */,
 				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
 				D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */,
+				D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */,
 				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
 				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
 				D4DA20BD1B94C69300C2E37C /* GenericNavigationController.m in Sources */,
@@ -722,6 +733,7 @@
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
 				D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */,
+				D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */,
 				D45A2F3F1B9FB9E800CCB099 /* FriendSearchController.m in Sources */,
 				D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */,
 			);

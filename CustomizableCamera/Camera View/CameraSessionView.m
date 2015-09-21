@@ -236,6 +236,12 @@
     
     //Capture image from camera
     [_captureManager captureStillImage];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(didPressCamera)])
+    {
+        [_delegate performSelector:@selector(didPressCamera)];
+    }
+    
 }
 
 - (void)onTapFlashButton {

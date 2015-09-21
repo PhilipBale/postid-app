@@ -41,7 +41,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)doneButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:@"mainTabBar" sender:self];
+    [self performSegueWithIdentifier:@"postSelector" sender:self];
 }
 
 @end
