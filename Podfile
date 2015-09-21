@@ -7,6 +7,7 @@ target 'Postid' do
     pod 'AWSCore'
     pod 'AWSS3'
     pod 'AWSCognito'
+    pod 'SDWebImage', '~>3.7'
 end
 
 target 'PostidTests' do

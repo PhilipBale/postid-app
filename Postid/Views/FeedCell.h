@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Post.h"
 
 @interface FeedCell : UITableViewCell
 
@@ -14,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *toUserLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromUserLabel;
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
+@property (nonatomic, strong) Post *post;
 
 @end

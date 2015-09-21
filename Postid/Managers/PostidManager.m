@@ -191,9 +191,11 @@
 
 - (void)cachePosts:(NSArray *)posts
 {
+    User *currentUser = [self currentUser];
     for (Post *post in posts)
     {
         Post* localPost = [self postFromCacheWithIntegerId:post.postId];
+        User* poster = [self userFromCacheWithId:post.userId];
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
             if (localPost)
@@ -208,6 +210,14 @@
             [Post createOrUpdateInDefaultRealmWithValue:post];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
+        
+        if (!poster && post.userId != currentUser.userId)
+        {
+            [PostidApi downloadUserForId:[NSNumber numberWithInteger:post.userId] completion:^(BOOL success, User *currentUser, User *downloaded) {
+                // TODO be careful because we could potential overrite important user data
+                [[PostidManager sharedManager] expressDefaultRealmWrite:downloaded];
+            }];
+        }
     }
 }
 

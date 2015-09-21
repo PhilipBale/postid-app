@@ -7,6 +7,8 @@
 //
 
 #import "FeedCell.h"
+#import "PostidManager.h"
+#import "User.h"
 
 @implementation FeedCell
 
@@ -21,6 +23,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setPost:(Post *)post
+{
+    _post = post;
+    NSString *url = [NSString stringWithFormat:@"https://s3.amazonaws.com/postidimages/%@", post.imageUrl];
+    [self.postImageView sd_setImageWithURL:[NSURL URLWithString:url]
+                      placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    User *poster = [[PostidManager sharedManager] userFromCacheWithId:post.userId];
+    self.fromUserLabel.text = poster.username;
 }
 
 - (IBAction)reportButtonPressed:(id)sender {

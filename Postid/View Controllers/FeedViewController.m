@@ -69,6 +69,7 @@
     
     Post* post = [self.results objectAtIndex:indexPath.row];
     cell.toUserLabel.text = [NSString stringWithFormat:@"%li",post.postId];
+    cell.post = post;
     
     return cell;
 }
