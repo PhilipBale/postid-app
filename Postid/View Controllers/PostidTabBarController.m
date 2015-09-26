@@ -34,9 +34,9 @@
 - (IBAction)dismissToCamera:(id)sender
 {
     NSLog(@"Swiped");
-    [self dismissViewControllerAnimated:NO completion:nil];
-    //[self performSegueWithIdentifier:@"mainTabBar" sender:self];
-    self unw
+    //[self dismissViewControllerAnimated:NO completion:nil];
+    [self performSegueWithIdentifier:@"unwindToCamera" sender:self];
+    //self unwindForSegue:<#(nonnull UIStoryboardSegue *)#> towardsViewController:<#(nonnull UIViewController *)#>
 }
 
 @end

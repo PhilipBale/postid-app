@@ -102,25 +102,10 @@
             [self.activityIndicator stopAnimating];
             if (success)
             {
-                [self popAndSegue];
+                [self performSegueWithIdentifier:@"mainTabBar" sender:self];
             }
         });
     }];
-}
-
-- (void)popAndSegue
-{
-    [self dismissViewControllerAnimated:NO completion:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.parentViewController performSegueWithIdentifier:@"mainTabBar" sender:self];
-        });
-    }];
-}
-
-- (IBAction)dismiss:(id)sender
-{
-    NSLog(@"Swiped");
-    [self performSegueWithIdentifier:@"mainTabBar" sender:self];
 }
 
 
