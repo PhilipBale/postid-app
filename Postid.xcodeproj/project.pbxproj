@@ -64,6 +64,7 @@
 		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
+		D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F01BB04B95008B3C2E /* Post.m */; settings = {ASSET_TAGS = (); }; };
 		D4ACC8F41BB06A10008B3C2E /* PostidTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		D4B486391BB99F820024D76F /* VotingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486381BB99F820024D76F /* VotingViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -171,6 +172,8 @@
 		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D4A553AE1BBACAB700B3A18A /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationViewController.h; path = "View Controllers/NotificationViewController.h"; sourceTree = "<group>"; };
+		D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationViewController.m; path = "View Controllers/NotificationViewController.m"; sourceTree = "<group>"; };
 		D4ACC8EF1BB04B95008B3C2E /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
 		D4ACC8F01BB04B95008B3C2E /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
 		D4ACC8F21BB06A10008B3C2E /* PostidTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostidTabBarController.h; path = "View Controllers/PostidTabBarController.h"; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 				D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */,
 				D4B486371BB99F820024D76F /* VotingViewController.h */,
 				D4B486381BB99F820024D76F /* VotingViewController.m */,
+				D4A553AE1BBACAB700B3A18A /* NotificationViewController.h */,
+				D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
 				D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */,
 				D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */,
+				D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */,
 				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
 				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
 				D4DA20BD1B94C69300C2E37C /* GenericNavigationController.m in Sources */,
