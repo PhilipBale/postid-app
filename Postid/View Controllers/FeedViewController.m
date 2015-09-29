@@ -29,9 +29,14 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
-    self.results = [[Post allObjects] sortedResultsUsingProperty:@"postId" ascending:NO];
+    self.results = [[Post objectsWhere:@"approved == YES"] sortedResultsUsingProperty:@"postId" ascending:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.feedTableView reloadData];
     [self downloadAndRefreshPosts];
-    // TODO pull data
 }
 
 - (void)downloadAndRefreshPosts
@@ -46,9 +51,8 @@
         {
             [[PostidManager sharedManager] cachePosts:posts];
             
-            //TODO set new max post id
+            //TODO set new max post id, will get intensive as app gets popular
         }
-        
         
         [self.feedTableView reloadData];
     }];

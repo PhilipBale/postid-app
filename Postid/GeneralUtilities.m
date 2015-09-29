@@ -36,4 +36,14 @@
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
++ (NSMutableArray *) mutableArrayFromRealmResults:(RLMResults *)results
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:results.count];
+    
+    for (RLMObject *object in results) {
+        [array addObject:object];
+    }
+    return array;
+}
+
 @end

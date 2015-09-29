@@ -14,6 +14,8 @@
 #import <AWSCore/AWSCore.h>
 #import <AWSCognito/AWSCognito.h>
 #import "User.h"
+#import "Post.h"
+#import <Realm.h>
 
 @interface AppDelegate ()
 
@@ -35,6 +37,8 @@
     AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
     //[AWSLogger defaultLogger].logLevel = AWSLogLevelVerbose;
     
+    NSLog(@"Realm path %@", [RLMRealm defaultRealmPath]);
+    
     [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
     
     return YES;
@@ -42,7 +46,7 @@
 
 - (void)handleMigrations
 {
-    [RLMRealm setSchemaVersion:3 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
+    [RLMRealm setSchemaVersion:4 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
         [migration enumerateObjects:User.className
                               block:^(RLMObject *oldUser, RLMObject *newUser) {
                                   if (oldSchemaVersion < 2) {
@@ -55,6 +59,12 @@
                                       ;
                                       newUser[@"pendingFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
                                       newUser[@"requestedFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+                                  }
+                              }];
+        [migration enumerateObjects:Post.className
+                              block:^(RLMObject *oldUser, RLMObject *newUser) {
+                                  if (oldSchemaVersion < 4) {
+                                      newUser[@"liked"] = @NO;
                                   }
                               }];
     }];

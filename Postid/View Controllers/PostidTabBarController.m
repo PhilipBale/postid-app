@@ -7,6 +7,9 @@
 //
 
 #import "PostidTabBarController.h"
+#import "Post.h"
+#import "PostidManager.h"
+#import <Realm.h>
 
 @interface PostidTabBarController ()
 
@@ -24,6 +27,18 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissToCamera:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
+    
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    RLMResults *posts = [Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId];
+    //RLMResults *posts = [Post objectsWhere:@"deleted == NO AND approved == NO AND liked == NO"];
+    if ([posts count] > 0)
+        [self performSegueWithIdentifier:@"voting" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

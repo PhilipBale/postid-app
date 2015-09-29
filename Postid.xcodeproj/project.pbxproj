@@ -66,6 +66,11 @@
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
 		D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F01BB04B95008B3C2E /* Post.m */; settings = {ASSET_TAGS = (); }; };
 		D4ACC8F41BB06A10008B3C2E /* PostidTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		D4B486391BB99F820024D76F /* VotingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486381BB99F820024D76F /* VotingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D4B4863E1BBA3DDA0024D76F /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4863D1BBA3DDA0024D76F /* CardView.m */; settings = {ASSET_TAGS = (); }; };
+		D4B486421BBA414B0024D76F /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486411BBA414B0024D76F /* ZLSwipeableView.m */; settings = {ASSET_TAGS = (); }; };
+		D4B486451BBA41940024D76F /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486441BBA41940024D76F /* ZLPanGestureRecognizer.m */; settings = {ASSET_TAGS = (); }; };
+		D4B486481BBA4AB20024D76F /* VotingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486471BBA4AB20024D76F /* VotingView.m */; settings = {ASSET_TAGS = (); }; };
 		D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B50E781BA5185000DFC644 /* SearchCell.m */; };
 		D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D0B91B8AE3F3002F23B8 /* GeneralUtilities.m */; };
 		D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */; };
@@ -170,6 +175,17 @@
 		D4ACC8F01BB04B95008B3C2E /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
 		D4ACC8F21BB06A10008B3C2E /* PostidTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostidTabBarController.h; path = "View Controllers/PostidTabBarController.h"; sourceTree = "<group>"; };
 		D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostidTabBarController.m; path = "View Controllers/PostidTabBarController.m"; sourceTree = "<group>"; };
+		D4B486371BB99F820024D76F /* VotingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VotingViewController.h; path = "View Controllers/VotingViewController.h"; sourceTree = "<group>"; };
+		D4B486381BB99F820024D76F /* VotingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingViewController.m; path = "View Controllers/VotingViewController.m"; sourceTree = "<group>"; };
+		D4B4863C1BBA3DDA0024D76F /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Vendor/CardView.h; sourceTree = "<group>"; };
+		D4B4863D1BBA3DDA0024D76F /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Vendor/CardView.m; sourceTree = "<group>"; };
+		D4B486401BBA414B0024D76F /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLSwipeableView.h; path = Vendor/ZLSwipeableView.h; sourceTree = "<group>"; };
+		D4B486411BBA414B0024D76F /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLSwipeableView.m; path = Vendor/ZLSwipeableView.m; sourceTree = "<group>"; };
+		D4B486431BBA41940024D76F /* ZLPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLPanGestureRecognizer.h; path = Vendor/ZLPanGestureRecognizer.h; sourceTree = "<group>"; };
+		D4B486441BBA41940024D76F /* ZLPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLPanGestureRecognizer.m; path = Vendor/ZLPanGestureRecognizer.m; sourceTree = "<group>"; };
+		D4B486461BBA4AB20024D76F /* VotingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VotingView.h; path = Views/VotingView.h; sourceTree = "<group>"; };
+		D4B486471BBA4AB20024D76F /* VotingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingView.m; path = Views/VotingView.m; sourceTree = "<group>"; };
+		D4B486491BBA51A00024D76F /* SDImageCache+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SDImageCache+Private.h"; path = "Vendor/SDImageCache+Private.h"; sourceTree = "<group>"; };
 		D4B50E771BA5185000DFC644 /* SearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchCell.h; path = Views/SearchCell.h; sourceTree = "<group>"; };
 		D4B50E781BA5185000DFC644 /* SearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchCell.m; path = Views/SearchCell.m; sourceTree = "<group>"; };
 		D4C7D0B81B8AE3F3002F23B8 /* GeneralUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralUtilities.h; sourceTree = "<group>"; };
@@ -347,13 +363,14 @@
 		D48B213E1B7FFF8500F8D659 /* Postid */ = {
 			isa = PBXGroup;
 			children = (
-				D4C7D0B71B8AE3C5002F23B8 /* Utilities */,
 				D48B21651B80459900F8D659 /* Core */,
 				D48B21671B8045B600F8D659 /* Managers */,
 				D41615E81B882BCD00320977 /* Models */,
-				D48B21661B8045A300F8D659 /* UI */,
 				D48B21691B804A3A00F8D659 /* Resources */,
 				D48B213F1B7FFF8500F8D659 /* Supporting Files */,
+				D48B21661B8045A300F8D659 /* UI */,
+				D4C7D0B71B8AE3C5002F23B8 /* Utilities */,
+				D4B4863A1BBA3DBD0024D76F /* Vendor */,
 			);
 			path = Postid;
 			sourceTree = "<group>";
@@ -461,6 +478,8 @@
 				D45A2F3E1B9FB9E800CCB099 /* FriendSearchController.m */,
 				D43A0FE71BAFBA8200CCDA07 /* PostSelectorViewController.h */,
 				D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */,
+				D4B486371BB99F820024D76F /* VotingViewController.h */,
+				D4B486381BB99F820024D76F /* VotingViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -489,8 +508,40 @@
 				D4B50E781BA5185000DFC644 /* SearchCell.m */,
 				D43A0FE41BAFB95500CCDA07 /* AddPostCell.h */,
 				D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */,
+				D4B486461BBA4AB20024D76F /* VotingView.h */,
+				D4B486471BBA4AB20024D76F /* VotingView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D4B4863A1BBA3DBD0024D76F /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4863F1BBA41380024D76F /* ZLSwipeableView */,
+				D4B4863B1BBA3DC40024D76F /* Tinder Cards */,
+				D4B486491BBA51A00024D76F /* SDImageCache+Private.h */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		D4B4863B1BBA3DC40024D76F /* Tinder Cards */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4863C1BBA3DDA0024D76F /* CardView.h */,
+				D4B4863D1BBA3DDA0024D76F /* CardView.m */,
+			);
+			name = "Tinder Cards";
+			sourceTree = "<group>";
+		};
+		D4B4863F1BBA41380024D76F /* ZLSwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				D4B486401BBA414B0024D76F /* ZLSwipeableView.h */,
+				D4B486411BBA414B0024D76F /* ZLSwipeableView.m */,
+				D4B486431BBA41940024D76F /* ZLPanGestureRecognizer.h */,
+				D4B486441BBA41940024D76F /* ZLPanGestureRecognizer.m */,
+			);
+			name = ZLSwipeableView;
 			sourceTree = "<group>";
 		};
 		D4C7D0B71B8AE3C5002F23B8 /* Utilities */ = {
@@ -720,6 +771,8 @@
 				D41615E71B882BA100320977 /* PostidApi.m in Sources */,
 				D4ACC8F41BB06A10008B3C2E /* PostidTabBarController.m in Sources */,
 				D41616131B8AD4F700320977 /* LaunchCameraButton.m in Sources */,
+				D4B4863E1BBA3DDA0024D76F /* CardView.m in Sources */,
+				D4B486451BBA41940024D76F /* ZLPanGestureRecognizer.m in Sources */,
 				D41616181B8AD4F700320977 /* Constants.m in Sources */,
 				D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */,
 				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
@@ -734,11 +787,14 @@
 				D416160E1B8AD4F700320977 /* CameraDismissButton.m in Sources */,
 				D4DA20C31B94CC9F00C2E37C /* FeedViewController.m in Sources */,
 				D4EA655E1B9DFCAC0074341E /* PostPreviewViewController.m in Sources */,
+				D4B486391BB99F820024D76F /* VotingViewController.m in Sources */,
 				D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */,
 				D416160D1B8AD4F700320977 /* CameraSessionView.m in Sources */,
+				D4B486481BBA4AB20024D76F /* VotingView.m in Sources */,
 				D41615EE1B8AA02600320977 /* CameraViewController.m in Sources */,
 				D416160F1B8AD4F700320977 /* CameraFlashButton.m in Sources */,
 				D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
+				D4B486421BBA414B0024D76F /* ZLSwipeableView.m in Sources */,
 				D41615E11B88297800320977 /* HTTPManager.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,

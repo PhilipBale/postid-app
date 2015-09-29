@@ -9,6 +9,7 @@
 #import "PostidApi.h"
 #import "HTTPManager.h"
 #import "PostidManager.h"
+#import <SDWebImagePrefetcher.h>
 
 @implementation PostidApi
 
@@ -132,16 +133,33 @@
          NSNumber *maxId = [responseObject objectForKey:@"max_id"];
          
          NSMutableArray *posts = [[NSMutableArray alloc] init];
+         NSMutableArray *postImageUrls = [[NSMutableArray alloc] init];
          for (NSObject *result in results)
          {
              Post *resultPost = [self postFromDictionary:(NSDictionary *)result];
+             [postImageUrls addObject:[NSURL URLWithString:resultPost.imageUrl]];
              [posts addObject:resultPost];
          }
+         
+         
+         [[SDWebImagePrefetcher  sharedImagePrefetcher] prefetchURLs:postImageUrls];
          
          if (completion) completion(YES, posts, maxId);
      } failure:^(NSError *error) {
          if (completion) completion(NO, nil, nil);
      }];
+}
+
++ (void)likePost:(NSNumber *)postId completion:(void (^)(BOOL success))completion
+{
+    NSDictionary *likePostParams = @{@"post":@{ @"post_id":postId}};
+    [[HTTPManager sharedManager] POST:kApiLikePost parameters:likePostParams success:^(NSDictionary *responseObject)
+     {
+         if (completion) completion(YES);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO);
+     }];
+
 }
 
 + (User *)userFromDictionary:(NSDictionary *)dictionary

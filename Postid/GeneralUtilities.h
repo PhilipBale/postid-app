@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
- 
+#import <Realm.h>
 @interface GeneralUtilities : NSObject
  
 + (void)animateView:(UIView *)view up:(BOOL)up delta:(CGFloat)delta duration:(NSTimeInterval)duration;
 + (void)makeAlertWithTitle:(NSString *)title message:(NSString *)message viewController:(UIViewController *)viewController;
++ (NSMutableArray *) mutableArrayFromRealmResults:(RLMResults *)results;
 
 @end

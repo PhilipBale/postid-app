@@ -23,6 +23,8 @@
 @property BOOL approved;
 @property BOOL deleted;
 
+@property BOOL liked; //local
+
 @property BOOL heartPressed;
 @property BOOL smirkPressed;
 @property BOOL firePressed;

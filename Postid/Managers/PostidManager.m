@@ -12,6 +12,8 @@
 #import "AppDelegate.h"
 #import <AWSCore/AWSCore.h>
 #import <AWSS3/AWSS3.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImagePrefetcher.h>
 
 @implementation PostidManager
 
@@ -83,7 +85,6 @@
 
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object
 {
-    
     [[RLMRealm defaultRealm] beginWriteTransaction];
     RLMObject *returnObj = [object.class createOrUpdateInRealm:[RLMRealm defaultRealm] withValue:object];
     [[RLMRealm defaultRealm] commitWriteTransaction];
@@ -200,11 +201,11 @@
         {
             if (localPost)
             {
+                [post setLiked:localPost.liked];
                 [post setHeartPressed:localPost.heartPressed];
                 [post setSmirkPressed:localPost.smirkPressed];
                 [post setFirePressed:localPost.firePressed];
                 [post setLikePressed:localPost.likePressed];
-                
             }
             
             [Post createOrUpdateInDefaultRealmWithValue:post];
