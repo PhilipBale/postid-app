@@ -159,7 +159,35 @@
      } failure:^(NSError *error) {
          if (completion) completion(NO);
      }];
+}
 
++ (void)commentPost:(NSNumber *)postId  comment:(CommentType)commentType increment:(BOOL)increment completion:(void (^)(BOOL success))completion
+{
+    NSNumber *incrementNum = increment ? @(1) : @(-1);
+    NSString *type = nil;
+    switch (commentType)
+    {
+        case CommentTypeHeart:
+            type = @"HEART";
+            break;
+        case CommentTypeFire:
+            type = @"FIRE";
+            break;
+        case CommentTypeSmirk:
+            type = @"SMIRK";
+            break;
+        default:
+            break;
+    }
+    
+    NSDictionary *commentPostParams = @{@"post":@{ @"post_id":postId, @"type":type, @"increment":incrementNum}};
+    
+    [[HTTPManager sharedManager] POST:kApiCommentPost parameters:commentPostParams success:^(NSDictionary *responseObject)
+     {
+         if (completion) completion(YES);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO);
+     }];
 }
 
 + (User *)userFromDictionary:(NSDictionary *)dictionary

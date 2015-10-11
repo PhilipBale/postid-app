@@ -30,7 +30,7 @@
     self.usernameLabel.text = [NSString stringWithFormat:@"@%@", currentUser.username];
     self.userFullNameLabel.text = [currentUser name];
     NSInteger friendCount = currentUser.friends.count;
-    [self.friendButton setTitle:[NSString stringWithFormat:@"%li friends", friendCount] forState:UIControlStateNormal];
+    [self.friendButton setTitle:[NSString stringWithFormat:@"%li friends", (long)friendCount] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
 }
 

@@ -31,6 +31,7 @@ NSString * const kApiDownloadUser = API_PATH(download_user);
 NSString * const kApiMakePost = API_PATH(make_post);
 NSString * const kApiFetchPosts = API_PATH(fetch_posts);
 NSString * const kApiLikePost = API_PATH(like_post);
+NSString * const kApiCommentPost = API_PATH(comment_post);
 
 @implementation HTTPManager
 

@@ -18,6 +18,7 @@ extern NSString * const kApiDownloadUser;
 extern NSString * const kApiMakePost;
 extern NSString * const kApiFetchPosts;
 extern NSString * const kApiLikePost;
+extern NSString * const kApiCommentPost;
 
 @interface HTTPManager : AFHTTPRequestOperationManager
 

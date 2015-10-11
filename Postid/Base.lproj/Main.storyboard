@@ -591,6 +591,9 @@
                                                             <state key="normal" image="heart_gray">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="heartButtonPressed:" destination="9XF-y9-eqW" eventType="touchUpInside" id="IF5-KA-peR"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -620,9 +623,12 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="1fP-6v-3gn" secondAttribute="height" multiplier="1:1" id="rU3-XS-Zwk"/>
                                                             </constraints>
-                                                            <state key="normal" image="heart_gray">
+                                                            <state key="normal" image="fire_gray">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="fireButtonPressed:" destination="9XF-y9-eqW" eventType="touchUpInside" id="Wh9-Z8-DVJ"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -655,6 +661,9 @@
                                                             <state key="normal" image="smirk_gray">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="smirkButtonPressed:" destination="9XF-y9-eqW" eventType="touchUpInside" id="25y-YC-WXK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,7 +679,7 @@
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="ze8-gl-Wie"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bri-PY-q7C" userLabel="widget view">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bri-PY-q7C" userLabel="widget view">
                                                     <rect key="frame" x="228" y="214" width="50" height="32"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MF-oE-sOB">
@@ -759,9 +768,15 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="fireButton" destination="1fP-6v-3gn" id="XLa-YF-qDh"/>
+                                            <outlet property="fireCountLabel" destination="Lpx-As-rAa" id="tbt-mc-PD4"/>
                                             <outlet property="fromUserLabel" destination="Ma9-TT-RYQ" id="u0a-qG-Znx"/>
+                                            <outlet property="heartButton" destination="cat-ok-HJ2" id="sOJ-Uv-fpB"/>
+                                            <outlet property="heartCountLabel" destination="rpk-9p-MmH" id="e2D-bV-xDn"/>
                                             <outlet property="postImageView" destination="l0f-dx-tkj" id="zXJ-4g-gJ6"/>
                                             <outlet property="reportButton" destination="6Ew-66-rFZ" id="hC1-tE-i8C"/>
+                                            <outlet property="smirkButton" destination="OlD-hu-wED" id="8w1-Dl-oLp"/>
+                                            <outlet property="smirkCountLabel" destination="ZfR-mb-hiM" id="0DL-iz-Hh0"/>
                                             <outlet property="toUserLabel" destination="dcA-CG-scE" id="234-lz-4Ov"/>
                                         </connections>
                                     </tableViewCell>
@@ -1015,7 +1030,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lexington Isham" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pib-5b-n86">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@lexingtonisham" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1od-Ay-Gb7">

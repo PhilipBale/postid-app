@@ -18,4 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
 @property (nonatomic, strong) Post *post;
 
+@property (weak, nonatomic) IBOutlet UIButton *fireButton;
+@property (weak, nonatomic) IBOutlet UILabel *fireCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *smirkButton;
+@property (weak, nonatomic) IBOutlet UILabel *smirkCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *heartButton;
+@property (weak, nonatomic) IBOutlet UILabel *heartCountLabel;
+
 @end

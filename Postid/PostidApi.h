@@ -11,6 +11,12 @@
 
 @interface PostidApi : NSObject
 
+typedef NS_ENUM(NSUInteger, CommentType) {
+    CommentTypeHeart = 0,
+    CommentTypeFire = 1,
+    CommentTypeSmirk = 2
+};
+
 + (void)loginOrRegisterWithEmail:(NSString *)email password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName username:(NSString *)username completion:(void (^)(BOOL, User *, NSDictionary *friendData))completion;
 + (void)loginWithToken:(NSString *)token completion:(void (^)(BOOL, User *, NSDictionary *friendData))completion;
 + (void)updatePhoneNumber:(NSString *)phoneNumber forToken:(NSString *)token completion:(void (^)(BOOL, User *))completion;
@@ -20,4 +26,6 @@
 + (void)makePost:(NSString *)urlKey userIdArray:(NSArray *)userIdArray completion:(void (^)(BOOL success))completion;
 +  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion;
 +  (void)likePost:(NSNumber *)postId completion:(void (^)(BOOL success))completion;
++ (void)commentPost:(NSNumber *)postId  comment:(CommentType)commentType increment:(BOOL)increment completion:(void (^)(BOOL success))completion;
+
 @end
