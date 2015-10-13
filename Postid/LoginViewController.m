@@ -41,7 +41,7 @@
     
     __weak typeof(self) weakSelf = self;
     NSString *empty = @"nil";
-    [PostidApi loginOrRegisterWithEmail:empty password:self.passwordTextField.text firstName:empty lastName:empty username:self.usernameTextField.text completion:^(BOOL success, User *user, NSDictionary *friendData){
+    [PostidApi loginOrRegisterWithEmail:empty password:self.passwordTextField.text firstName:empty lastName:empty username:self.usernameTextField.text isLogin:YES completion:^(BOOL success, User *user, NSDictionary *friendData){
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.loginActivityIndicatorView stopAnimating];

@@ -14,5 +14,6 @@
 @interface VotingView : UIImageView
 
 @property (nonatomic, strong) Post *post;
+@property (nonatomic, strong) UILabel *postTitle;
 
 @end

@@ -48,7 +48,7 @@
 
 - (IBAction)dismissToCamera:(id)sender
 {
-    NSLog(@"Swiped");
+    NSLog(@"Swiped, dismissing to camera");
     //[self dismissViewControllerAnimated:NO completion:nil];
     [self performSegueWithIdentifier:@"unwindToCamera" sender:self];
     //self unwindForSegue:<#(nonnull UIStoryboardSegue *)#> towardsViewController:<#(nonnull UIViewController *)#>
