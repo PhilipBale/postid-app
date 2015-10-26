@@ -18,6 +18,10 @@
     self.reportButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.reportButton.layer.borderWidth = 1;
     self.reportButton.layer.cornerRadius = 5;
+    
+    [self.heartButton setImage:[UIImage imageNamed:@"heart_blue"] forState:UIControlStateSelected | UIControlStateHighlighted];
+    [self.smirkButton setImage:[UIImage imageNamed:@"smirk_blue"] forState:UIControlStateSelected | UIControlStateHighlighted];
+    [self.fireButton setImage:[UIImage imageNamed:@"fire_blue"] forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -47,10 +51,19 @@
 }
 
 - (IBAction)reportButtonPressed:(id)sender {
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Choose option:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-}
-
-//TODO configure server for pressing!!!
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        // Cancel pressed; do nothing
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Report postid" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Reporting post with id: %li", self.post.postId);
+       // Report post
+    }]];
+    
+    [self.parent presentViewController:actionSheet animated:YES completion:nil];
+} 
 
 - (IBAction)heartButtonPressed:(id)sender {
     BOOL increment;
@@ -149,5 +162,7 @@
     
     [self updateCountLabels];
 }
+
+
 
 @end

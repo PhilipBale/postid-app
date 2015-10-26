@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Post.h"
+#import "FeedViewController.h"
 
 @interface FeedCell : UITableViewCell
+
+@property (nonatomic, strong) FeedViewController *parent; //hack
 
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *toUserLabel;
