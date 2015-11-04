@@ -15,7 +15,7 @@
 #import <AWSCognito/AWSCognito.h>
 #import "User.h"
 #import "Post.h"
-#import <Realm.h>
+#import <Realm/RLMRealm.h>
 
 @interface AppDelegate ()
 

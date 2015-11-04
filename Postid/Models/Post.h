@@ -6,7 +6,8 @@
 //  Copyright © 2015 Philip Bale. All rights reserved.
 //
 
-#import "RLMObject.h"
+#import <Realm/RLMRealm.h>
+#import "Realm/RLMObject.h"
 
 @interface Post : RLMObject
 

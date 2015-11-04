@@ -11,7 +11,7 @@
 #import "VotingView.h"
 #import "PostidManager.h"
 #import "PostidApi.h"
-#import "Realm.h"
+#import <Realm/RLMRealm.h>
 #import "GeneralUtilities.h"
 
 @interface VotingViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>

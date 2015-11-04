@@ -8,7 +8,7 @@
 
 #import "SearchCell.h"
 #import "User.h"
-#import "Realm.h"
+#import <Realm/RLMRealm.h>
 #import "PostidManager.h"
 #import "PostidApi.h"
 

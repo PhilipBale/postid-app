@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <Realm/RLMRealm.h>
 #import "PostidManager.h"
 
 @implementation User

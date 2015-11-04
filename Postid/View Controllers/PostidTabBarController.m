@@ -8,8 +8,7 @@
 
 #import "PostidTabBarController.h"
 #import "Post.h"
-#import "PostidManager.h"
-#import <Realm.h>
+#import "PostidManager.h" 
 
 @interface PostidTabBarController ()
 

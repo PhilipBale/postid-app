@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <Realm.h>
+#import <Realm/RLMRealm.h>
+#import <Realm/RLMResults.h>
+
 @interface GeneralUtilities : NSObject
  
 + (void)animateView:(UIView *)view up:(BOOL)up delta:(CGFloat)delta duration:(NSTimeInterval)duration;

@@ -11,7 +11,7 @@
 #import "User.h"
 #import "SearchCell.h"
 #import "PostidApi.h"
-#import "Realm.h"
+#import <Realm/RLMRealm.h>
 
 @interface SearchViewController () <UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 {

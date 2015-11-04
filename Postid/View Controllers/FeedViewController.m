@@ -10,7 +10,7 @@
 #import "FeedCell.h"
 #import "PostidApi.h"
 #import "PostidManager.h"
-#import "Realm.h"
+#import <Realm/RLMRealm.h>
 
 @interface FeedViewController ()
 {

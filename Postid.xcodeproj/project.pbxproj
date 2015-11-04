@@ -582,6 +582,7 @@
 				D48B213A1B7FFF8500F8D659 /* Resources */,
 				D48B21961B8118E700F8D659 /* ShellScript */,
 				1F943894C4523B179229CB58 /* Copy Pods Resources */,
+				DBCBAA9C1603531026BA2EE9 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,6 +602,7 @@
 				D48B21521B7FFF8500F8D659 /* Frameworks */,
 				D48B21531B7FFF8500F8D659 /* Resources */,
 				8975B17072101353BECDB890 /* Copy Pods Resources */,
+				E968EF540A5AE87155CEF108 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -618,7 +620,7 @@
 		D48B21341B7FFF8500F8D659 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Philip Bale";
 				TargetAttributes = {
 					D48B213B1B7FFF8500F8D659 = {
@@ -763,6 +765,36 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 9341b20f47a3a523ec0b40d17388fa594df9e94b a748eb2e34b275d469c11a473c767e444d1ade23965a5f882def33eaa6970952";
 		};
+		DBCBAA9C1603531026BA2EE9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Postid/Pods-Postid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E968EF540A5AE87155CEF108 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -876,6 +908,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -952,6 +985,7 @@
 				GCC_PREFIX_HEADER = "Postid/Core/Postid-PrefixHeader.pch";
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postid.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -971,6 +1005,7 @@
 				GCC_PREFIX_HEADER = "Postid/Core/Postid-PrefixHeader.pch";
 				INFOPLIST_FILE = Postid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postid.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -990,6 +1025,7 @@
 				);
 				INFOPLIST_FILE = PostidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postid.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Postid.app/Postid";
 			};
@@ -1006,6 +1042,7 @@
 				);
 				INFOPLIST_FILE = PostidTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.postid.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Postid.app/Postid";
 			};

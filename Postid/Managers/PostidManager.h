@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/RLMRealm.h>
 #import "User.h"
 #import "Post.h"
 
