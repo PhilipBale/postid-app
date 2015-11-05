@@ -10,14 +10,15 @@
 #import "PostidManager.h"
 #import "User.h"
 #import "PostidApi.h"
+#import "UserId.h"
 
 @implementation FeedCell
 
 - (void)awakeFromNib {
     // Initialization code
     self.reportButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.reportButton.layer.borderWidth = 1;
-    self.reportButton.layer.cornerRadius = 5;
+    //self.reportButton.layer.borderWidth = 1;
+    //self.reportButton.layer.cornerRadius = 5;
     
     [self.heartButton setImage:[UIImage imageNamed:@"heart_blue"] forState:UIControlStateSelected | UIControlStateHighlighted];
     [self.smirkButton setImage:[UIImage imageNamed:@"smirk_blue"] forState:UIControlStateSelected | UIControlStateHighlighted];
@@ -36,6 +37,10 @@
                           placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     User *poster = [[PostidManager sharedManager] userFromCacheWithId:post.userId];
     self.fromUserLabel.text = poster.username;
+    
+    UserId *firstUserId = [post.postidForIds lastObject];
+    User *toUser = [[PostidManager sharedManager] userFromCacheWithId:firstUserId.userId];
+    self.toUserLabel.text = [toUser name];
     
     [self.heartButton setHighlighted:self.post.heartPressed];
     [self.fireButton setHighlighted:self.post.firePressed];

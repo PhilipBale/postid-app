@@ -8,12 +8,15 @@
 
 #import <Realm/RLMRealm.h>
 #import "Realm/RLMObject.h"
+#import <Realm/RLMArray.h>
+#import "UserId.h"
 
 @interface Post : RLMObject
 
 @property NSInteger postId;
 @property NSInteger userId; // Poster
 @property NSString *imageUrl; //Image key
+@property RLMArray<UserId>  *postidForIds;
 @property NSInteger viewCount;
 @property NSInteger heartCount;
 @property NSInteger smirkCount;

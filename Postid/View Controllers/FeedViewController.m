@@ -72,7 +72,6 @@
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FeedCell class]) forIndexPath:indexPath];
     
     Post* post = [self.results objectAtIndex:indexPath.row];
-    cell.toUserLabel.text = [NSString stringWithFormat:@"%li",post.postId];
     cell.post = post;
     cell.parent = self;
     

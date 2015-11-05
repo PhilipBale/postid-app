@@ -64,6 +64,7 @@
 		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
+		D4981DBF1BEBF38200D0C406 /* UserId.m in Sources */ = {isa = PBXBuildFile; fileRef = D4981DBE1BEBF38200D0C406 /* UserId.m */; };
 		D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */; };
 		D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F01BB04B95008B3C2E /* Post.m */; };
 		D4ACC8F41BB06A10008B3C2E /* PostidTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */; };
@@ -172,6 +173,8 @@
 		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D4981DBD1BEBF38200D0C406 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserId.h; path = Models/UserId.h; sourceTree = "<group>"; };
+		D4981DBE1BEBF38200D0C406 /* UserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserId.m; path = Models/UserId.m; sourceTree = "<group>"; };
 		D4A553AE1BBACAB700B3A18A /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationViewController.h; path = "View Controllers/NotificationViewController.h"; sourceTree = "<group>"; };
 		D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationViewController.m; path = "View Controllers/NotificationViewController.m"; sourceTree = "<group>"; };
 		D4ACC8EF1BB04B95008B3C2E /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				D41615EA1B882BF400320977 /* User.m */,
 				D4ACC8EF1BB04B95008B3C2E /* Post.h */,
 				D4ACC8F01BB04B95008B3C2E /* Post.m */,
+				D4981DBD1BEBF38200D0C406 /* UserId.h */,
+				D4981DBE1BEBF38200D0C406 /* UserId.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -818,6 +823,7 @@
 				D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */,
 				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
 				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
+				D4981DBF1BEBF38200D0C406 /* UserId.m in Sources */,
 				D4DA20BD1B94C69300C2E37C /* GenericNavigationController.m in Sources */,
 				D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */,
 				D4DA20C01B94C80900C2E37C /* FeedCell.m in Sources */,

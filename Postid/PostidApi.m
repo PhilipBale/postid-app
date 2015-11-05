@@ -9,6 +9,7 @@
 #import "PostidApi.h"
 #import "HTTPManager.h"
 #import "PostidManager.h"
+#import "UserId.h"
 #import <SDWebImagePrefetcher.h>
 
 @implementation PostidApi
@@ -134,13 +135,29 @@
          
          NSMutableArray *posts = [[NSMutableArray alloc] init];
          NSMutableArray *postImageUrls = [[NSMutableArray alloc] init];
-         for (NSObject *result in results)
+         NSMutableArray *uniqueUsers = [[NSMutableArray alloc] init];
+         User *currentUser = [[PostidManager sharedManager] currentUser];
+         
+         for (NSDictionary *result in results)
          {
-             Post *resultPost = [self postFromDictionary:(NSDictionary *)result];
+             NSArray *postsUsers = [result objectForKey:@"users"];
+             for (NSDictionary *user in postsUsers) {
+                 NSInteger userId = [[user objectForKey:@"id"] integerValue];
+                 NSNumber *userIdNum = @(userId);
+                 
+                 // Prefetch up-to-date users
+                 if (![uniqueUsers containsObject:userIdNum] && userId != currentUser.userId)
+                 {
+                     //prefetch
+                     [uniqueUsers addObject:userIdNum];
+                     [[PostidManager sharedManager] downloadAndAddUser:userIdNum toFriendGroup:FriendGroupUnknown ofCurrentUser:nil];
+                 }
+             }
+             
+             Post *resultPost = [self postFromDictionary:result];
              [postImageUrls addObject:[NSURL URLWithString:resultPost.imageUrl]];
              [posts addObject:resultPost];
          }
-         
          
          [[SDWebImagePrefetcher  sharedImagePrefetcher] prefetchURLs:postImageUrls];
          
@@ -221,6 +238,17 @@
     post.flagged = [[dictionary objectForKey:@"flagged"] boolValue];
     post.approved = [[dictionary objectForKey:@"approved"] boolValue];
     post.deleted = [[dictionary objectForKey:@"deleted"] boolValue];
+    
+    
+    NSArray *postsUsers = [dictionary objectForKey:@"users"];
+    
+    for (NSDictionary *user in postsUsers) {
+        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        UserId *userIdModel = [[UserId alloc] init];
+        userIdModel.userId = userIdValue;
+        [post.postidForIds addObject:userIdModel];
+    }
+    
     
     return post;
 }
