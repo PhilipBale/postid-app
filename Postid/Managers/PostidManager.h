@@ -10,6 +10,7 @@
 #import <Realm/RLMRealm.h>
 #import "User.h"
 #import "Post.h"
+#import "Notification.h"
 
 @interface PostidManager : NSObject
 
@@ -40,6 +41,10 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (Post *)postFromCacheWithIntegerId:(NSInteger)postId;
 - (void)cachePosts:(NSArray *)posts;
 - (void)makePostForUsers:(NSArray *)userIds withImageData:(NSData *)imageData completion:(void (^)(BOOL success))completion;
+
+- (void)saveMaxNotificationIdToKeychain:(NSNumber *)maxNotificationId;
+- (NSNumber *)loadMaxNotificationIdFromKeychain;
+- (void)cacheNotifications:(NSArray *)notifications;
 
 - (void)downloadAndAddUser:(NSNumber *)userId toFriendGroup:(FriendGroup)group ofCurrentUser:(User *)currentUser;
 

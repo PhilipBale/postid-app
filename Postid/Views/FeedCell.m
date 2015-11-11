@@ -15,6 +15,7 @@
 @implementation FeedCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     self.reportButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
     //self.reportButton.layer.borderWidth = 1;

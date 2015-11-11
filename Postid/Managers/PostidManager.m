@@ -83,6 +83,19 @@
     return [defaults objectForKey:@"maxPostId"];
 }
 
+- (void)saveMaxNotificationIdToKeychain:(NSNumber *)maxNotificationId
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:maxNotificationId forKey:@"maxNotificationId"];
+    [defaults synchronize];
+}
+
+- (NSNumber *)loadMaxNotificationIdFromKeychain
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"maxNotificationId"];
+}
+
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object
 {
     [[RLMRealm defaultRealm] beginWriteTransaction];
@@ -256,6 +269,19 @@
         completion(false);
         return nil;
     }];
+}
+
+- (void)cacheNotifications:(NSArray *)notifications
+{
+    User *currentUser = [self currentUser];
+    for (Notification *notification in notifications)
+    {
+        [[RLMRealm defaultRealm] beginWriteTransaction];
+        {
+            [Notification createOrUpdateInDefaultRealmWithValue:notification];
+        }
+        [[RLMRealm defaultRealm] commitWriteTransaction];
+    }
 }
 
 -(void)downloadImage

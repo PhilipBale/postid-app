@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface NotificationViewController : UIViewController
+@interface NotificationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *userFullNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;

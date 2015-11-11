@@ -1162,33 +1162,52 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="AWZ-ub-ifR" detailTextLabel="niY-qm-LST" rowHeight="35" style="IBUITableViewCellStyleValue1" id="dOw-nT-W2L">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationCell" rowHeight="35" id="dOw-nT-W2L" customClass="NotificationCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dOw-nT-W2L" id="E0A-LV-7c4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AWZ-ub-ifR">
-                                                    <rect key="frame" x="15" y="8" width="31.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-eS-vIQ">
+                                                    <rect key="frame" x="8" y="8.5" width="264.5" height="17.5"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="niY-qm-LST">
-                                                    <rect key="frame" x="263.5" y="8" width="41.5" height="19.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61g-gZ-jhf">
+                                                    <rect key="frame" x="277.5" y="0.0" width="34.5" height="34.5"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="61g-gZ-jhf" secondAttribute="height" multiplier="1:1" id="Op9-15-7TA"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="61g-gZ-jhf" firstAttribute="leading" secondItem="hTW-eS-vIQ" secondAttribute="trailing" constant="5" id="0qf-9s-n8r"/>
+                                                <constraint firstItem="61g-gZ-jhf" firstAttribute="top" secondItem="E0A-LV-7c4" secondAttribute="topMargin" id="9rq-Ey-61m"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="61g-gZ-jhf" secondAttribute="bottom" id="Kzz-Pv-aoK"/>
+                                                <constraint firstItem="61g-gZ-jhf" firstAttribute="top" secondItem="E0A-LV-7c4" secondAttribute="top" id="Lqf-eo-sKL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="61g-gZ-jhf" secondAttribute="trailing" id="Oey-Ft-gaG"/>
+                                                <constraint firstAttribute="bottom" secondItem="61g-gZ-jhf" secondAttribute="bottom" id="Wjc-6K-AfK"/>
+                                                <constraint firstItem="hTW-eS-vIQ" firstAttribute="leading" secondItem="E0A-LV-7c4" secondAttribute="leadingMargin" id="atV-62-Ray"/>
+                                                <constraint firstItem="hTW-eS-vIQ" firstAttribute="centerY" secondItem="E0A-LV-7c4" secondAttribute="centerY" id="gTV-1J-Ls2"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9rq-Ey-61m"/>
+                                                    <exclude reference="Kzz-Pv-aoK"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="hTW-eS-vIQ" id="k2G-YH-0Wm"/>
+                                            <outlet property="rightView" destination="61g-gZ-jhf" id="WzD-NS-PZ6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

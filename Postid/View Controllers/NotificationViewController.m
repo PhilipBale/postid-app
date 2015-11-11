@@ -9,8 +9,13 @@
 #import "NotificationViewController.h"
 #import "User.h"
 #import "PostidManager.h"
+#import "Notification.h"
+#import "PostidApi.h"
+#import "NotificationCell.h"
 
 @interface NotificationViewController ()
+
+@property (nonatomic, strong) RLMResults* results;
 
 @end
 
@@ -32,11 +37,35 @@
     NSInteger friendCount = currentUser.friends.count;
     [self.friendButton setTitle:[NSString stringWithFormat:@"%li friends", (long)friendCount] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
+    
+    self.results = [[Notification objectsWhere:@"userId == %li", currentUser.userId] sortedResultsUsingProperty:@"notificationId" ascending:NO];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.notificationTableView reloadData];
+    [self downloadAndRefreshNotifications];
+}
+
+- (void)downloadAndRefreshNotifications
+{
+    NSNumber *minNotification = [[PostidManager sharedManager] loadMaxNotificationIdFromKeychain];
+    if (!minNotification) {
+        minNotification = [NSNumber numberWithInteger:0];
+    }
+    
+    [PostidApi fetchNotificationsWithMinId:minNotification completion:^(BOOL success, NSArray *notifications, NSNumber *maxId) {
+        if (success)
+        {
+            [[PostidManager sharedManager] cacheNotifications:notifications];
+            
+            //TODO set new max post id, will get intensive as app gets popular
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{ 
+            [self.notificationTableView reloadData];
+        });
+    }];
 }
 
 - (IBAction)friendButtonPressed:(id)sender {
@@ -44,6 +73,22 @@
 
 - (IBAction)logoutButtonPressed:(id)sender {
     [[PostidManager sharedManager] logout];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.results count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NotificationCell class]) forIndexPath:indexPath];
+    
+    Notification* notification = [self.results objectAtIndex:indexPath.row];
+    cell.notification = notification;
+    cell.parent = self;
+    
+    return cell;
 }
 
 

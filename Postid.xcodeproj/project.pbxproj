@@ -84,6 +84,7 @@
 		D4DA20C31B94CC9F00C2E37C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20C21B94CC9F00C2E37C /* FeedViewController.m */; };
 		D4EA655E1B9DFCAC0074341E /* PostPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */; };
 		D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE3F51BF3016A004D21A0 /* Notification.m */; };
+		D4EFE3F91BF3C687004D21A0 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE3F81BF3C687004D21A0 /* NotificationCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,8 @@
 		D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostPreviewViewController.m; path = "View Controllers/PostPreviewViewController.m"; sourceTree = "<group>"; };
 		D4EFE3F41BF3016A004D21A0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = Models/Notification.h; sourceTree = "<group>"; };
 		D4EFE3F51BF3016A004D21A0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = Models/Notification.m; sourceTree = "<group>"; };
+		D4EFE3F71BF3C687004D21A0 /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationCell.h; path = Views/NotificationCell.h; sourceTree = "<group>"; };
+		D4EFE3F81BF3C687004D21A0 /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationCell.m; path = Views/NotificationCell.m; sourceTree = "<group>"; };
 		E4EE125FEFF727592DD7ADDC /* Pods-PostidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostidTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -525,6 +528,8 @@
 				D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */,
 				D4B486461BBA4AB20024D76F /* VotingView.h */,
 				D4B486471BBA4AB20024D76F /* VotingView.m */,
+				D4EFE3F71BF3C687004D21A0 /* NotificationCell.h */,
+				D4EFE3F81BF3C687004D21A0 /* NotificationCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -854,6 +859,7 @@
 				D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */,
 				D45A2F3F1B9FB9E800CCB099 /* FriendSearchController.m in Sources */,
 				D4C7D0BA1B8AE3F3002F23B8 /* GeneralUtilities.m in Sources */,
+				D4EFE3F91BF3C687004D21A0 /* NotificationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
