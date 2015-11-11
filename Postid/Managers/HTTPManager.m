@@ -32,6 +32,8 @@ NSString * const kApiMakePost = API_PATH(make_post);
 NSString * const kApiFetchPosts = API_PATH(fetch_posts);
 NSString * const kApiLikePost = API_PATH(like_post);
 NSString * const kApiCommentPost = API_PATH(comment_post);
+NSString * const kApiFetchNotifications = API_PATH(fetch_notifications);
+NSString * const kApiMarkNotificationRead = API_PATH(mark_notification_read);
 
 @implementation HTTPManager
 

@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *friendButton;
 
+@property (weak, nonatomic) IBOutlet UITableView *notificationTableView;
+
 @end

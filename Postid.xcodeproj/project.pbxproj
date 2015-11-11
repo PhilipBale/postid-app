@@ -83,6 +83,7 @@
 		D4DA20C01B94C80900C2E37C /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20BF1B94C80900C2E37C /* FeedCell.m */; };
 		D4DA20C31B94CC9F00C2E37C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DA20C21B94CC9F00C2E37C /* FeedViewController.m */; };
 		D4EA655E1B9DFCAC0074341E /* PostPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */; };
+		D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE3F51BF3016A004D21A0 /* Notification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,8 @@
 		D4DA20C21B94CC9F00C2E37C /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = "View Controllers/FeedViewController.m"; sourceTree = "<group>"; };
 		D4EA655C1B9DFCAC0074341E /* PostPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostPreviewViewController.h; path = "View Controllers/PostPreviewViewController.h"; sourceTree = "<group>"; };
 		D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostPreviewViewController.m; path = "View Controllers/PostPreviewViewController.m"; sourceTree = "<group>"; };
+		D4EFE3F41BF3016A004D21A0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notification.h; path = Models/Notification.h; sourceTree = "<group>"; };
+		D4EFE3F51BF3016A004D21A0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notification.m; path = Models/Notification.m; sourceTree = "<group>"; };
 		E4EE125FEFF727592DD7ADDC /* Pods-PostidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostidTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostidTests/Pods-PostidTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +272,8 @@
 				D4ACC8F01BB04B95008B3C2E /* Post.m */,
 				D4981DBD1BEBF38200D0C406 /* UserId.h */,
 				D4981DBE1BEBF38200D0C406 /* UserId.m */,
+				D4EFE3F41BF3016A004D21A0 /* Notification.h */,
+				D4EFE3F51BF3016A004D21A0 /* Notification.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
+				D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */,
 				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
 				D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */,
 				D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "HTTPManager.h"
 #import "PostidManager.h"
 #import "UserId.h"
+#import "Notification.h"
 #import <SDWebImagePrefetcher.h>
 
 @implementation PostidApi
@@ -207,6 +208,60 @@
      }];
 }
 
++  (void)fetchNotificationsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *notifications, NSNumber *maxId))completion
+{
+    NSDictionary *fetchPostsParams = @{@"notification":@{ @"min_id":minId}};
+    [[HTTPManager sharedManager] GET:kApiFetchNotifications parameters:fetchPostsParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *results = [responseObject objectForKey:@"notifications"];
+         NSNumber *maxId = [responseObject objectForKey:@"max_id"];
+         
+         NSMutableArray *notifications = [[NSMutableArray alloc] init];
+         NSMutableArray *uniquePosts = [[NSMutableArray alloc] init];
+         NSMutableArray *uniqueUsers = [[NSMutableArray alloc] init];
+         User *currentUser = [[PostidManager sharedManager] currentUser];
+         
+         
+         
+         for (NSDictionary *result in results)
+         {
+             Notification *notificationResult = [self notificationFromDictionary:result];
+             NSNumber *fromId = @(notificationResult.fromId);
+             NSNumber *postId = @(notificationResult.postId);
+             
+             if (![uniqueUsers containsObject:fromId] && [fromId integerValue] != currentUser.userId)
+             {
+                 [uniqueUsers addObject:fromId];
+                 [[PostidManager sharedManager] downloadAndAddUser:fromId toFriendGroup:FriendGroupUnknown ofCurrentUser:nil];
+             }
+             
+             if (postId != nil && ![uniquePosts containsObject:postId])
+             {
+                 [uniquePosts addObject:fromId];
+                 //TODO cache post
+             }
+             
+             [notifications addObject:notificationResult];
+         }
+         
+         if (completion) completion(YES, notifications, maxId);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil, nil);
+     }];
+}
+
++  (void)markNotificationViewed:(NSNumber *)notificationId completion:(void (^)(BOOL success))completion
+{
+    NSDictionary *markNotificationViewedParam = @{@"notification":@{ @"notification_id":notificationId}};
+    
+    [[HTTPManager sharedManager] POST:kApiMarkNotificationRead parameters:markNotificationViewedParam success:^(NSDictionary *responseObject)
+     {
+         if (completion) completion(YES);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO);
+     }];
+}
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];
@@ -249,8 +304,22 @@
         [post.postidForIds addObject:userIdModel];
     }
     
-    
     return post;
+}
+
++ (Notification *)notificationFromDictionary:(NSDictionary *)dictionary
+{
+    Notification *notification = [[Notification alloc] init];
+    notification.notificationId = [[dictionary objectForKey:@"id"] integerValue];
+    notification.userId = [[dictionary objectForKey:@"user_id"] integerValue];
+    notification.fromId = [[dictionary objectForKey:@"from_id"] integerValue];
+    notification.message = [dictionary objectForKey:@"message"];
+    notification.postId = [[dictionary objectForKey:@"post_id"] integerValue];
+    notification.type = [[dictionary objectForKey:@"type"] integerValue];
+    notification.viewed = [[dictionary objectForKey:@"viewed"] boolValue];
+    notification.date = [[dictionary objectForKey:@"created_at"] integerValue];
+    
+    return notification;
 }
 
 @end

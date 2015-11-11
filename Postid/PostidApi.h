@@ -23,9 +23,13 @@ typedef NS_ENUM(NSUInteger, CommentType) {
 + (void)searchForFriends:(NSString *)query forToken:(NSString *)token completion:(void (^)(BOOL, NSArray *results))completion;
 + (void)addFriend:(NSInteger)userId completion:(void (^)(BOOL success, BOOL pending, User *))completion;
 + (void)downloadUserForId:(NSNumber *)userId completion:(void (^)(BOOL success, User *currentUser, User *downloaded))completion;
+
 + (void)makePost:(NSString *)urlKey userIdArray:(NSArray *)userIdArray completion:(void (^)(BOOL success))completion;
 +  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion;
 +  (void)likePost:(NSNumber *)postId completion:(void (^)(BOOL success))completion;
 + (void)commentPost:(NSNumber *)postId  comment:(CommentType)commentType increment:(BOOL)increment completion:(void (^)(BOOL success))completion;
+
++  (void)fetchNotificationsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *notifications, NSNumber *maxId))completion;
++  (void)markNotificationViewed:(NSNumber *)notificationId completion:(void (^)(BOOL success))completion;
 
 @end
