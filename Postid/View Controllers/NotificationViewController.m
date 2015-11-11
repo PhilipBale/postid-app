@@ -23,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.notificationTableView.delegate = self;
+    self.notificationTableView.dataSource = self;
+    
     self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.height + 10;
     self.userImageView.clipsToBounds = YES;
     

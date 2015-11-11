@@ -315,7 +315,7 @@
     notification.fromId = [[dictionary objectForKey:@"from_id"] integerValue];
     notification.message = [dictionary objectForKey:@"message"];
     notification.postId = [[dictionary objectForKey:@"post_id"] integerValue];
-    notification.type = [[dictionary objectForKey:@"type"] integerValue];
+    notification.type = [[dictionary objectForKey:@"notification_type"] integerValue];
     notification.viewed = [[dictionary objectForKey:@"viewed"] boolValue];
     notification.date = [[dictionary objectForKey:@"created_at"] integerValue];
     

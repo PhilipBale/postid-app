@@ -1158,25 +1158,25 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f5z-Yi-5cz">
-                                <rect key="frame" x="0.0" y="164" width="320" height="267"/>
+                                <rect key="frame" x="16" y="164" width="288" height="267"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationCell" rowHeight="35" id="dOw-nT-W2L" customClass="NotificationCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="35"/>
+                                        <rect key="frame" x="0.0" y="28" width="288" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dOw-nT-W2L" id="E0A-LV-7c4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-eS-vIQ">
-                                                    <rect key="frame" x="8" y="8.5" width="264.5" height="17.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notification Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-eS-vIQ">
+                                                    <rect key="frame" x="8" y="8" width="264.5" height="17.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61g-gZ-jhf">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61g-gZ-jhf">
                                                     <rect key="frame" x="277.5" y="0.0" width="34.5" height="34.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1225,8 +1225,10 @@
                             <constraint firstItem="SEp-mx-97N" firstAttribute="top" secondItem="f5z-Yi-5cz" secondAttribute="bottom" id="ORt-eI-br4"/>
                             <constraint firstAttribute="trailing" secondItem="7Xi-YK-ecq" secondAttribute="trailing" id="Q0x-g4-cXg"/>
                             <constraint firstItem="FZo-Jf-YDc" firstAttribute="leading" secondItem="g8l-tZ-dVB" secondAttribute="trailing" constant="5" id="RbD-Kz-1Fa"/>
+                            <constraint firstItem="f5z-Yi-5cz" firstAttribute="leading" secondItem="LXw-pE-X8t" secondAttribute="leadingMargin" id="TYb-Ns-dt4"/>
                             <constraint firstAttribute="trailing" secondItem="FZo-Jf-YDc" secondAttribute="trailing" constant="20" id="YO6-59-0PS"/>
                             <constraint firstItem="g8l-tZ-dVB" firstAttribute="centerY" secondItem="ceZ-dk-wsL" secondAttribute="centerY" id="ZvY-ud-44v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f5z-Yi-5cz" secondAttribute="trailing" id="de6-J9-7Q5"/>
                             <constraint firstItem="FZo-Jf-YDc" firstAttribute="leading" secondItem="ceZ-dk-wsL" secondAttribute="trailing" constant="20" id="h1Q-Ay-njv"/>
                             <constraint firstItem="7Xi-YK-ecq" firstAttribute="top" secondItem="ceZ-dk-wsL" secondAttribute="bottom" constant="10" id="ktM-wd-egn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ceZ-dk-wsL" secondAttribute="trailing" constant="110" id="lZe-uK-FSN"/>
@@ -1236,6 +1238,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="1fD-hj-Qro"/>
+                                <exclude reference="3sO-79-Lnj"/>
                                 <exclude reference="RbD-Kz-1Fa"/>
                             </mask>
                         </variation>
