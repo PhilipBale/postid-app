@@ -310,11 +310,20 @@
 + (Notification *)notificationFromDictionary:(NSDictionary *)dictionary
 {
     Notification *notification = [[Notification alloc] init];
+    NSLog(@"Dict: %@", dictionary);
     notification.notificationId = [[dictionary objectForKey:@"id"] integerValue];
     notification.userId = [[dictionary objectForKey:@"user_id"] integerValue];
     notification.fromId = [[dictionary objectForKey:@"from_id"] integerValue];
     notification.message = [dictionary objectForKey:@"message"];
-    notification.postId = [[dictionary objectForKey:@"post_id"] integerValue];
+    NSLog(@"Posti id %@", [dictionary objectForKey:@"post_id"]);
+    if ([dictionary objectForKey:@"post_id"] == [NSNull null])
+    {
+        notification.postId = 0;
+    } else
+    {
+        notification.postId = [[dictionary objectForKey:@"post_id"] integerValue];
+    }
+    
     notification.type = [[dictionary objectForKey:@"notification_type"] integerValue];
     notification.viewed = [[dictionary objectForKey:@"viewed"] boolValue];
     notification.date = [[dictionary objectForKey:@"created_at"] integerValue];
