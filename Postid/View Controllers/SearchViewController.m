@@ -12,6 +12,10 @@
 #import "SearchCell.h"
 #import "PostidApi.h"
 #import <Realm/RLMRealm.h>
+#import <APAddressBook/APAddressBook.h>
+#import <APAddressBook/APPhone.h>
+#import <APAddressBook/APContact.h>
+#import "PostidApi.h"
 
 @interface SearchViewController () <UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 {
@@ -87,12 +91,12 @@ static BOOL phoneAuthenticated;
     self.searchController.searchBar.showsCancelButton = NO;
     self.searchController.definesPresentationContext = YES;
     
-    
-    
     //[[UITextField appearanceWhenContainedInInstancesOfClasses:[UISearchBar class]] setDefaultTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     self.navigationItem.titleView = self.searchController.searchBar;
     [self refreshGeneralSearchResults];
+    
+    [self searchForPhoneContacts];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -125,6 +129,42 @@ static BOOL phoneAuthenticated;
     
 }
 
+- (void)searchForPhoneContacts {
+    APAddressBook *addressBook = [[APAddressBook alloc] init];
+    
+    addressBook.fieldsMask =  APContactFieldPhonesOnly;
+    
+    
+    [addressBook loadContacts:^(NSArray <APContact *> *contacts, NSError *error)
+    {
+        if (!error)
+        {
+            NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
+            for (APContact *contact in contacts) {
+                for (APPhone* phone in [contact phones]) {
+                    NSLog(@"Found phone: %@", phone.number);
+                    [phoneNumbers addObject:phone];
+                }
+            }
+            
+            if ([phoneNumbers count] > 0) {
+                [PostidApi searchAndCacheFriendsWithPhoneNumbers:phoneNumbers completion:^(BOOL success) {
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self refreshGeneralSearchResults];
+                            [self.resultsTableView reloadData];
+                        });
+                    }
+                }];
+            }
+        }
+        else
+        {
+            // show error
+        }
+    }];
+}
+
 - (void)refreshGeneralSearchResults
 {
     User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
@@ -142,6 +182,11 @@ static BOOL phoneAuthenticated;
     for (User *user in currentUser.friends)
     {
        [allUsers addObject:user];
+    }
+    
+    for (User *user in currentUser.phoneFriends)
+    {
+        [allUsers addObject:user];
     }
     
     allUsers = [[allUsers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {

@@ -46,4 +46,12 @@
     return ([matches count] > 0);
 }
 
+-(BOOL)phoneFriendsWithPrimaryUser
+{
+    User * currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    RLMResults *matches = [currentUser.phoneFriends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
+    
+    return ([matches count] > 0);
+}
+
 @end

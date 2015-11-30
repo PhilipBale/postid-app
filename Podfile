@@ -8,6 +8,7 @@ target 'Postid' do
     pod 'AWSS3'
     pod 'AWSCognito'
     pod 'SDWebImage', '~>3.7'
+    pod 'APAddressBook'
 end
 
 target 'PostidTests' do

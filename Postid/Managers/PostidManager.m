@@ -38,6 +38,7 @@
         currentUser.friends = oldUser.friends;
         currentUser.pendingFriends = oldUser.pendingFriends;
         currentUser.requestedFriends = oldUser.requestedFriends;
+        currentUser.phoneFriends = oldUser.phoneFriends;
     }
     
     _currentUser = currentUser;
@@ -165,6 +166,9 @@
                         if (![user pendingFriendsWithPrimaryUser])
                             [currentUser.pendingFriends addObject:user];
                         break;
+                    case FriendGroupPhone:
+                        if (![user phoneFriendsWithPrimaryUser])
+                            [currentUser.phoneFriends addObject:user];
                     default:
                         break;
                 }
@@ -193,6 +197,8 @@
                         case FriendGroupPending:
                             [currentUser.pendingFriends addObject:realmDownloadedUser];
                             break;
+                        case FriendGroupPhone:
+                            [currentUser.phoneFriends addObject:realmDownloadedUser];
                         default:
                             break;
                     }

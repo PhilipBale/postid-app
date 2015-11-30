@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
     FriendGroupRequest,
     FriendGroupPending,
     FriendGroupFriends,
+    FriendGroupPhone,
     FriendGroupUnknown
 };
 

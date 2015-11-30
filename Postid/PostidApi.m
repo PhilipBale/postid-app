@@ -262,6 +262,11 @@
      }];
 }
 
++ (void)searchAndCacheFriendsWithPhoneNumbers:(NSArray *)numbers completion:(void (^)(BOOL))completion
+{
+    // TODO finish method
+}
+
 + (User *)userFromDictionary:(NSDictionary *)dictionary
 {
     User *user = [[User alloc] init];

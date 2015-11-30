@@ -46,7 +46,7 @@
 
 - (void)handleMigrations
 {
-    [RLMRealm setSchemaVersion:5 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
+    [RLMRealm setSchemaVersion:6 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
         [migration enumerateObjects:User.className
                               block:^(RLMObject *oldUser, RLMObject *newUser) {
                                   if (oldSchemaVersion < 2) {
@@ -59,6 +59,10 @@
                                       ;
                                       newUser[@"pendingFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
                                       newUser[@"requestedFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+                                  }
+                                  
+                                  if (oldSchemaVersion < 6) {
+                                      newUser[@"phoneFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
                                   }
                                   
                                   
