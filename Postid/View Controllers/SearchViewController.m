@@ -142,8 +142,23 @@ static BOOL phoneAuthenticated;
             NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
             for (APContact *contact in contacts) {
                 for (APPhone* phone in [contact phones]) {
-                    NSLog(@"Found phone: %@", phone.number);
-                    [phoneNumbers addObject:phone];
+                    NSString *number = [[phone.number stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                    number = [[number stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
+                    NSLog(@"Found phone: %@", number);
+                    
+                    if ([number length] == 10)
+                    {
+                        number = [NSString stringWithFormat:@"+1%@", number];
+                        [phoneNumbers addObject:number];
+                    }
+                    else if ([number length] == 11)
+                    {
+                        number = [NSString stringWithFormat:@"+%@", number];
+                        [phoneNumbers addObject:number];
+                    }
+                    else {
+                        NSLog(@"Phone number is not in appropriate format, discarding.");
+                    }
                 }
             }
             

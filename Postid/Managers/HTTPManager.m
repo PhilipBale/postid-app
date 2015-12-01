@@ -34,6 +34,7 @@ NSString * const kApiLikePost = API_PATH(like_post);
 NSString * const kApiCommentPost = API_PATH(comment_post);
 NSString * const kApiFetchNotifications = API_PATH(fetch_notifications);
 NSString * const kApiMarkNotificationRead = API_PATH(mark_notification_read);
+NSString * const kAPiSearchForFriendsWithNumbers = API_PATH(search_for_friends_with_numbers);
 
 @implementation HTTPManager
 

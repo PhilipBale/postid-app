@@ -264,6 +264,36 @@
 
 + (void)searchAndCacheFriendsWithPhoneNumbers:(NSArray *)numbers completion:(void (^)(BOOL))completion
 {
+    NSDictionary *searchAndCacheFriendsParams = @{@"phone_numbers":@{ @"numbers":numbers}};
+    
+    [[HTTPManager sharedManager] GET:kAPiSearchForFriendsWithNumbers parameters:searchAndCacheFriendsParams success:^(NSDictionary *results) {
+        NSLog(@"Found search for friends results!");
+        
+        User* currentUser = [[PostidManager sharedManager] currentUser];
+        NSInteger currentUserId = [currentUser userId];
+        
+        for (NSDictionary *result in [results objectForKey:@"search_results"])
+        {
+            User *userResult = [self userFromDictionary:result];
+            if ([userResult userId] != currentUserId) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[RLMRealm defaultRealm] beginWriteTransaction];
+                    {
+                        User *realmDownloadedUser = [User createOrUpdateInDefaultRealmWithValue:userResult];
+                        NSLog(@"Adding user to phone friends: %@", realmDownloadedUser);
+                        [currentUser.phoneFriends addObject:realmDownloadedUser];
+                        [User createOrUpdateInDefaultRealmWithValue:currentUser];
+                    }
+                    [[RLMRealm defaultRealm] commitWriteTransaction];
+                });
+            }
+        }
+        if (completion) completion(YES);
+    } failure:^(NSError *error) {
+        if (completion) completion(NO);
+    }];
+    
+    NSLog(@"Attempting to search friends");
     // TODO finish method
 }
 

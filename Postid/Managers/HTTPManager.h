@@ -21,6 +21,7 @@ extern NSString * const kApiLikePost;
 extern NSString * const kApiCommentPost;
 extern NSString * const kApiFetchNotifications;
 extern NSString * const kApiMarkNotificationRead;
+extern NSString * const kAPiSearchForFriendsWithNumbers;
 
 @interface HTTPManager : AFHTTPRequestOperationManager
 
