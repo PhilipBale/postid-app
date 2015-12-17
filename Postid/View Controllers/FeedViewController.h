@@ -11,6 +11,9 @@
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+@property (weak, nonatomic) IBOutlet UILabel *emptyLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *emptyLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *emptyLabel3;
 
 
 @end

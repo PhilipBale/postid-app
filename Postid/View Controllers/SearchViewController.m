@@ -49,6 +49,7 @@ static BOOL phoneAuthenticated;
                         [[PostidManager sharedManager] setCurrentUser:user];
                         [weakSelf.authenticateButton setHidden:YES];
                         [weakSelf.authenticateButton removeFromSuperview];
+                        weakSelf.phoneAuthViewHeight.constant = 0;
                         phoneAuthenticated = true;
                         [weakSelf generalViewLoad];
                         [weakSelf viewDidAppear:YES];
@@ -60,13 +61,20 @@ static BOOL phoneAuthenticated;
         self.authenticateButton.layer.borderColor = PRIMARY_COLOR.CGColor;
         self.authenticateButton.layer.borderWidth = 2;
         self.authenticateButton.layer.cornerRadius = 5;
-        self.authenticateButton.center = self.view.center;
+        // self.authenticateButton.center = self.view.center;
         [self.authenticateButton setTitleColor:PRIMARY_COLOR forState:UIControlStateNormal];
         [self.authenticateButton setBackgroundColor:[UIColor clearColor]];
         [self.authenticateButton setTitle:@"Authenticate Phone to Search" forState:UIControlStateNormal];
-        [self.view addSubview:self.authenticateButton];
+        self.authenticateButton.center = CGPointMake(self.view.frame.size.width  / 2, self.phoneAuthView.frame.size.height / 2);
+        self.phoneAuthViewHeight.constant = self.authenticateButton.frame.size.height;
+        [self.phoneAuthView addSubview:self.authenticateButton];
+        
+        [self generalViewLoad];
+        
     } else {
         phoneAuthenticated = YES;
+        self.phoneAuthViewHeight.constant = 0;
+        self.phoneAuthView.hidden = YES;
         [self generalViewLoad];
     }
 }
@@ -136,48 +144,48 @@ static BOOL phoneAuthenticated;
     
     
     [addressBook loadContacts:^(NSArray <APContact *> *contacts, NSError *error)
-    {
-        if (!error)
-        {
-            NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
-            for (APContact *contact in contacts) {
-                for (APPhone* phone in [contact phones]) {
-                    NSString *number = [[phone.number stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
-                    number = [[number stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
-                    NSLog(@"Found phone: %@", number);
-                    
-                    if ([number length] == 10)
-                    {
-                        number = [NSString stringWithFormat:@"+1%@", number];
-                        [phoneNumbers addObject:number];
-                    }
-                    else if ([number length] == 11)
-                    {
-                        number = [NSString stringWithFormat:@"+%@", number];
-                        [phoneNumbers addObject:number];
-                    }
-                    else {
-                        NSLog(@"Phone number is not in appropriate format, discarding.");
-                    }
-                }
-            }
-            
-            if ([phoneNumbers count] > 0) {
-                [PostidApi searchAndCacheFriendsWithPhoneNumbers:phoneNumbers completion:^(BOOL success) {
-                    if (success) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [self refreshGeneralSearchResults];
-                            [self.resultsTableView reloadData];
-                        });
-                    }
-                }];
-            }
-        }
-        else
-        {
-            // show error
-        }
-    }];
+     {
+         if (!error)
+         {
+             NSMutableArray *phoneNumbers = [[NSMutableArray alloc] init];
+             for (APContact *contact in contacts) {
+                 for (APPhone* phone in [contact phones]) {
+                     NSString *number = [[phone.number stringByReplacingOccurrencesOfString:@"-" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+                     number = [[number stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@""];
+                     NSLog(@"Found phone: %@", number);
+                     
+                     if ([number length] == 10)
+                     {
+                         number = [NSString stringWithFormat:@"+1%@", number];
+                         [phoneNumbers addObject:number];
+                     }
+                     else if ([number length] == 11)
+                     {
+                         number = [NSString stringWithFormat:@"+%@", number];
+                         [phoneNumbers addObject:number];
+                     }
+                     else {
+                         NSLog(@"Phone number is not in appropriate format, discarding.");
+                     }
+                 }
+             }
+             
+             if ([phoneNumbers count] > 0) {
+                 [PostidApi searchAndCacheFriendsWithPhoneNumbers:phoneNumbers completion:^(BOOL success) {
+                     if (success) {
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             [self refreshGeneralSearchResults];
+                             [self.resultsTableView reloadData];
+                         });
+                     }
+                 }];
+             }
+         }
+         else
+         {
+             // show error
+         }
+     }];
 }
 
 - (void)refreshGeneralSearchResults
@@ -196,7 +204,7 @@ static BOOL phoneAuthenticated;
     }
     for (User *user in currentUser.friends)
     {
-       [allUsers addObject:user];
+        [allUsers addObject:user];
     }
     
     for (User *user in currentUser.phoneFriends)
@@ -215,6 +223,9 @@ static BOOL phoneAuthenticated;
             return [[first name] compare:[second name]];
         }
     }] mutableCopy];
+    
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:allUsers];
+    allUsers = [[orderedSet array] mutableCopy];
     
     self.generalSearchResults = allUsers;
     

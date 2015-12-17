@@ -37,6 +37,16 @@
     [super viewWillAppear:animated];
     [self.feedTableView reloadData];
     [self downloadAndRefreshPosts];
+    
+    [self setEmptyLabelsHidden:([self.results count] > 0)];
+    
+}
+
+-(void)setEmptyLabelsHidden:(BOOL)value
+{
+    [self.emptyLabel1 setHidden:value];
+    [self.emptyLabel2 setHidden:value];
+    [self.emptyLabel3 setHidden:value];
 }
 
 - (void)downloadAndRefreshPosts

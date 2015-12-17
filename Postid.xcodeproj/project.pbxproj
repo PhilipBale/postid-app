@@ -27,6 +27,10 @@
 		D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616071B8AD4F700320977 /* CameraStyleKitClass.m */; };
 		D41616171B8AD4F700320977 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160A1B8AD4F700320977 /* CaptureSessionManager.m */; };
 		D41616181B8AD4F700320977 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160C1B8AD4F700320977 /* Constants.m */; };
+		D434E3A21C220EA0006D3533 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A01C220EA0006D3533 /* AppEntryTextField.m */; };
+		D434E3A71C220EB7006D3533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A31C220EB7006D3533 /* LoginViewController.m */; };
+		D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A41C220EB7006D3533 /* AppEntryViewController.m */; };
+		D434E3AB1C220ED2006D3533 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A91C220ED2006D3533 /* SignUpViewController.m */; };
 		D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */; };
 		D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */; };
 		D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */; };
@@ -54,14 +58,6 @@
 		D48B21801B804A8D00F8D659 /* Minimo-Regular-Oblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */; };
 		D48B21811B804A8D00F8D659 /* Minimo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */; };
 		D48B21821B804A8D00F8D659 /* Minimo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */; };
-		D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
-		D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21851B804DCD00F8D659 /* AppEntryViewController.m */; };
-		D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218A1B810A8000F8D659 /* LoginViewController.m */; };
-		D48B218C1B810A8000F8D659 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218A1B810A8000F8D659 /* LoginViewController.m */; };
-		D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218E1B810CB300F8D659 /* AppEntryTextField.m */; };
-		D48B21901B810CB300F8D659 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B218E1B810CB300F8D659 /* AppEntryTextField.m */; };
-		D48B21941B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
-		D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21931B8114CA00F8D659 /* SignUpViewController.m */; };
 		D48B21991B81194100F8D659 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21971B81194100F8D659 /* Fabric.framework */; };
 		D48B219A1B81194100F8D659 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48B21981B81194100F8D659 /* Crashlytics.framework */; };
 		D4981DBF1BEBF38200D0C406 /* UserId.m in Sources */ = {isa = PBXBuildFile; fileRef = D4981DBE1BEBF38200D0C406 /* UserId.m */; };
@@ -136,6 +132,14 @@
 		D416160A1B8AD4F700320977 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		D416160B1B8AD4F700320977 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D416160C1B8AD4F700320977 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D434E3A01C220EA0006D3533 /* AppEntryTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppEntryTextField.m; sourceTree = "<group>"; };
+		D434E3A11C220EA0006D3533 /* AppEntryTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppEntryTextField.h; sourceTree = "<group>"; };
+		D434E3A31C220EB7006D3533 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D434E3A41C220EB7006D3533 /* AppEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppEntryViewController.m; sourceTree = "<group>"; };
+		D434E3A51C220EB7006D3533 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D434E3A61C220EB7006D3533 /* AppEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppEntryViewController.h; sourceTree = "<group>"; };
+		D434E3A91C220ED2006D3533 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
+		D434E3AA1C220ED2006D3533 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = "View Controllers/SignUpViewController.h"; sourceTree = "<group>"; };
 		D43A0FE41BAFB95500CCDA07 /* AddPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPostCell.h; path = Views/AddPostCell.h; sourceTree = "<group>"; };
 		D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPostCell.m; path = Views/AddPostCell.m; sourceTree = "<group>"; };
 		D43A0FE71BAFBA8200CCDA07 /* PostSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostSelectorViewController.h; path = "View Controllers/PostSelectorViewController.h"; sourceTree = "<group>"; };
@@ -165,14 +169,6 @@
 		D48B21701B804A8D00F8D659 /* Minimo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Medium.otf"; sourceTree = "<group>"; };
 		D48B21711B804A8D00F8D659 /* Minimo-Regular-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Regular-Oblique.otf"; sourceTree = "<group>"; };
 		D48B21721B804A8D00F8D659 /* Minimo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minimo-Regular.otf"; sourceTree = "<group>"; };
-		D48B21841B804DCD00F8D659 /* AppEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppEntryViewController.h; path = ../../postid/Postid/AppEntryViewController.h; sourceTree = "<group>"; };
-		D48B21851B804DCD00F8D659 /* AppEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppEntryViewController.m; path = ../../postid/Postid/AppEntryViewController.m; sourceTree = "<group>"; };
-		D48B21891B810A8000F8D659 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../postid/Postid/LoginViewController.h; sourceTree = "<group>"; };
-		D48B218A1B810A8000F8D659 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../postid/Postid/LoginViewController.m; sourceTree = "<group>"; };
-		D48B218D1B810CB300F8D659 /* AppEntryTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppEntryTextField.h; path = ../../postid/Postid/AppEntryTextField.h; sourceTree = "<group>"; };
-		D48B218E1B810CB300F8D659 /* AppEntryTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppEntryTextField.m; path = ../../postid/Postid/AppEntryTextField.m; sourceTree = "<group>"; };
-		D48B21921B8114CA00F8D659 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = "../../postid/Postid/View Controllers/SignUpViewController.h"; sourceTree = "<group>"; };
-		D48B21931B8114CA00F8D659 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "../../postid/Postid/View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D48B21971B81194100F8D659 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D48B21981B81194100F8D659 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D4981DBD1BEBF38200D0C406 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserId.h; path = Models/UserId.h; sourceTree = "<group>"; };
@@ -505,12 +501,12 @@
 		D48B21881B804DD100F8D659 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D48B21841B804DCD00F8D659 /* AppEntryViewController.h */,
-				D48B21851B804DCD00F8D659 /* AppEntryViewController.m */,
-				D48B21891B810A8000F8D659 /* LoginViewController.h */,
-				D48B218A1B810A8000F8D659 /* LoginViewController.m */,
-				D48B21921B8114CA00F8D659 /* SignUpViewController.h */,
-				D48B21931B8114CA00F8D659 /* SignUpViewController.m */,
+				D434E3A91C220ED2006D3533 /* SignUpViewController.m */,
+				D434E3AA1C220ED2006D3533 /* SignUpViewController.h */,
+				D434E3A31C220EB7006D3533 /* LoginViewController.m */,
+				D434E3A41C220EB7006D3533 /* AppEntryViewController.m */,
+				D434E3A51C220EB7006D3533 /* LoginViewController.h */,
+				D434E3A61C220EB7006D3533 /* AppEntryViewController.h */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -518,8 +514,8 @@
 		D48B21911B810D0400F8D659 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D48B218D1B810CB300F8D659 /* AppEntryTextField.h */,
-				D48B218E1B810CB300F8D659 /* AppEntryTextField.m */,
+				D434E3A01C220EA0006D3533 /* AppEntryTextField.m */,
+				D434E3A11C220EA0006D3533 /* AppEntryTextField.h */,
 				D4DA20BE1B94C80900C2E37C /* FeedCell.h */,
 				D4DA20BF1B94C80900C2E37C /* FeedCell.m */,
 				D4B50E771BA5185000DFC644 /* SearchCell.h */,
@@ -826,18 +822,17 @@
 				D4B4863E1BBA3DDA0024D76F /* CardView.m in Sources */,
 				D4B486451BBA41940024D76F /* ZLPanGestureRecognizer.m in Sources */,
 				D41616181B8AD4F700320977 /* Constants.m in Sources */,
-				D48B218B1B810A8000F8D659 /* LoginViewController.m in Sources */,
 				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
 				D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */,
 				D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */,
 				D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */,
-				D48B218F1B810CB300F8D659 /* AppEntryTextField.m in Sources */,
 				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
 				D4981DBF1BEBF38200D0C406 /* UserId.m in Sources */,
 				D4DA20BD1B94C69300C2E37C /* GenericNavigationController.m in Sources */,
 				D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */,
+				D434E3AB1C220ED2006D3533 /* SignUpViewController.m in Sources */,
 				D4DA20C01B94C80900C2E37C /* FeedCell.m in Sources */,
-				D48B21941B8114CA00F8D659 /* SignUpViewController.m in Sources */,
+				D434E3A71C220EB7006D3533 /* LoginViewController.m in Sources */,
 				D416160E1B8AD4F700320977 /* CameraDismissButton.m in Sources */,
 				D4DA20C31B94CC9F00C2E37C /* FeedViewController.m in Sources */,
 				D4EA655E1B9DFCAC0074341E /* PostPreviewViewController.m in Sources */,
@@ -847,11 +842,12 @@
 				D4B486481BBA4AB20024D76F /* VotingView.m in Sources */,
 				D41615EE1B8AA02600320977 /* CameraViewController.m in Sources */,
 				D416160F1B8AD4F700320977 /* CameraFlashButton.m in Sources */,
-				D48B21861B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
 				D4B486421BBA414B0024D76F /* ZLSwipeableView.m in Sources */,
 				D41615E11B88297800320977 /* HTTPManager.m in Sources */,
+				D434E3A21C220EA0006D3533 /* AppEntryTextField.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
+				D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 				D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */,
 				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
@@ -868,10 +864,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48B215C1B7FFF8500F8D659 /* PostidTests.m in Sources */,
-				D48B21951B8114CA00F8D659 /* SignUpViewController.m in Sources */,
-				D48B21871B804DCD00F8D659 /* AppEntryViewController.m in Sources */,
-				D48B21901B810CB300F8D659 /* AppEntryTextField.m in Sources */,
-				D48B218C1B810A8000F8D659 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

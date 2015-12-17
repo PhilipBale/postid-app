@@ -16,5 +16,7 @@
 @property (strong, nonatomic) DGTAuthenticateButton *authenticateButton;
 
 @property (strong, nonatomic) IBOutlet UITableView *resultsTableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *phoneAuthViewHeight;
+@property (weak, nonatomic) IBOutlet UIView *phoneAuthView;
 
 @end
