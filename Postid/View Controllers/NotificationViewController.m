@@ -43,6 +43,11 @@
     // Do any additional setup after loading the view.
     
     self.results = [[Notification objectsWhere:@"userId == %li", currentUser.userId] sortedResultsUsingProperty:@"notificationId" ascending:NO];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+    @{NSForegroundColorAttributeName:[UIColor whiteColor],
+      NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
+    [self.navigationItem setTitle:@"Postid"];
 }
 
 - (void)viewWillAppear:(BOOL)animated

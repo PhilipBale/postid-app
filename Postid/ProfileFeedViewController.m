@@ -1,27 +1,28 @@
 //
-//  FeedViewController.m
+//  ProfileFeedViewController.m
 //  Postid
 //
-//  Created by Philip Bale on 8/31/15.
-//  Copyright (c) 2015 Philip Bale. All rights reserved.
+//  Created by Philip Bale on 12/17/15.
+//  Copyright © 2015 Philip Bale. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "ProfileFeedViewController.h"
 #import "FeedCell.h"
 #import "PostidApi.h"
 #import "PostidManager.h"
 #import <Realm/RLMRealm.h>
+#import "UserId.h"
 
-@interface FeedViewController ()
+@interface ProfileFeedViewController ()
 {
     CGFloat cellHeight;
 }
 
-@property (nonatomic, strong) RLMResults* results;
+@property (nonatomic, strong) NSMutableArray* results;
 
 @end
 
-@implementation FeedViewController
+@implementation ProfileFeedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +30,31 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
-    self.results = [[Post objectsWhere:@"approved == YES"] sortedResultsUsingProperty:@"postId" ascending:NO];
+    
+    NSInteger userToDisplayId = [[PostidManager sharedManager] currentUser].userId;
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"approved == YES"];
+    RLMResults *rlmResults = [[Post objectsWithPredicate:searchPredicate] sortedResultsUsingProperty:@"postId" ascending:NO];
+    self.results = [[NSMutableArray alloc] init];
+    for (Post* post in rlmResults)
+    {
+        BOOL include = NO;
+        for (UserId *userId in post.postidForIds)
+        {
+            if (userId.userId == userToDisplayId) {
+                include = YES;
+            }
+        }
+        
+        if (include)
+        {
+            [self.results addObject:post];
+        }
+    }
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],
+       NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
+    [self.navigationItem setTitle:@"Postid"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,22 +62,7 @@
     [super viewWillAppear:animated];
     [self.feedTableView reloadData];
     [self downloadAndRefreshPosts];
-    
-    [self setEmptyLabelsHidden:([self.results count] > 0)];
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[UIColor whiteColor],
-       NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
-    [self.navigationItem setTitle:@"Postid"];
-    
-}
-
--(void)setEmptyLabelsHidden:(BOOL)value
-{
-    [self.emptyLabel1 setHidden:value];
-    [self.emptyLabel2 setHidden:value];
-    [self.emptyLabel3 setHidden:value];
-}
+} 
 
 - (void)downloadAndRefreshPosts
 {
@@ -88,7 +98,10 @@
     
     Post* post = [self.results objectAtIndex:indexPath.row];
     cell.post = post;
-    cell.parent = self;
+    
+    [cell.heartButton setEnabled:NO];
+    [cell.fireButton setEnabled:NO];
+    [cell.smirkButton setEnabled:NO]; 
     
     return cell;
 }

@@ -172,6 +172,7 @@
                     default:
                         break;
                 }
+                [User createOrUpdateInDefaultRealmWithValue:user];
             }
             [[RLMRealm defaultRealm] commitWriteTransaction];
         }

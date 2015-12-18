@@ -31,6 +31,7 @@
 		D434E3A71C220EB7006D3533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A31C220EB7006D3533 /* LoginViewController.m */; };
 		D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A41C220EB7006D3533 /* AppEntryViewController.m */; };
 		D434E3AB1C220ED2006D3533 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A91C220ED2006D3533 /* SignUpViewController.m */; };
+		D434E3AE1C238032006D3533 /* ProfileFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3AD1C238032006D3533 /* ProfileFeedViewController.m */; };
 		D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */; };
 		D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */; };
 		D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */; };
@@ -140,6 +141,8 @@
 		D434E3A61C220EB7006D3533 /* AppEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppEntryViewController.h; sourceTree = "<group>"; };
 		D434E3A91C220ED2006D3533 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = "View Controllers/SignUpViewController.m"; sourceTree = "<group>"; };
 		D434E3AA1C220ED2006D3533 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = "View Controllers/SignUpViewController.h"; sourceTree = "<group>"; };
+		D434E3AC1C238032006D3533 /* ProfileFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileFeedViewController.h; sourceTree = "<group>"; };
+		D434E3AD1C238032006D3533 /* ProfileFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileFeedViewController.m; sourceTree = "<group>"; };
 		D43A0FE41BAFB95500CCDA07 /* AddPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPostCell.h; path = Views/AddPostCell.h; sourceTree = "<group>"; };
 		D43A0FE51BAFB95500CCDA07 /* AddPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPostCell.m; path = Views/AddPostCell.m; sourceTree = "<group>"; };
 		D43A0FE71BAFBA8200CCDA07 /* PostSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostSelectorViewController.h; path = "View Controllers/PostSelectorViewController.h"; sourceTree = "<group>"; };
@@ -484,6 +487,8 @@
 				D4DA20B21B93CEFF00C2E37C /* SearchViewController.m */,
 				D4DA20C11B94CC9F00C2E37C /* FeedViewController.h */,
 				D4DA20C21B94CC9F00C2E37C /* FeedViewController.m */,
+				D434E3AC1C238032006D3533 /* ProfileFeedViewController.h */,
+				D434E3AD1C238032006D3533 /* ProfileFeedViewController.m */,
 				D4EA655C1B9DFCAC0074341E /* PostPreviewViewController.h */,
 				D4EA655D1B9DFCAC0074341E /* PostPreviewViewController.m */,
 				D45A2F3D1B9FB9E800CCB099 /* FriendSearchController.h */,
@@ -847,6 +852,7 @@
 				D434E3A21C220EA0006D3533 /* AppEntryTextField.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
+				D434E3AE1C238032006D3533 /* ProfileFeedViewController.m in Sources */,
 				D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 				D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */,
