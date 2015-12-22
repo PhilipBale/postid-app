@@ -51,6 +51,8 @@
         }
     }
     
+    [self.noneProfiledLabel setHidden:([self.results count] > 0)];
+    
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],
        NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];

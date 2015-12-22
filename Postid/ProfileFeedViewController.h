@@ -11,5 +11,6 @@
 @interface ProfileFeedViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
+@property (weak, nonatomic) IBOutlet UILabel *noneProfiledLabel;
 
 @end

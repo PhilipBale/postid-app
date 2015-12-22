@@ -27,6 +27,9 @@
             <string>Minimo-Medium</string>
             <string>Minimo-Medium</string>
         </mutableArray>
+        <mutableArray key="Minimo-Regular.otf">
+            <string>Minimo-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--App Entry View Controller-->
@@ -824,19 +827,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts have been profiled yet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDD-hE-iPC">
                                 <rect key="frame" x="16" y="84" width="288" height="48"/>
                                 <fontDescription key="fontDescription" name="Minimo-Light" family="Minimo" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for friends and start posting for them" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bT9-y4-cDM">
                                 <rect key="frame" x="16" y="236" width="288" height="48"/>
                                 <fontDescription key="fontDescription" name="Minimo-Light" family="Minimo" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left or right to access camera" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbC-RY-EPh">
                                 <rect key="frame" x="16" y="587" width="288" height="14"/>
                                 <fontDescription key="fontDescription" name="Minimo-Light" family="Minimo" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1559,9 +1562,9 @@
                                                     <exclude reference="cMU-jt-jj2"/>
                                                     <exclude reference="wEY-5e-ZtB"/>
                                                     <exclude reference="AT6-aU-9zf"/>
+                                                    <exclude reference="Je1-Hq-LWy"/>
                                                     <exclude reference="OT8-ap-ptP"/>
                                                     <exclude reference="uBq-Ea-5v6"/>
-                                                    <exclude reference="Je1-Hq-LWy"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1580,20 +1583,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No posts have been profiled yet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uox-i8-qca">
+                                <rect key="frame" x="16" y="324.5" width="288" height="52"/>
+                                <fontDescription key="fontDescription" name="Minimo-Regular" family="Minimo" pointSize="26"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uDm-j6-2BK" secondAttribute="trailing" id="22g-Gr-aTH"/>
+                            <constraint firstItem="uox-i8-qca" firstAttribute="leading" secondItem="F7K-Qa-PfU" secondAttribute="leadingMargin" id="FWW-uZ-w96"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uox-i8-qca" secondAttribute="trailing" id="GJk-XL-A9K"/>
                             <constraint firstItem="uDm-j6-2BK" firstAttribute="leading" secondItem="F7K-Qa-PfU" secondAttribute="leading" id="Iw8-gn-mBw"/>
                             <constraint firstItem="uDm-j6-2BK" firstAttribute="top" secondItem="Vk5-DH-Ntt" secondAttribute="bottom" id="LmF-Ta-ID1"/>
                             <constraint firstItem="uDm-j6-2BK" firstAttribute="leading" secondItem="F7K-Qa-PfU" secondAttribute="leadingMargin" id="M3g-oA-YXz"/>
                             <constraint firstItem="CxG-rW-Gwp" firstAttribute="top" secondItem="uDm-j6-2BK" secondAttribute="bottom" id="OJ0-gL-DvR"/>
+                            <constraint firstItem="uox-i8-qca" firstAttribute="centerX" secondItem="F7K-Qa-PfU" secondAttribute="centerX" id="Td9-sW-kSX"/>
+                            <constraint firstItem="uox-i8-qca" firstAttribute="centerY" secondItem="F7K-Qa-PfU" secondAttribute="centerY" id="bDB-FY-NrY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uDm-j6-2BK" secondAttribute="trailing" id="h5n-hX-WfQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="h5n-hX-WfQ"/>
                                 <exclude reference="M3g-oA-YXz"/>
+                                <exclude reference="h5n-hX-WfQ"/>
+                                <exclude reference="Td9-sW-kSX"/>
                             </mask>
                         </variation>
                     </view>
@@ -1602,6 +1616,7 @@
                     <size key="freeformSize" width="320" height="700"/>
                     <connections>
                         <outlet property="feedTableView" destination="uDm-j6-2BK" id="Iat-md-TD0"/>
+                        <outlet property="noneProfiledLabel" destination="uox-i8-qca" id="HqH-og-yIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhP-8y-bif" userLabel="First Responder" sceneMemberID="firstResponder"/>
