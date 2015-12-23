@@ -25,6 +25,7 @@
 NSString * const kApiLoginOrRegisterPath = API_PATH(login_or_register_user);
 NSString * const kApiLoginWithTokenPath = API_PATH(login_with_token);
 NSString * const kApiUpdatePhoneNumber = API_PATH(update_phone_number);
+NSString * const kApiUpdateImageUrl = API_PATH(update_image_url);
 NSString * const kApiSearchForFriends = API_PATH(search_for_friends);
 NSString * const kApiAddFriend = API_PATH(add_friend);
 NSString * const kApiDownloadUser = API_PATH(download_user);

@@ -24,6 +24,7 @@
     self.photoButton.layer.cornerRadius = 5;
     self.photoButton.layer.borderWidth = 1;
     self.photoButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.photoButton.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -72,18 +73,41 @@
         [self.signupActivityIndicatorView startAnimating];
         [self.signupButton setEnabled:NO];
         
+        
         __weak typeof(self) weakSelf = self;
+        
         [PostidApi loginOrRegisterWithEmail:self.emailTextField.text password:self.passwordTextField.text firstName:self.firstNameTextField.text lastName:self.lastNameTextField.text username:self.usernameTextField.text isLogin:NO completion:^(BOOL success, User *user, NSDictionary *friendData) {
-
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.signupActivityIndicatorView stopAnimating];
-                [self.signupButton setEnabled:YES];
-            });
             
             if (success) {
-                [[PostidManager sharedManager] setCurrentUser:user];
-                [[PostidManager sharedManager] cacheFriendsData:friendData];
-                [self performSegueWithIdentifier:@"login" sender:self];
+                [[PostidManager sharedManager] uploadProfilePhoto:UIImageJPEGRepresentation([self.photoButton backgroundImageForState:UIControlStateNormal], 0.8) completion:^(BOOL success, NSString *imageName) {
+                    
+                    
+                    [[PostidManager sharedManager] setCurrentUser:user]; // Needed to set HTTP headers
+
+                    if (success && [imageName length] > 6) {
+                        user.imageUrl = imageName;
+                        [PostidApi updateImageUrl:imageName forToken:user.token completion:^(BOOL success, User *newUser) {
+                            if (success) {
+                                NSLog(@"Successfully set user image for new signup");
+                            }
+                        }];
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [weakSelf.signupActivityIndicatorView stopAnimating];
+                        [self.signupButton setEnabled:YES];
+                        
+                        [[PostidManager sharedManager] setCurrentUser:user];
+                        [[PostidManager sharedManager] cacheFriendsData:friendData];
+                        
+                        [self performSegueWithIdentifier:@"login" sender:self];
+                    });
+                }];
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.signupActivityIndicatorView stopAnimating];
+                    [weakSelf.signupButton setEnabled:YES];
+                });
             }
         }];
     }
@@ -93,17 +117,17 @@
 {
     if (self.firstNameTextField.text.length < 2)
     {
-        [GeneralUtilities makeAlertWithTitle:@"Invalid first name" message:@"Please enter a valid name!" viewController:self];
+        [GeneralUtilities makeAlertWithTitle:@"Invalid first name" message:@"Please enter a valid first name!" viewController:self];
         return NO;
     }
     else if (self.lastNameTextField.text.length < 2)
     {
-        [GeneralUtilities makeAlertWithTitle:@"Invalid last name" message:@"Please enter a valid name!" viewController:self];
+        [GeneralUtilities makeAlertWithTitle:@"Invalid last name" message:@"Please enter a valid last name!" viewController:self];
         return NO;
     }
     else if (self.usernameTextField.text.length < 2)
     {
-        [GeneralUtilities makeAlertWithTitle:@"Invalid username" message:@"Please enter a valid name!" viewController:self];
+        [GeneralUtilities makeAlertWithTitle:@"Invalid username" message:@"Please enter a valid username!" viewController:self];
         return NO;
     }
     else if (![self validateEmail:self.emailTextField.text])
@@ -114,6 +138,12 @@
     else if (self.passwordTextField.text.length < 6)
     {
         [GeneralUtilities makeAlertWithTitle:@"Password too short" message:@"Please make password at least 6 characters long" viewController:self];
+        return NO;
+    }
+    else if ([self.photoButton backgroundImageForState:UIControlStateNormal] == nil)
+    {
+        
+        [GeneralUtilities makeAlertWithTitle:@"Profile image not set" message:@"Please choose a profile image" viewController:self];
         return NO;
     }
     

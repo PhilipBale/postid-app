@@ -39,6 +39,7 @@
         currentUser.pendingFriends = oldUser.pendingFriends;
         currentUser.requestedFriends = oldUser.requestedFriends;
         currentUser.phoneFriends = oldUser.phoneFriends;
+        currentUser.imageUrl = oldUser.imageUrl;
     }
     
     _currentUser = currentUser;
@@ -276,6 +277,40 @@
         completion(false);
         return nil;
     }];
+}
+
+- (void)uploadProfilePhoto:(NSData *)imageData completion:(void (^)(BOOL success, NSString *imageName))completion
+{
+    NSLog(@"Attempting to upload profile photo");
+    
+    AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
+    AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
+    
+    
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"temp.jpg"];
+    [imageData writeToFile:path atomically:YES];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
+    
+    NSString *imageKey = [NSString stringWithFormat:@"profile_photos/%@.jpg", [[NSUUID UUID] UUIDString]];
+    uploadRequest.bucket = @"postidimages";
+    uploadRequest.key = imageKey;
+    uploadRequest.contentType = @"image/jpeg";
+    uploadRequest.body = url;
+    
+    [[transferManager upload:uploadRequest] continueWithExecutor:[AWSExecutor mainThreadExecutor] withBlock:^id(AWSTask *task) {
+        if (task.error) {
+            NSLog(@"%@", task.error);
+        }else{
+            if (task.result) {
+                AWSS3TransferManagerUploadOutput *uploadOutput = task.result;
+                NSLog(@"Image successfully uploaded w/ etag: %@", [uploadOutput ETag]);
+                completion(YES, imageKey);
+            }
+        }
+        completion(NO, @"nil");
+        return nil;
+    }];
+
 }
 
 - (void)cacheNotifications:(NSArray *)notifications

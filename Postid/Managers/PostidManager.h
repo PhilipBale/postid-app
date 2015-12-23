@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (User *)currentUserFromRealm;
 - (User *)userFromCacheWithId:(NSInteger)userId;
 - (void)cacheFriendsData:(NSDictionary *)dictionary;
+- (void)uploadProfilePhoto:(NSData *)imageData completion:(void (^)(BOOL success, NSString *imageName))completion;
 
 - (Post *)postFromCacheWithId:(NSNumber *)postId;
 - (Post *)postFromCacheWithIntegerId:(NSInteger)postId;

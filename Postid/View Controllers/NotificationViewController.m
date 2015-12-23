@@ -27,7 +27,6 @@
     self.notificationTableView.delegate = self;
     self.notificationTableView.dataSource = self;
     
-    self.userImageView.layer.cornerRadius = self.userImageView.bounds.size.height + 10;
     self.userImageView.clipsToBounds = YES;
     
     self.friendButton.layer.cornerRadius = 8;
@@ -45,9 +44,18 @@
     self.results = [[Notification objectsWhere:@"userId == %li", currentUser.userId] sortedResultsUsingProperty:@"notificationId" ascending:NO];
     
     [self.navigationController.navigationBar setTitleTextAttributes:
-    @{NSForegroundColorAttributeName:[UIColor whiteColor],
-      NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],
+       NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
     [self.navigationItem setTitle:@"Postid"];
+    
+    if ([[currentUser imageUrl] length] > 0) {
+        NSString *url = [NSString stringWithFormat:@"https://s3.amazonaws.com/postidimages/%@", currentUser.imageUrl];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.userImageView sd_setImageWithURL:[NSURL URLWithString:url]
+                                  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        });
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,6 +63,12 @@
     [super viewWillAppear:animated];
     [self.notificationTableView reloadData];
     [self downloadAndRefreshNotifications];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.userImageView.layer.cornerRadius = self.userImageView.frame.size.height / 2;
 }
 
 - (void)downloadAndRefreshNotifications
@@ -71,7 +85,7 @@
             
             //TODO set new max post id, will get intensive as app gets popular
         }
-        dispatch_async(dispatch_get_main_queue(), ^{ 
+        dispatch_async(dispatch_get_main_queue(), ^{
             [self.notificationTableView reloadData];
         });
     }];

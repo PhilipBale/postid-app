@@ -1092,10 +1092,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lebron" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-dk-wsL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lebron" translatesAutoresizingMaskIntoConstraints="NO" id="ceZ-dk-wsL">
                                 <rect key="frame" x="126" y="84" width="68" height="68"/>
+                                <color key="backgroundColor" red="0.078372677429999996" green="0.378411583" blue="0.49473248110000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ceZ-dk-wsL" secondAttribute="height" multiplier="1:1" id="RH9-3G-Coa"/>
+                                    <constraint firstAttribute="width" constant="68" id="bXj-iL-ydV"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8l-tZ-dVB">
@@ -1125,7 +1127,7 @@
                                     <constraint firstItem="Pib-5b-n86" firstAttribute="top" secondItem="g8l-tZ-dVB" secondAttribute="top" id="utT-HF-5zk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ey-Vo-3Sv" userLabel="Post Profile Button">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ey-Vo-3Sv" userLabel="Post Profile Button">
                                 <rect key="frame" x="126" y="84" width="68" height="68"/>
                                 <connections>
                                     <segue destination="ShZ-Wt-xfu" kind="show" id="VYN-ES-QDi"/>
@@ -1160,14 +1162,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="288" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notification Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-eS-vIQ">
-                                                    <rect key="frame" x="8" y="8" width="264.5" height="17.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-eS-vIQ">
+                                                    <rect key="frame" x="8" y="8" width="232.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61g-gZ-jhf">
-                                                    <rect key="frame" x="277.5" y="0.0" width="34.5" height="34.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61g-gZ-jhf">
+                                                    <rect key="frame" x="245.5" y="0.0" width="34.5" height="34.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="61g-gZ-jhf" secondAttribute="height" multiplier="1:1" id="Op9-15-7TA"/>

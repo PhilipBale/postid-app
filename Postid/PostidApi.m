@@ -45,7 +45,7 @@
      }];
 }
 
-+ (void)updatePhoneNumber:(NSString *)phoneNumber forToken:(NSString *)token completion:(void (^)(BOOL, User *))completion;
++ (void)updatePhoneNumber:(NSString *)phoneNumber forToken:(NSString *)token completion:(void (^)(BOOL, User *))completion
 {
     NSDictionary *updatePhoneNumberParams = @{@"user":@{ @"token":token, @"phone_number":phoneNumber}};
     [[HTTPManager sharedManager] POST:kApiUpdatePhoneNumber parameters:updatePhoneNumberParams success:^(NSDictionary *responseObject)
@@ -57,6 +57,25 @@
      } failure:^(NSError *error) {
          if (completion) completion(NO, nil);
      }];
+}
+
++ (void)updateImageUrl:(NSString *)imageUrl forToken:(NSString *)token completion:(void (^)(BOOL, User *))completion
+{
+    if ([imageUrl length] > 5 && ![imageUrl isEqualToString:@"nil"]) {
+        
+        NSDictionary *updateImageUrlParams = @{@"user":@{ @"token":token, @"image_url":imageUrl}};
+        [[HTTPManager sharedManager] POST:kApiUpdateImageUrl parameters:updateImageUrlParams success:^(NSDictionary *responseObject)
+         {
+             NSDictionary *response = [responseObject objectForKey:@"user"];
+             User *user = [self userFromDictionary:response];
+             
+             if (completion) completion(YES, user);
+         } failure:^(NSError *error) {
+             if (completion) completion(NO, nil);
+         }];
+    } else {
+        if (completion) completion(NO, nil);
+    }
 }
 
 + (void)searchForFriends:(NSString *)query forToken:(NSString *)token completion:(void (^)(BOOL, NSArray *results))completion
