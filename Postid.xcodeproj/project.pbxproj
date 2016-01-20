@@ -65,6 +65,7 @@
 		D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */; };
 		D4ACC8F11BB04B95008B3C2E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F01BB04B95008B3C2E /* Post.m */; };
 		D4ACC8F41BB06A10008B3C2E /* PostidTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */; };
+		D4AFA9F51C4FCB8800385AEC /* FriendListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFA9F41C4FCB8800385AEC /* FriendListTableViewController.m */; };
 		D4B486391BB99F820024D76F /* VotingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486381BB99F820024D76F /* VotingViewController.m */; };
 		D4B4863E1BBA3DDA0024D76F /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4863D1BBA3DDA0024D76F /* CardView.m */; };
 		D4B486421BBA414B0024D76F /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B486411BBA414B0024D76F /* ZLSwipeableView.m */; };
@@ -182,6 +183,8 @@
 		D4ACC8F01BB04B95008B3C2E /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
 		D4ACC8F21BB06A10008B3C2E /* PostidTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostidTabBarController.h; path = "View Controllers/PostidTabBarController.h"; sourceTree = "<group>"; };
 		D4ACC8F31BB06A10008B3C2E /* PostidTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostidTabBarController.m; path = "View Controllers/PostidTabBarController.m"; sourceTree = "<group>"; };
+		D4AFA9F31C4FCB8800385AEC /* FriendListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendListTableViewController.h; path = "View Controllers/FriendListTableViewController.h"; sourceTree = "<group>"; };
+		D4AFA9F41C4FCB8800385AEC /* FriendListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendListTableViewController.m; path = "View Controllers/FriendListTableViewController.m"; sourceTree = "<group>"; };
 		D4B486371BB99F820024D76F /* VotingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VotingViewController.h; path = "View Controllers/VotingViewController.h"; sourceTree = "<group>"; };
 		D4B486381BB99F820024D76F /* VotingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VotingViewController.m; path = "View Controllers/VotingViewController.m"; sourceTree = "<group>"; };
 		D4B4863C1BBA3DDA0024D76F /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Vendor/CardView.h; sourceTree = "<group>"; };
@@ -499,6 +502,8 @@
 				D4B486381BB99F820024D76F /* VotingViewController.m */,
 				D4A553AE1BBACAB700B3A18A /* NotificationViewController.h */,
 				D4A553AF1BBACAB700B3A18A /* NotificationViewController.m */,
+				D4AFA9F31C4FCB8800385AEC /* FriendListTableViewController.h */,
+				D4AFA9F41C4FCB8800385AEC /* FriendListTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				D4B486421BBA414B0024D76F /* ZLSwipeableView.m in Sources */,
 				D41615E11B88297800320977 /* HTTPManager.m in Sources */,
 				D434E3A21C220EA0006D3533 /* AppEntryTextField.m in Sources */,
+				D4AFA9F51C4FCB8800385AEC /* FriendListTableViewController.m in Sources */,
 				D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */,
 				D41616101B8AD4F700320977 /* CameraFocalReticule.m in Sources */,
 				D434E3AE1C238032006D3533 /* ProfileFeedViewController.m in Sources */,

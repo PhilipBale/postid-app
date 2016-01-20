@@ -16,11 +16,16 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.titleBlocker = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 80)];
+    [self.titleBlocker setBackgroundColor:[UIColor blackColor]];
+    
     self.postTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,25, [[UIScreen mainScreen] bounds].size.width, 40)];
     
     [self.postTitle setTextAlignment:NSTextAlignmentCenter];
     [self.postTitle setText:@"Test preview"];
     [self.postTitle setTextColor:[UIColor whiteColor]];
+    
+    [self addSubview:self.titleBlocker];
     [self addSubview:self.postTitle];
     
     NSLog(@"Initializing voting view");

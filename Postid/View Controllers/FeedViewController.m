@@ -10,6 +10,7 @@
 #import "FeedCell.h"
 #import "PostidApi.h"
 #import "PostidManager.h"
+#import "ProfileFeedViewController.h"
 #import <Realm/RLMRealm.h>
 
 @interface FeedViewController ()
@@ -91,6 +92,21 @@
     cell.parent = self;
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // PhotoFeedViewController
+    //TODO pop up users timelinefeed
+    NSLog(@"Selected row touched");
+    
+    Post *post = [self.results objectAtIndex:indexPath.row];
+    User *user = [[post postidForIds] firstObject];
+    
+    ProfileFeedViewController *profileFeedViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhotoFeedViewController"];
+    [profileFeedViewController setDisplayUserId:user.userId];
+    [self.navigationController pushViewController:profileFeedViewController animated:YES];
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

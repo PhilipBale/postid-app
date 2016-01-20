@@ -15,5 +15,6 @@
 
 @property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) UILabel *postTitle;
+@property (nonatomic, strong) UIView *titleBlocker;
 
 @end

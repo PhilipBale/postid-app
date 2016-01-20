@@ -90,9 +90,7 @@
         });
     }];
 }
-
-- (IBAction)friendButtonPressed:(id)sender {
-}
+ 
 
 - (IBAction)logoutButtonPressed:(id)sender {
     [[PostidManager sharedManager] logout];

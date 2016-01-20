@@ -29,6 +29,11 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL *stop) {
+        vc.title = nil;
+        vc.tabBarItem.imageInsets = UIEdgeInsetsMake(3, 0, -3, 0);
+    }];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated

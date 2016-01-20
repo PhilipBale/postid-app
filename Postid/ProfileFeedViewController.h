@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (weak, nonatomic) IBOutlet UILabel *noneProfiledLabel;
 
+@property (nonatomic) NSInteger displayUserId;
+
 @end

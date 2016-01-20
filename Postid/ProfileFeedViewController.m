@@ -30,8 +30,14 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
+    //TODO user profile feed view controlelr if needed
     
     NSInteger userToDisplayId = [[PostidManager sharedManager] currentUser].userId;
+    if (self.displayUserId > 0) {
+        userToDisplayId = self.displayUserId;
+    }
+    
+    
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"approved == YES"];
     RLMResults *rlmResults = [[Post objectsWithPredicate:searchPredicate] sortedResultsUsingProperty:@"postId" ascending:NO];
     self.results = [[NSMutableArray alloc] init];

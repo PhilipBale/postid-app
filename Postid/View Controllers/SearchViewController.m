@@ -16,6 +16,7 @@
 #import <APAddressBook/APPhone.h>
 #import <APAddressBook/APContact.h>
 #import "PostidApi.h"
+#import "ProfileFeedViewController.h"
 
 @interface SearchViewController () <UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 {
@@ -268,6 +269,25 @@ static BOOL phoneAuthenticated;
             [self.resultsTableView reloadData];
         }
     }];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // PhotoFeedViewController
+    //TODO pop up users timelinefeed
+    NSLog(@"Selected row touched");
+    
+    User *user;
+    if (self.searchController.isActive && !self.searchController.isBeingDismissed && ![self.searchController.searchBar.text isEqualToString:@""])
+    {
+        user = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        user = [self.generalSearchResults objectAtIndex:indexPath.row];
+    }
+    
+    ProfileFeedViewController *profileFeedViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PhotoFeedViewController"];
+    [profileFeedViewController setDisplayUserId:user.userId];
+    [self.navigationController pushViewController:profileFeedViewController animated:YES];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
