@@ -1,0 +1,1 @@
+../../../MBSegueCollection/MBSegueCollection/MBGateOpenOutsideSegue.h

@@ -36,6 +36,7 @@
 		D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A0FE81BAFBA8200CCDA07 /* PostSelectorViewController.m */; };
 		D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44EE92D1B8BED3F0091D1D5 /* ProfileViewController.m */; };
 		D45A2F3F1B9FB9E800CCB099 /* FriendSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D45A2F3E1B9FB9E800CCB099 /* FriendSearchController.m */; };
+		D46639CB1C5A348900EEEDC3 /* LeftRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D46639CA1C5A348900EEEDC3 /* LeftRightSegue.m */; };
 		D47431A51B8BAAE60014C6CF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D47431A41B8BAAE60014C6CF /* libc++.dylib */; };
 		D48B21421B7FFF8500F8D659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21411B7FFF8500F8D659 /* main.m */; };
 		D48B21451B7FFF8500F8D659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D48B21441B7FFF8500F8D659 /* AppDelegate.m */; };
@@ -153,6 +154,8 @@
 		D4533EE01B8AD9DF00D2BFF4 /* Postid-PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Postid-PrefixHeader.pch"; path = "Core/Postid-PrefixHeader.pch"; sourceTree = "<group>"; };
 		D45A2F3D1B9FB9E800CCB099 /* FriendSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendSearchController.h; path = "View Controllers/FriendSearchController.h"; sourceTree = "<group>"; };
 		D45A2F3E1B9FB9E800CCB099 /* FriendSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendSearchController.m; path = "View Controllers/FriendSearchController.m"; sourceTree = "<group>"; };
+		D46639C91C5A348900EEEDC3 /* LeftRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftRightSegue.h; path = Views/LeftRightSegue.h; sourceTree = "<group>"; };
+		D46639CA1C5A348900EEEDC3 /* LeftRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftRightSegue.m; path = Views/LeftRightSegue.m; sourceTree = "<group>"; };
 		D47431A41B8BAAE60014C6CF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		D48B213C1B7FFF8500F8D659 /* Postid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Postid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48B21401B7FFF8500F8D659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -352,6 +355,15 @@
 			path = "Model Classes";
 			sourceTree = "<group>";
 		};
+		D46639C81C5A347500EEEDC3 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				D46639C91C5A348900EEEDC3 /* LeftRightSegue.h */,
+				D46639CA1C5A348900EEEDC3 /* LeftRightSegue.m */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
 		D48B21331B7FFF8500F8D659 = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +444,7 @@
 		D48B21661B8045A300F8D659 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D46639C81C5A347500EEEDC3 /* Segues */,
 				D48B21911B810D0400F8D659 /* Views */,
 				D48B21831B804D8400F8D659 /* View Controllers */,
 				D48B21491B7FFF8500F8D659 /* Main.storyboard */,
@@ -862,6 +875,7 @@
 				D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */,
 				D48B21421B7FFF8500F8D659 /* main.m in Sources */,
 				D4EFE3F61BF3016A004D21A0 /* Notification.m in Sources */,
+				D46639CB1C5A348900EEEDC3 /* LeftRightSegue.m in Sources */,
 				D4DA20B31B93CEFF00C2E37C /* SearchViewController.m in Sources */,
 				D4B50E791BA5185000DFC644 /* SearchCell.m in Sources */,
 				D43A0FE91BAFBA8200CCDA07 /* PostSelectorViewController.m in Sources */,

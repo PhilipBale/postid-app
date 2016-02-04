@@ -23,11 +23,15 @@
     self.doneButton.layer.borderWidth = self.redoButton.layer.borderWidth;
     self.doneButton.layer.borderColor = self.redoButton.layer.borderColor;
     self.doneButton.layer.cornerRadius = self.redoButton.layer.cornerRadius;
+    
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES];
     UIImage *image = [UIImage imageWithData:[[PostidManager sharedManager] lastImageData]];
     [self.previewImage setImage: image];
 }

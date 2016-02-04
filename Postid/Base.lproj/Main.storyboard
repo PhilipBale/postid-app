@@ -260,8 +260,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="yfp-xt-3Ny" kind="show" identifier="mainTabBar" id="1UI-sh-dGC"/>
-                        <segue destination="hiv-Gy-rQG" kind="show" identifier="previewImage" id="GPW-MZ-PgI"/>
+                        <segue destination="yfp-xt-3Ny" kind="show" identifier="mainTabBar" customClass="MBFadeSegue" id="1UI-sh-dGC"/>
+                        <segue destination="dZP-du-Kqy" kind="show" identifier="previewImage" id="0Sl-1A-1b8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU1-6w-UF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,6 +328,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="EbX-OP-EEI"/>
                     <connections>
                         <outlet property="doneButton" destination="urY-ug-5qa" id="eyP-iA-Fmm"/>
                         <outlet property="previewImage" destination="N6C-VL-PRl" id="20e-XY-Vag"/>
@@ -338,7 +339,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAg-8k-r58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="1124"/>
+            <point key="canvasLocation" x="1528" y="1812"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iOa-qy-y5b">
+            <objects>
+                <navigationController id="dZP-du-Kqy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jbv-1x-3cP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hiv-Gy-rQG" kind="relationship" relationship="rootViewController" id="zAD-gY-KdW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIu-Vb-H0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="1187"/>
         </scene>
         <!--Post Selector View Controller-->
         <scene sceneID="u5L-uA-3fY">
@@ -366,8 +383,8 @@
                                     <action selector="postButtonSelected:" destination="uFu-J8-icX" eventType="touchUpInside" id="nEH-j5-BN4"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-Q4-vPL">
-                                <rect key="frame" x="16" y="20" width="304" height="410"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-Q4-vPL">
+                                <rect key="frame" x="16" y="20" width="304" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AddPostCell" rowHeight="55" id="igH-G2-VyC" customClass="AddPostCell">
@@ -995,7 +1012,7 @@
                         <segue destination="Pe2-nd-QwD" kind="relationship" relationship="viewControllers" id="nl5-LO-tOL"/>
                         <segue destination="WDp-PY-95u" kind="relationship" relationship="viewControllers" id="hLs-mY-HFA"/>
                         <segue destination="il2-b2-Fkc" kind="relationship" relationship="viewControllers" id="RBM-gA-ukj"/>
-                        <segue destination="FUw-jI-dOG" kind="unwind" identifier="unwindToCamera" unwindAction="prepareForUnwind:" id="Aqc-59-6aR"/>
+                        <segue destination="FUw-jI-dOG" kind="unwind" identifier="unwindToCamera" customClass="MBFadeSegue" unwindAction="prepareForUnwind:" id="Aqc-59-6aR"/>
                         <segue destination="xZB-H2-r3e" kind="show" identifier="voting" id="tOx-Mf-MhX"/>
                     </connections>
                 </tabBarController>
@@ -1722,7 +1739,7 @@
         <image name="smirk_gray" width="768" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1UI-sh-dGC"/>
+        <segue reference="QRR-LH-Lan"/>
         <segue reference="9QB-V0-hlo"/>
     </inferredMetricsTieBreakers>
 </document>

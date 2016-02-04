@@ -9,6 +9,8 @@
 #import "CameraViewController.h"
 #import "PostidManager.h"
 #import "PostidApi.h"
+#import <MBSegue.h>
+#import <MBFadeSegue.h>
 
 @interface CameraViewController () <CACameraSessionDelegate>
 @property (nonatomic, strong) CameraSessionView *cameraView;
@@ -67,6 +69,19 @@
 }
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    
+}
+
+- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController
+                                      fromViewController:(UIViewController *)fromViewController
+                                              identifier:(NSString *)identifier
+{
+    MBSegue *fade = [[MBFadeSegue alloc] initWithIdentifier:identifier
+                                                     source:fromViewController
+                                                destination:toViewController];
+    fade.type = MBSegueTypeDismiss;
+    return fade;
+    
     
 }
 

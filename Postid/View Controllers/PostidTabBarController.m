@@ -8,7 +8,9 @@
 
 #import "PostidTabBarController.h"
 #import "Post.h"
-#import "PostidManager.h" 
+#import "PostidManager.h"
+#import <MBSegue.h>
+#import <MBFadeSegue.h>
 
 @interface PostidTabBarController ()
 
@@ -57,5 +59,7 @@
     [self performSegueWithIdentifier:@"unwindToCamera" sender:self];
     //self unwindForSegue:<#(nonnull UIStoryboardSegue *)#> towardsViewController:<#(nonnull UIViewController *)#>
 }
+
+
 
 @end

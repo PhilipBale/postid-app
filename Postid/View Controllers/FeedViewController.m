@@ -44,7 +44,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],
        NSFontAttributeName:[UIFont fontWithName:@"minimo-bold" size:28]}];
-    [self.navigationItem setTitle:@"Postid"];
+    [self.navigationItem setTitle:@"postid"];
     
 }
 

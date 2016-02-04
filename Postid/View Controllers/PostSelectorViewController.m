@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
     
@@ -56,6 +58,16 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
+    
+    
+    [[self navigationItem] setTitle:@"Post for..."];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +114,7 @@
             [self.activityIndicator stopAnimating];
             if (success)
             {
+                [[self navigationController] setNavigationBarHidden:YES];
                 [self performSegueWithIdentifier:@"mainTabBar" sender:self];
             }
         });
