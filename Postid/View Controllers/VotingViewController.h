@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VotingViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *postidTitleLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
 
 @end

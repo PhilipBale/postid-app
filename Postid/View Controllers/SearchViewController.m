@@ -317,22 +317,22 @@ static BOOL phoneAuthenticated;
     
     if ([user friendsWithPrimaryUser])
     {
-        [cell.rightWidget setTitle:@"" forState:UIControlStateNormal];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"confirmed"] forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:NO];
     }
     else if ([user requestedFriendsWithPrimaryUser])
     {
-        [cell.rightWidget setTitle:@"Accept" forState:UIControlStateNormal];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:YES];
     }
     else if ([user pendingFriendsWithPrimaryUser])
     {
-        [cell.rightWidget setTitle:@"Pending" forState:UIControlStateNormal];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"request"] forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:NO];
     }
     else
     {
-        [cell.rightWidget setTitle:@"Add" forState:UIControlStateNormal];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"request"] forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:YES];
     }
     

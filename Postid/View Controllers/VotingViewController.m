@@ -7,7 +7,7 @@
 //
 
 #import "VotingViewController.h"
-#import "ZLSwipeableView.h"
+#import "SwipeableView.h"
 #import "VotingView.h"
 #import "PostidManager.h"
 #import "PostidApi.h"
@@ -19,7 +19,9 @@
     
 }
 
-@property(nonatomic,strong) ZLSwipeableView *swipeableView;
+@property(nonatomic,strong) SwipeableView *swipeableView;
+@property(nonatomic, strong) NSMutableArray *votingViews;
+
 @property(nonatomic,strong) NSMutableArray *postsToVoteOn;
 @property (nonatomic) NSUInteger voteIndex;
 
@@ -33,29 +35,34 @@
     //self.postsToVoteOn = [Post allObjects]
     self.postsToVoteOn = [GeneralUtilities mutableArrayFromRealmResults:[Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId]];
     //self.postsToVoteOn = [GeneralUtilities mutableArrayFromRealmResults:[Post objectsWhere:@"deleted == NO AND approved == NO AND liked == NO"]];
-
-    self.swipeableView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
+    
+    self.swipeableView = [[SwipeableView alloc] initWithFrame:self.view.frame];
     self.swipeableView.dataSource = self;
     self.swipeableView.delegate = self;
     
     [self.view addSubview:self.swipeableView];
 }
 
--(VotingView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView
+-(VotingView *)nextViewForSwipeableView:(SwipeableView *)swipeableView
 {
-    if (self.voteIndex >= self.postsToVoteOn.count)
+    BOOL simulatePosts = YES;
+    
+    if (self.voteIndex >= self.postsToVoteOn.count && !simulatePosts)
         return nil;
     
-    Post *nextPost = [self.postsToVoteOn objectAtIndex:self.voteIndex];
+    Post *nextPost = simulatePosts ? [[Post allObjects] firstObject] : [self.postsToVoteOn objectAtIndex:self.voteIndex];
+    
     VotingView *view = [[VotingView alloc] initWithFrame:swipeableView.frame];
     view.post = nextPost;
+    
+    [swipeableView setVotingView:view];
     
     self.voteIndex++;
     
     return view;
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView
+- (void)swipeableView:(SwipeableView *)swipeableView
          didSwipeView:(VotingView *)view
           inDirection:(ZLSwipeableViewDirection)direction {
     
@@ -67,10 +74,10 @@
         NSLog(@"Did swipe positive");
         liked = YES;
         [PostidApi likePost:[NSNumber numberWithInteger:post.postId] completion:^(BOOL success) {
-           if (!success)
-           {
-               NSLog(@"This is awkward.  Failed to like!");
-           }
+            if (!success)
+            {
+                NSLog(@"This is awkward.  Failed to like!");
+            }
         }];
     }
     else
@@ -98,9 +105,25 @@
     }
 }
 
+-(void)swipeableView:(ZLSwipeableView *)swipeableView didStartSwipingView:(VotingView *)view atLocation:(CGPoint)location
+{
+    NSLog(@"Started swiping");
+    [view startSwiping:location];
+}
+
+- (void)swipeableView:(SwipeableView *)swipeableView swipingView:(VotingView *)view atLocation:(CGPoint)location  translation:(CGPoint)translation {
+    //NSLog(@"swiping at location: x %f, y %f, translation: x %f, y %f", location.x, location.y, translation.x, translation.y);
+    [view swiping:translation];
+}
+
+-(void)swipeableView:(SwipeableView *)swipeableView didCancelSwipe:(VotingView *)view{
+    NSLog(@"Stopped swiping");
+    [view stopSwiping];
+}
+
 - (void)vote:(BOOL)up
 {
     
-} 
+}
 
 @end

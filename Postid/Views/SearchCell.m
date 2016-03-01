@@ -22,6 +22,7 @@
     [super setSelected:selected animated:animated];
     
     self.userImage.layer.cornerRadius = self.userImage.bounds.size.width / 2;
+    
     // Configure the view for the selected state
 }
 
@@ -44,18 +45,16 @@
                     if (pending)
                     {
                         [currentUser.pendingFriends addObject:toAdd];
-                        [self.rightWidget setTitle:@"Pending" forState:UIControlStateNormal];
+                        [self.rightWidget setBackgroundImage:[UIImage imageNamed:@"confirmed"] forState:UIControlStateNormal];
                     }
                     else
                     {
                         [currentUser.friends addObject:toAdd];
-                        [self.rightWidget setTitle:@"" forState:UIControlStateNormal];
+                        [ self.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
                     }
                     [User createOrUpdateInDefaultRealmWithValue:currentUser];
                 }
                 [[RLMRealm defaultRealm] commitWriteTransaction];
-                
-                [self.rightWidget setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             });
         }
     }];

@@ -15,6 +15,12 @@
 
 @property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) UILabel *postTitle;
-@property (nonatomic, strong) UIView *titleBlocker;
+
+@property (nonatomic, strong) UIImageView *upvoteImageView;
+@property (nonatomic, strong )UIImageView *downvoteImageView;
+
+-(void)swiping:(CGPoint)translation;
+-(void)startSwiping:(CGPoint)location;
+-(void)stopSwiping;
 
 @end

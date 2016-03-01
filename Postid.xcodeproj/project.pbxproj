@@ -27,6 +27,7 @@
 		D41616161B8AD4F700320977 /* CameraStyleKitClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D41616071B8AD4F700320977 /* CameraStyleKitClass.m */; };
 		D41616171B8AD4F700320977 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160A1B8AD4F700320977 /* CaptureSessionManager.m */; };
 		D41616181B8AD4F700320977 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D416160C1B8AD4F700320977 /* Constants.m */; };
+		D42B7CB21C7D001D008744CE /* SwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D42B7CB11C7D001D008744CE /* SwipeableView.m */; };
 		D434E3A21C220EA0006D3533 /* AppEntryTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A01C220EA0006D3533 /* AppEntryTextField.m */; };
 		D434E3A71C220EB7006D3533 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A31C220EB7006D3533 /* LoginViewController.m */; };
 		D434E3A81C220EB7006D3533 /* AppEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D434E3A41C220EB7006D3533 /* AppEntryViewController.m */; };
@@ -135,6 +136,8 @@
 		D416160A1B8AD4F700320977 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		D416160B1B8AD4F700320977 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D416160C1B8AD4F700320977 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D42B7CB01C7D001D008744CE /* SwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeableView.h; path = Views/SwipeableView.h; sourceTree = "<group>"; };
+		D42B7CB11C7D001D008744CE /* SwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipeableView.m; path = Views/SwipeableView.m; sourceTree = "<group>"; };
 		D434E3A01C220EA0006D3533 /* AppEntryTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppEntryTextField.m; sourceTree = "<group>"; };
 		D434E3A11C220EA0006D3533 /* AppEntryTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppEntryTextField.h; sourceTree = "<group>"; };
 		D434E3A31C220EB7006D3533 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -393,8 +396,8 @@
 		D48B213E1B7FFF8500F8D659 /* Postid */ = {
 			isa = PBXGroup;
 			children = (
-				D48B21651B80459900F8D659 /* Core */,
 				D48B21671B8045B600F8D659 /* Managers */,
+				D48B21651B80459900F8D659 /* Core */,
 				D41615E81B882BCD00320977 /* Models */,
 				D48B21691B804A3A00F8D659 /* Resources */,
 				D48B213F1B7FFF8500F8D659 /* Supporting Files */,
@@ -549,6 +552,8 @@
 				D4B486471BBA4AB20024D76F /* VotingView.m */,
 				D4EFE3F71BF3C687004D21A0 /* NotificationCell.h */,
 				D4EFE3F81BF3C687004D21A0 /* NotificationCell.m */,
+				D42B7CB01C7D001D008744CE /* SwipeableView.h */,
+				D42B7CB11C7D001D008744CE /* SwipeableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -847,6 +852,7 @@
 				D41616181B8AD4F700320977 /* Constants.m in Sources */,
 				D44EE92E1B8BED3F0091D1D5 /* ProfileViewController.m in Sources */,
 				D41616111B8AD4F700320977 /* CameraShutterButton.m in Sources */,
+				D42B7CB21C7D001D008744CE /* SwipeableView.m in Sources */,
 				D43A0FE61BAFB95500CCDA07 /* AddPostCell.m in Sources */,
 				D4A553B01BBACAB700B3A18A /* NotificationViewController.m in Sources */,
 				D41616121B8AD4F700320977 /* CameraToggleButton.m in Sources */,
