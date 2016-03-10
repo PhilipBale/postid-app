@@ -14,6 +14,7 @@
 @interface VotingView ()
 @property CGPoint startLocation;
 @property CGFloat screenWidth;
+@property CGFloat screenHeight;
 @end
 
 @implementation VotingView
@@ -74,9 +75,11 @@
 }
 
 -(void)swiping:(CGPoint)translation {
-    BOOL swipeRight = translation.x > 0;
-    CGFloat maxTranslate = swipeRight ? self.startLocation.x : self.screenWidth - self.startLocation.x;
-    CGFloat alpha = fabs(translation.x) / maxTranslate;
+    BOOL swipeRight = translation.y < 0;
+    NSLog(@"Swipe right %@", @(self.startLocation.y));
+    
+    CGFloat maxTranslate = swipeRight ? self.startLocation.y : self.screenHeight - self.startLocation.y;
+    CGFloat alpha = fabs(translation.y) / fabs(maxTranslate);
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (swipeRight) {
