@@ -18,7 +18,7 @@
     CGFloat cellHeight;
 }
 
-@property (nonatomic, strong) NSMutableArray* results;
+@property (nonatomic, strong) NSArray<Post>* results;
 
 @end
 
@@ -38,26 +38,26 @@
     }
     
     
-    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"approved == YES"];
-    RLMResults *rlmResults = [[Post objectsWithPredicate:searchPredicate] sortedResultsUsingProperty:@"postId" ascending:NO];
-    self.results = [[NSMutableArray alloc] init];
-    for (Post* post in rlmResults)
-    {
-        BOOL include = NO;
-        for (UserId *userId in post.postidForIds)
-        {
-            if (userId.userId == userToDisplayId) {
-                include = YES;
-            }
-        }
-        
-        if (include)
-        {
-            [self.results addObject:post];
-        }
-    }
+//    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"approved == YES"];
+//    RLMResults *rlmResults = [[Post objectsWithPredicate:searchPredicate] sortedResultsUsingProperty:@"postId" ascending:NO];
+//    self.results = [[NSMutableArray alloc] init];
+//    for (Post* post in rlmResults)
+//    {
+//        BOOL include = NO;
+//        for (UserId *userId in post.postidForIds)
+//        {
+//            if (userId.userId == userToDisplayId) {
+//                include = YES;
+//            }
+//        }
+//        
+//        if (include)
+//        {
+//            [self.results addObject:post];
+//        }
+//    }
     
-    [self.noneProfiledLabel setHidden:([self.results count] > 0)];
+    
     
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],
@@ -79,15 +79,16 @@
         minPost = [NSNumber numberWithInteger:0];
     }
     
-    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray *posts, NSNumber *maxId) {
-        if (success)
-        {
-            [[PostidManager sharedManager] cachePosts:posts];
-            
-            //TODO set new max post id, will get intensive as app gets popular
-        }
+    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
         
-        [self.feedTableView reloadData];
+        self.results = posts;
+        
+        @throw [NSException exceptionWithName:@"Make sure to sort and order" reason:nil userInfo:nil];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.noneProfiledLabel setHidden:([self.results count] > 0)];
+            [self.feedTableView reloadData];
+        });
     }];
 }
 

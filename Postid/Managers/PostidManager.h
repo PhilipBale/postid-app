@@ -39,14 +39,14 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (void)cacheFriendsData:(NSDictionary *)dictionary;
 - (void)uploadProfilePhoto:(NSData *)imageData completion:(void (^)(BOOL success, NSString *imageName))completion;
 
-- (Post *)postFromCacheWithId:(NSNumber *)postId;
-- (Post *)postFromCacheWithIntegerId:(NSInteger)postId;
-- (void)cachePosts:(NSArray *)posts;
+//- (Post *)postFromCacheWithId:(NSNumber *)postId;
+//- (Post *)postFromCacheWithIntegerId:(NSInteger)postId;
+//- (void)cachePosts:(NSArray *)posts;
 - (void)makePostForUsers:(NSArray *)userIds withImageData:(NSData *)imageData completion:(void (^)(BOOL success))completion;
 
 - (void)saveMaxNotificationIdToKeychain:(NSNumber *)maxNotificationId;
 - (NSNumber *)loadMaxNotificationIdFromKeychain;
-- (void)cacheNotifications:(NSArray *)notifications;
+//- (void)cacheNotifications:(NSArray *)notifications;
 
 - (void)downloadAndAddUser:(NSNumber *)userId toFriendGroup:(FriendGroup)group ofCurrentUser:(User *)currentUser;
 

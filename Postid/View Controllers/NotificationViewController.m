@@ -15,7 +15,7 @@
 
 @interface NotificationViewController ()
 
-@property (nonatomic, strong) RLMResults* results;
+@property (nonatomic, strong) NSArray<Notification>* results;
 
 @end
 
@@ -41,7 +41,8 @@
     [self.friendButton setTitle:[NSString stringWithFormat:@"%li friends", (long)friendCount] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
     
-    self.results = [[Notification objectsWhere:@"userId == %li", currentUser.userId] sortedResultsUsingProperty:@"notificationId" ascending:NO];
+    
+    //self.results = [[Notification objectsWhere:@"userId == %li", currentUser.userId] sortedResultsUsingProperty:@"notificationId" ascending:NO];
     
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],
@@ -74,17 +75,14 @@
 - (void)downloadAndRefreshNotifications
 {
     NSNumber *minNotification = [[PostidManager sharedManager] loadMaxNotificationIdFromKeychain];
-    if (!minNotification) {
+    if (!minNotification || true) { //Disable caching
         minNotification = [NSNumber numberWithInteger:0];
     }
     
-    [PostidApi fetchNotificationsWithMinId:minNotification completion:^(BOOL success, NSArray *notifications, NSNumber *maxId) {
-        if (success)
-        {
-            [[PostidManager sharedManager] cacheNotifications:notifications];
-            
-            //TODO set new max post id, will get intensive as app gets popular
-        }
+    @throw [NSException exceptionWithName:@"ORDER NOTIFICATIONS" reason:nil userInfo:nil];
+    
+    [PostidApi fetchNotificationsWithMinId:minNotification completion:^(BOOL success, NSArray<Notification> *notifications, NSNumber *maxId) {
+        self.results = notifications;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.notificationTableView reloadData];
         });

@@ -18,7 +18,7 @@
     CGFloat cellHeight;
 }
 
-@property (nonatomic, strong) RLMResults* results;
+@property (nonatomic, strong) NSArray<Post> *results;
 
 @end
 
@@ -30,7 +30,7 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
-    self.results = [[Post objectsWhere:@"approved == YES"] sortedResultsUsingProperty:@"postId" ascending:NO];
+    //self.results = [[Post objectsWhere:@"approved == YES"] sortedResultsUsingProperty:@"postId" ascending:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,15 +62,16 @@
         minPost = [NSNumber numberWithInteger:0];
     }
     
-    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray *posts, NSNumber *maxId) {
-        if (success)
-        {
-            [[PostidManager sharedManager] cachePosts:posts];
-            
-            //TODO set new max post id, will get intensive as app gets popular
-        }
+    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
+        self.results = posts;
         
-        [self.feedTableView reloadData];
+        @throw [NSException exceptionWithName:@"Make sure to sort and order" reason:nil userInfo:nil];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.feedTableView reloadData];
+        });
+        
+        
     }];
 }
 
