@@ -11,7 +11,7 @@
 #include "TargetConditionals.h"
 
 #if TARGET_IPHONE_SIMULATOR
-#define BASE_API_URL @"http:localhost:3000"
+#define BASE_API_URL @"http:localhost:3006"
 #else
 #define BASE_API_URL @"http://postid-prod.elasticbeanstalk.com/"
 #endif

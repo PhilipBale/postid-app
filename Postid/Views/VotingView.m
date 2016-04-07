@@ -32,7 +32,7 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.screenWidth = screenRect.size.width;
-    CGFloat imageWidth = screenRect.size.width / 3;
+    CGFloat imageWidth = screenRect.size.width / 1.5;
     
     CGRect voteFrame = CGRectMake(screenRect.size.width / 2 - imageWidth / 2, screenRect.size.height / 2 - imageWidth / 2, imageWidth, imageWidth);
     CGRect upvoteFrame = CGRectMake(screenRect.size.width - imageWidth - imageWidth / 4, screenRect.size.height / 2 - imageWidth / 2, imageWidth, imageWidth);
@@ -63,10 +63,19 @@
     NSString *url = [NSString stringWithFormat:@"https://s3.amazonaws.com/postidimages/%@", post.imageUrl];
     NSString *path = [cache defaultCachePathForKey:url];
     //[self setImage:[UIImage imageWithContentsOfFile:path]];
-    [self sd_setImageWithURL:[NSURL URLWithString:url]];
+    
+    bool debugImage = YES;
+    if (debugImage) {
+        UIImage *sample = [UIImage imageNamed:@"lebron"];
+        [self setImage:sample];
+    } else {
+        [self sd_setImageWithURL:[NSURL URLWithString:url]];
+    }
     
     PostidManager *man = [PostidManager sharedManager];
     User *poster = [man userFromCacheWithId:self.post.userId];
+    
+    [self setBackgroundColor:[UIColor blackColor]];
     
     [self.postTitle setText:[NSString stringWithFormat:@"Postid by %@", poster.username]];
     //[self sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:url] andPlaceholderImage:[UIImage imageNamed:@"placeholder.png"] options:0 progress:nil completed:nil];
@@ -80,6 +89,8 @@
     
     CGFloat maxTranslate = swipeRight ? self.startLocation.y : self.screenHeight - self.startLocation.y;
     CGFloat alpha = fabs(translation.y) / fabs(maxTranslate);
+    
+    alpha *= 1.75; // increase
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (swipeRight) {
