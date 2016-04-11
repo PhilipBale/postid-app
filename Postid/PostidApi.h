@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, CommentType) {
 
 + (void)makePost:(NSString *)urlKey userIdArray:(NSArray *)userIdArray completion:(void (^)(BOOL success))completion;
 +  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion;
++  (void)fetchPostsForUser:(NSInteger)userId completion:(void (^)(BOOL, NSArray *posts))completion;
 +  (void)likePost:(NSNumber *)postId completion:(void (^)(BOOL success))completion;
 + (void)commentPost:(NSNumber *)postId  comment:(CommentType)commentType increment:(BOOL)increment completion:(void (^)(BOOL success))completion;
 

@@ -45,10 +45,15 @@
 
 -(VotingView *)nextViewForSwipeableView:(SwipeableView *)swipeableView
 {
-    BOOL simulatePosts = YES;
+    BOOL simulatePosts = NO;
     
-    if (self.voteIndex >= self.postsToVoteOn.count && !simulatePosts)
+    if (self.voteIndex >= self.postsToVoteOn.count && !simulatePosts) {
+        NSLog(@"No voting view to show");
+        [self showVotingView:NO];
         return nil;
+    } else {
+        [self showVotingView:YES];
+    }
     
     Post *nextPost = simulatePosts ? [[Post allObjects] firstObject] : [self.postsToVoteOn objectAtIndex:self.voteIndex];
     
@@ -59,7 +64,17 @@
     
     self.voteIndex++;
     
+    
     return view;
+}
+
+- (void)showVotingView:(BOOL)show
+{
+    if (show) {
+        [self.swipeableView setBackgroundColor:[UIColor blackColor]];
+    } else {
+        [self.swipeableView setBackgroundColor:[UIColor clearColor]];
+    }
 }
 
 - (void)swipeableView:(SwipeableView *)swipeableView

@@ -187,6 +187,32 @@
      }];
 }
 
++  (void)fetchPostsForUser:(NSInteger)userId completion:(void (^)(BOOL, NSArray *posts))completion
+{
+    NSDictionary *fetchPostsParams = @{@"user_id":@( userId)};
+    [[HTTPManager sharedManager] GET:kApiFetchPostsForUser parameters:fetchPostsParams success:^(NSDictionary *responseObject)
+     {
+         NSDictionary *results = [responseObject objectForKey:@"posts"];
+         
+         NSMutableArray *posts = [[NSMutableArray alloc] init];
+         NSMutableArray *postImageUrls = [[NSMutableArray alloc] init];
+         
+         for (NSDictionary *result in results)
+         {
+             Post *resultPost = [self postFromDictionary:result];
+             [postImageUrls addObject:[NSURL URLWithString:resultPost.imageUrl]];
+             [posts addObject:resultPost];
+         }
+         
+         [[SDWebImagePrefetcher  sharedImagePrefetcher] prefetchURLs:postImageUrls];
+         
+         if (completion) completion(YES, posts);
+     } failure:^(NSError *error) {
+         if (completion) completion(NO, nil);
+     }];
+
+}
+
 + (void)likePost:(NSNumber *)postId completion:(void (^)(BOOL success))completion
 {
     NSDictionary *likePostParams = @{@"post":@{ @"post_id":postId}};

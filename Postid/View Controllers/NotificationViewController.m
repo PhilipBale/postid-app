@@ -79,8 +79,6 @@
         minNotification = [NSNumber numberWithInteger:0];
     }
     
-    @throw [NSException exceptionWithName:@"ORDER NOTIFICATIONS" reason:nil userInfo:nil];
-    
     [PostidApi fetchNotificationsWithMinId:minNotification completion:^(BOOL success, NSArray<Notification> *notifications, NSNumber *maxId) {
         self.results = notifications;
         dispatch_async(dispatch_get_main_queue(), ^{

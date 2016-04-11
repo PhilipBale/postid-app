@@ -65,8 +65,6 @@
     [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
         self.results = posts;
         
-        @throw [NSException exceptionWithName:@"Make sure to sort and order" reason:nil userInfo:nil];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.feedTableView reloadData];
         });

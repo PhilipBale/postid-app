@@ -19,6 +19,7 @@
 }
 
 @property (nonatomic, strong) NSArray<Post>* results;
+@property (nonatomic) NSInteger userToDisplayId;
 
 @end
 
@@ -30,11 +31,10 @@
     self.feedTableView.dataSource = self;
     cellHeight = [[UIScreen mainScreen] bounds].size.height / 640 * 275;
     
-    //TODO user profile feed view controlelr if needed
     
-    NSInteger userToDisplayId = [[PostidManager sharedManager] currentUser].userId;
+    self.userToDisplayId = [[PostidManager sharedManager] currentUser].userId;
     if (self.displayUserId > 0) {
-        userToDisplayId = self.displayUserId;
+        self.userToDisplayId = self.displayUserId;
     }
     
     
@@ -79,11 +79,9 @@
         minPost = [NSNumber numberWithInteger:0];
     }
     
-    [PostidApi fetchPostsWithMinId:minPost completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
+    [PostidApi fetchPostsForUser:[[PostidManager sharedManager] currentUser].userId completion:^(BOOL success, NSArray<Post> *posts) {
         
         self.results = posts;
-        
-        @throw [NSException exceptionWithName:@"Make sure to sort and order" reason:nil userInfo:nil];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.noneProfiledLabel setHidden:([self.results count] > 0)];

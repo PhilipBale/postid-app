@@ -41,7 +41,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    BOOL simulatePost = YES;
+    BOOL simulatePost = NO;
     
     RLMResults *posts = [Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId];
     //RLMResults *posts = [Post objectsWhere:@"deleted == NO AND approved == NO AND liked == NO"];

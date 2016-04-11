@@ -18,6 +18,7 @@ extern NSString * const kApiAddFriend;
 extern NSString * const kApiDownloadUser;
 extern NSString * const kApiMakePost;
 extern NSString * const kApiFetchPosts;
+extern NSString * const kApiFetchPostsForUser;
 extern NSString * const kApiLikePost;
 extern NSString * const kApiCommentPost;
 extern NSString * const kApiFetchNotifications;
