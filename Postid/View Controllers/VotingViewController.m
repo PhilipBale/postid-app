@@ -102,10 +102,9 @@
     
     [[RLMRealm defaultRealm] beginWriteTransaction];
     {
-        post.liked = YES;
-        if (liked)
-            post.likes++;
-        if (post.likes > post.likesNeeded / 2) {
+        [post like:YES];
+        
+        if ([post.likedIds count] > post.likesNeeded / 2) {
             post.approved = YES;
         }
         [Post createOrUpdateInDefaultRealmWithValue:post];

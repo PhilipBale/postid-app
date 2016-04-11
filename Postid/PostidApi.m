@@ -365,10 +365,6 @@
     post.userId = [[dictionary objectForKey:@"user_id"] integerValue];
     post.imageUrl = [dictionary objectForKey:@"image_url"];
     post.viewCount = [[dictionary objectForKey:@"view_count"] integerValue];
-    post.heartCount = [[dictionary objectForKey:@"heart_count"] integerValue];
-    post.smirkCount = [[dictionary objectForKey:@"smirk_count"] integerValue];
-    post.fireCount = [[dictionary objectForKey:@"fire_count"] integerValue];
-    post.likes = [[dictionary objectForKey:@"likes"] integerValue];
     post.likesNeeded = [[dictionary objectForKey:@"likes_needed"] integerValue];
     post.flagged = [[dictionary objectForKey:@"flagged"] boolValue];
     post.approved = [[dictionary objectForKey:@"approved"] boolValue];
@@ -376,12 +372,35 @@
     
     
     NSArray *postsUsers = [dictionary objectForKey:@"users"];
-    
     for (NSDictionary *user in postsUsers) {
         NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
         UserId *userIdModel = [[UserId alloc] init];
         userIdModel.userId = userIdValue;
         [post.postidForIds addObject:userIdModel];
+    }
+    
+    NSArray *heartUsers = [dictionary objectForKey:@"heart_users"];
+    for (NSDictionary *user in heartUsers) {
+        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        UserId *userIdModel = [[UserId alloc] init];
+        userIdModel.userId = userIdValue;
+        [post.heartedIds addObject:userIdModel];
+    }
+    
+    NSArray *fireUsers = [dictionary objectForKey:@"fire_users"];
+    for (NSDictionary *user in fireUsers) {
+        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        UserId *userIdModel = [[UserId alloc] init];
+        userIdModel.userId = userIdValue;
+        [post.fireIds addObject:userIdModel];
+    }
+    
+    NSArray *smirkUsers = [dictionary objectForKey:@"smirk_users"];
+    for (NSDictionary *user in smirkUsers) {
+        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        UserId *userIdModel = [[UserId alloc] init];
+        userIdModel.userId = userIdValue;
+        [post.smirkedIds addObject:userIdModel];
     }
     
     return post;

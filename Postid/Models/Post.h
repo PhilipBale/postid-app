@@ -18,21 +18,26 @@
 @property NSString *imageUrl; //Image key
 @property RLMArray<UserId>  *postidForIds;
 @property NSInteger viewCount;
-@property NSInteger heartCount;
-@property NSInteger smirkCount;
-@property NSInteger fireCount;
-@property NSInteger likes;
+@property RLMArray<UserId>  *likedIds;
+@property RLMArray<UserId>  *heartedIds;
+@property RLMArray<UserId>  *smirkedIds;
+@property RLMArray<UserId>  *fireIds;
+
 @property NSInteger likesNeeded;
 @property BOOL flagged;
 @property BOOL approved;
 @property BOOL deleted;
 
-@property BOOL liked; //local
+-(void)like:(BOOL)value;
+-(void)heart:(BOOL)value;
+-(void)smirk:(BOOL)value;
+-(void)fire:(BOOL)value;
 
-@property BOOL heartPressed;
-@property BOOL smirkPressed;
-@property BOOL firePressed;
-@property BOOL likePressed;
+-(BOOL)liked;
+-(BOOL)hearted;
+-(BOOL)smirked;
+-(BOOL)fired;
+
 
 @end
 

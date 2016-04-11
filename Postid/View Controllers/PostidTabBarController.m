@@ -11,6 +11,7 @@
 #import "PostidManager.h"
 #import <MBSegue.h>
 #import <MBFadeSegue.h>
+#import "PostidApi.h"
 
 @interface PostidTabBarController ()
 
@@ -43,10 +44,14 @@
     [super viewDidAppear:animated];
     BOOL simulatePost = NO;
     
-    RLMResults *posts = [Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId];
-    //RLMResults *posts = [Post objectsWhere:@"deleted == NO AND approved == NO AND liked == NO"];
-    if ([posts count] > 0 || simulatePost)
-        [self performSegueWithIdentifier:@"voting" sender:self];
+    [PostidApi fetchPostsWithMinId:0 completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
+        for (NSInteger i = 0; i < [posts count]; i++) {
+            if (![posts[i] liked] || simulatePost) {
+                [self performSegueWithIdentifier:@"voting" sender:self];
+                break;
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

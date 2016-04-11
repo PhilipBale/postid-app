@@ -43,17 +43,17 @@
     User *toUser = [[PostidManager sharedManager] userFromCacheWithId:firstUserId.userId];
     self.toUserLabel.text = [toUser name];
     
-    [self.heartButton setHighlighted:self.post.heartPressed];
-    [self.fireButton setHighlighted:self.post.firePressed];
-    [self.smirkButton setHighlighted:self.post.smirkPressed];
+    [self.heartButton setHighlighted:self.post.hearted];
+    [self.fireButton setHighlighted:self.post.fired];
+    [self.smirkButton setHighlighted:self.post.smirked];
     [self updateCountLabels];
 }
 
 - (void)updateCountLabels
 {
-    self.heartCountLabel.text = [@(self.post.heartCount) stringValue];
-    self.fireCountLabel.text = [@(self.post.fireCount) stringValue];
-    self.smirkCountLabel.text = [@(self.post.smirkCount) stringValue];
+    self.heartCountLabel.text = [@([self.post.heartedIds  count]) stringValue];
+    self.fireCountLabel.text = [@([self.post.fireIds count]) stringValue];
+    self.smirkCountLabel.text = [@([self.post.smirkedIds count]) stringValue];
 }
 
 - (IBAction)reportButtonPressed:(id)sender {
@@ -74,11 +74,10 @@
 - (IBAction)heartButtonPressed:(id)sender {
     BOOL increment;
     
-    if (self.post.heartPressed) {
+    if (self.post.hearted) {
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setHeartPressed:NO];
-            self.post.heartCount -= 1;
+            [self.post like:NO];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
     } else {
@@ -86,8 +85,7 @@
         
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setHeartPressed:YES];
-            self.post.heartCount += 1;
+            [self.post heart:YES];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
         
@@ -106,12 +104,11 @@
 - (IBAction)fireButtonPressed:(id)sender {
     BOOL increment = NO;
     
-    if (self.post.firePressed) {
+    if (self.post.fired) {
         NSLog(@"Unpressing fire");
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setFirePressed:NO];
-            self.post.fireCount -= 1;
+            [self.post fire:NO];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
     } else {
@@ -120,8 +117,7 @@
         
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setFirePressed:YES];
-            self.post.fireCount += 1;
+            [self.post fire:YES];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
         
@@ -140,11 +136,10 @@
 - (IBAction)smirkButtonPressed:(id)sender {
     BOOL increment = NO;
     
-    if (self.post.smirkPressed) {
+    if (self.post.smirked) {
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setSmirkPressed:NO];
-            self.post.smirkCount -= 1;
+            [self.post smirk:NO];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
     } else {
@@ -152,8 +147,7 @@
         
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post setSmirkPressed:YES];
-            self.post.smirkCount += 1;
+            [self.post smirk:YES];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
         
