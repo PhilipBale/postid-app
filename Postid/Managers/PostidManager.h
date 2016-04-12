@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
     FriendGroupUnknown
 };
 
-@property (nonatomic, strong) User *currentUser;
+@property (nonatomic) NSInteger currentUserId;
 @property (nonatomic, strong) NSData *lastImageData;
 
 + (PostidManager *)sharedManager;
@@ -34,7 +34,8 @@ typedef NS_ENUM(NSInteger, FriendGroup) {
 - (NSNumber *)loadMaxPostIdFromKeychain;
 - (RLMObject *)expressDefaultRealmWrite:(RLMObject *)object;
 
-- (User *)currentUserFromRealm;
+- (void)setCurrentUser:(User *)currentUser;
+- (User *)currentUser;
 - (User *)userFromCacheWithId:(NSInteger)userId;
 - (void)cacheFriendsData:(NSDictionary *)dictionary;
 - (void)uploadProfilePhoto:(NSData *)imageData completion:(void (^)(BOOL success, NSString *imageName))completion;

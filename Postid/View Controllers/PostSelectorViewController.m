@@ -27,7 +27,7 @@
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
     
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     NSMutableArray *allUsers = [[NSMutableArray alloc] init];
     
     for (User *user in currentUser.friends)

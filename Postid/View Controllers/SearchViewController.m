@@ -191,7 +191,7 @@ static BOOL phoneAuthenticated;
 
 - (void)refreshGeneralSearchResults
 {
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     //self.generalSearchResults = [[User objectsWhere:@"userId != %@", [NSNumber numberWithInteger:currentUser.userId]] sortedResultsUsingProperty:@"firstName" ascending:YES];
     NSMutableArray *allUsers = [[NSMutableArray alloc] init];
     
@@ -254,7 +254,7 @@ static BOOL phoneAuthenticated;
     [PostidApi searchForFriends:searchString forToken:[PostidManager sharedManager].currentUser.token  completion:^(BOOL success, NSArray *results) {
         if (success) {
             
-            User* currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+            User* currentUser = [[PostidManager sharedManager] currentUser];
             [[RLMRealm defaultRealm] beginWriteTransaction];
             {
                 for (User *user in results)

@@ -32,17 +32,17 @@
     if (!currentUser) return;
     
     //Persist non-server variables
-    User *oldUser = [User objectForPrimaryKey:[NSNumber numberWithInteger:currentUser.userId]];
-    if (oldUser)
-    {
-        currentUser.friends = oldUser.friends;
-        currentUser.pendingFriends = oldUser.pendingFriends;
-        currentUser.requestedFriends = oldUser.requestedFriends;
-        currentUser.phoneFriends = oldUser.phoneFriends;
-        currentUser.imageUrl = oldUser.imageUrl;
-    }
+//    User *oldUser = [User objectForPrimaryKey:[NSNumber numberWithInteger:currentUser.userId]];
+//    if (oldUser)
+//    {
+//        currentUser.friends = oldUser.friends;
+//        currentUser.pendingFriends = oldUser.pendingFriends;
+//        currentUser.requestedFriends = oldUser.requestedFriends;
+//        currentUser.phoneFriends = oldUser.phoneFriends;
+//        currentUser.imageUrl = oldUser.imageUrl;
+//    }
     
-    _currentUser = currentUser;
+    self.currentUserId = currentUser.userId;
     
     [self expressDefaultRealmWrite:currentUser];
     [self saveTokenToKeychain:currentUser.token];
@@ -107,9 +107,9 @@
     return returnObj;
 }
 
--(User *)currentUserFromRealm
+-(User *)currentUser
 {
-    return [self userFromCacheWithId:self.currentUser.userId];
+    return [self userFromCacheWithId:self.currentUserId];
     //return [User objectForPrimaryKey:[NSNumber numberWithInteger:self.currentUser.userId]];
 }
 
@@ -131,7 +131,7 @@
 
 - (void)cacheFriendsData:(NSDictionary *)dictionary
 {
-    User *currentUser = [self currentUserFromRealm];
+    User *currentUser = [self currentUser];
     NSArray *friendIds = [dictionary objectForKey:@"friends"];
     NSArray *pendingIds = [dictionary objectForKey:@"pending"];
     NSArray *requestIds = [dictionary objectForKey:@"requests"];
@@ -312,7 +312,7 @@
 
 - (void)cacheNotifications:(NSArray *)notifications
 {
-    User *currentUser = [self currentUser];
+    //User *currentUser = [self currentUser];
     for (Notification *notification in notifications)
     {
         [[RLMRealm defaultRealm] beginWriteTransaction];

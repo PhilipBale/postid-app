@@ -27,7 +27,7 @@
 }
 
 - (IBAction)rightWidgetButtonPressed:(id)sender {
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     User *toAdd = [[PostidManager sharedManager] userFromCacheWithId:self.userId];
     
     

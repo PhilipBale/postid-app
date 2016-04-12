@@ -24,7 +24,7 @@
 
 -(BOOL)friendsWithPrimaryUser
 {
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     RLMResults *matches = [currentUser.friends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
     
     return ([matches count] > 0);
@@ -32,7 +32,7 @@
 
 -(BOOL)pendingFriendsWithPrimaryUser
 {
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     RLMResults *matches = [currentUser.pendingFriends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
     
     return ([matches count] > 0);
@@ -40,7 +40,7 @@
 
 -(BOOL)requestedFriendsWithPrimaryUser
 {
-    User *currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User *currentUser = [[PostidManager sharedManager] currentUser];
     RLMResults *matches = [currentUser.requestedFriends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
     
     return ([matches count] > 0);
@@ -48,7 +48,7 @@
 
 -(BOOL)phoneFriendsWithPrimaryUser
 {
-    User * currentUser = [[PostidManager sharedManager] currentUserFromRealm];
+    User * currentUser = [[PostidManager sharedManager] currentUser];
     RLMResults *matches = [currentUser.phoneFriends objectsWhere:@"userId = %@", [NSNumber numberWithInteger:self.userId]];
     
     return ([matches count] > 0);
