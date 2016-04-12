@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface VotingViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *postImageView;
+@property (nonatomic, strong) NSArray<Post> *posts;
 
 @end

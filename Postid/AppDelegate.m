@@ -47,36 +47,36 @@
 - (void)handleMigrations
 {
     [RLMRealm setSchemaVersion:6 forRealmAtPath:[RLMRealm defaultRealmPath] withMigrationBlock:^(RLMMigration *migration, uint64_t oldSchemaVersion) {
-        [migration enumerateObjects:User.className
-                              block:^(RLMObject *oldUser, RLMObject *newUser) {
-                                  if (oldSchemaVersion < 2) {
-                                      newUser[@"phoneNumber"] = @"";
-                                  }
-                                  
-                                  if (oldSchemaVersion < 3) {
-                                      newUser[@"imageUrl"] = @"";
-                                      newUser[@"friends"] = [[RLMArray alloc] initWithObjectClassName:@"User"]
-                                      ;
-                                      newUser[@"pendingFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
-                                      newUser[@"requestedFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
-                                  }
-                                  
-                                  if (oldSchemaVersion < 6) {
-                                      newUser[@"phoneFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
-                                  }
-                                  
-                                  
-                              }];
-        [migration enumerateObjects:Post.className
-                              block:^(RLMObject *oldUser, RLMObject *newUser) {
-                                  if (oldSchemaVersion < 4) {
-                                      newUser[@"liked"] = @NO;
-                                  }
-                                  
-                                  if (oldSchemaVersion < 5) {
-                                      newUser[@"postidForIds"] = [[RLMArray alloc] initWithObjectClassName:@"UserId"];
-                                  }
-                              }];
+//        [migration enumerateObjects:User.className
+//                              block:^(RLMObject *oldUser, RLMObject *newUser) {
+//                                  if (oldSchemaVersion < 2) {
+//                                      newUser[@"phoneNumber"] = @"";
+//                                  }
+//                                  
+//                                  if (oldSchemaVersion < 3) {
+//                                      newUser[@"imageUrl"] = @"";
+//                                      newUser[@"friends"] = [[RLMArray alloc] initWithObjectClassName:@"User"]
+//                                      ;
+//                                      newUser[@"pendingFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+//                                      newUser[@"requestedFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+//                                  }
+//                                  
+//                                  if (oldSchemaVersion < 6) {
+//                                      newUser[@"phoneFriends"] = [[RLMArray alloc] initWithObjectClassName:@"User"];
+//                                  }
+//                                  
+//                                  
+//                              }];
+//        [migration enumerateObjects:Post.className
+//                              block:^(RLMObject *oldUser, RLMObject *newUser) {
+//                                  if (oldSchemaVersion < 4) {
+//                                      newUser[@"liked"] = @NO;
+//                                  }
+//                                  
+//                                  if (oldSchemaVersion < 5) {
+//                                      newUser[@"postidForIds"] = [[RLMArray alloc] initWithObjectClassName:@"UserId"];
+//                                  }
+//                              }];
     }];
 }
 

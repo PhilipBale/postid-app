@@ -33,8 +33,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //self.postsToVoteOn = [Post allObjects]
-    self.postsToVoteOn = [GeneralUtilities mutableArrayFromRealmResults:[Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId]];
+    
+    //TODO FIX THIS BC I COMMENTED OUT BELOW
+    
+    //self.postsToVoteOn = [GeneralUtilities mutableArrayFromRealmResults:[Post objectsWhere:@"userId != %li AND deleted == NO AND approved == NO AND liked == NO", [[PostidManager sharedManager] currentUser].userId]];
     //self.postsToVoteOn = [GeneralUtilities mutableArrayFromRealmResults:[Post objectsWhere:@"deleted == NO AND approved == NO AND liked == NO"]];
+    
+    self.postsToVoteOn = [self.posts mutableCopy];
+    for (Post *post in self.posts)
+    {
+        if (![post liked] && ![post approved])
+        {
+            [self.postsToVoteOn addObject:post];
+        }
+    }
+    
+    self.posts = nil;
     
     self.swipeableView = [[SwipeableView alloc] initWithFrame:self.view.frame];
     self.swipeableView.dataSource = self;
@@ -100,10 +114,11 @@
         NSLog(@"Did swipe negative");
     }
     
+    
+    
     [[RLMRealm defaultRealm] beginWriteTransaction];
     {
         [post like:YES];
-        
         if ([post.likedIds count] > post.likesNeeded / 2) {
             post.approved = YES;
         }

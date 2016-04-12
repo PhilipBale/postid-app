@@ -29,22 +29,14 @@
     
     if (value) {
         if (exitingUserIndex < 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                UserId *userId = [[UserId alloc] init];
-                userId.userId = currentUserId;
-                [UserId createOrUpdateInDefaultRealmWithValue:userId];
-                [self.likedIds addObject:userId];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            UserId *userId = [[UserId alloc] init];
+            userId.userId = currentUserId;
+            userId = [UserId createOrUpdateInDefaultRealmWithValue:userId];
+            [self.likedIds addObject:userId];
         }
     } else {
         if (exitingUserIndex >= 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                [self.likedIds removeObjectAtIndex:exitingUserIndex];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            [self.likedIds removeObjectAtIndex:exitingUserIndex];
         }
     }
 }
@@ -62,22 +54,14 @@
     
     if (value) {
         if (exitingUserIndex < 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                UserId *userId = [[UserId alloc] init];
-                userId.userId = currentUserId;
-                [UserId createOrUpdateInDefaultRealmWithValue:userId];
-                [self.heartedIds addObject:userId];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            UserId *userId = [[UserId alloc] init];
+            userId.userId = currentUserId;
+            userId = [UserId createOrUpdateInDefaultRealmWithValue:userId];
+            [self.heartedIds addObject:userId];
         }
     } else {
         if (exitingUserIndex >= 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                [self.heartedIds removeObjectAtIndex:exitingUserIndex];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            [self.heartedIds removeObjectAtIndex:exitingUserIndex];
         }
     }
 }
@@ -95,22 +79,14 @@
     
     if (value) {
         if (exitingUserIndex < 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                UserId *userId = [[UserId alloc] init];
-                userId.userId = currentUserId;
-                [UserId createOrUpdateInDefaultRealmWithValue:userId];
-                [self.smirkedIds addObject:userId];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            UserId *userId = [[UserId alloc] init];
+            userId.userId = currentUserId;
+            userId = [UserId createOrUpdateInDefaultRealmWithValue:userId];
+            [self.smirkedIds addObject:userId];
         }
     } else {
         if (exitingUserIndex >= 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                [self.smirkedIds removeObjectAtIndex:exitingUserIndex];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            [self.smirkedIds removeObjectAtIndex:exitingUserIndex];
         }
     }
 }
@@ -128,22 +104,16 @@
     
     if (value) {
         if (exitingUserIndex < 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                UserId *userId = [[UserId alloc] init];
-                userId.userId = currentUserId;
-                [UserId createOrUpdateInDefaultRealmWithValue:userId];
-                [self.fireIds addObject:userId];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            
+            UserId *userId = [[UserId alloc] init];
+            userId.userId = currentUserId;
+            userId = [UserId createOrUpdateInDefaultRealmWithValue:userId];
+            [self.fireIds addObject:userId];
         }
     } else {
         if (exitingUserIndex >= 0) {
-            [[RLMRealm defaultRealm] beginWriteTransaction];
-            {
-                [self.fireIds removeObjectAtIndex:exitingUserIndex];
-            }
-            [[RLMRealm defaultRealm] commitWriteTransaction];
+            [self.fireIds removeObjectAtIndex:exitingUserIndex];
+            
         }
     }
 }

@@ -12,8 +12,11 @@
 #import <MBSegue.h>
 #import <MBFadeSegue.h>
 #import "PostidApi.h"
+#import "VotingViewController.h"
 
 @interface PostidTabBarController ()
+
+@property (nonatomic, strong) NSMutableArray<Post> *postsForVoting;
 
 @end
 
@@ -46,14 +49,34 @@
     BOOL simulatePost = NO;
     
     [PostidApi fetchPostsWithMinId:0 completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
-  
-        for (NSInteger i = 0; i < [posts count]; i++) {
-            if (![posts[i] liked] || simulatePost) {
-                [self performSegueWithIdentifier:@"voting" sender:self];
-                break;
+        self.postsForVoting = [[NSMutableArray<Post> alloc] init];
+        
+        
+        for (Post *post in posts)
+        {
+            if (![post liked] && ![post approved])
+            {
+                [self.postsForVoting addObject:post];
             }
         }
+        
+        if ([self.postsForVoting count] > 0 || simulatePost)
+        {
+            
+            [self performSegueWithIdentifier:@"voting" sender:self];
+        }
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"voting"])
+    { 
+        VotingViewController *vc = [segue destinationViewController];
+        
+        [vc setPosts:self.postsForVoting];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

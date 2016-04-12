@@ -77,7 +77,7 @@
     if (self.post.hearted) {
         [[RLMRealm defaultRealm] beginWriteTransaction];
         {
-            [self.post like:NO];
+            [self.post heart:NO];
         }
         [[RLMRealm defaultRealm] commitWriteTransaction];
     } else {
