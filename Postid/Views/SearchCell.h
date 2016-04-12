@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface SearchCell : UITableViewCell
 
@@ -15,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userUsername;
 @property (weak, nonatomic) IBOutlet UIButton *rightWidget;
 @property (nonatomic) NSInteger userId;
+@property (nonatomic, strong) User *user;
 
 @end

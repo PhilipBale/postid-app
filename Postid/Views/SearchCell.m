@@ -28,10 +28,10 @@
 
 - (IBAction)rightWidgetButtonPressed:(id)sender {
     User *currentUser = [[PostidManager sharedManager] currentUser];
-    User *toAdd = [[PostidManager sharedManager] userFromCacheWithId:self.userId];
     
+    BOOL requestedFriendsWithPrimaryUser = [self.user requestedFriendsWithPrimaryUser];
     
-    if ([toAdd pendingFriendsWithPrimaryUser] || [toAdd friendsWithPrimaryUser]) {
+    if ([self.user pendingFriendsWithPrimaryUser] || [self.user friendsWithPrimaryUser]) {
         NSLog(@"Already pending friends or friends with this user");
         return;
     }
@@ -42,15 +42,18 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[RLMRealm defaultRealm] beginWriteTransaction];
                 {
-                    if (pending)
+                    self.user = [[PostidManager sharedManager] userFromCacheWithId:self.user.userId];
+                    if (requestedFriendsWithPrimaryUser)
                     {
-                        [currentUser.pendingFriends addObject:toAdd];
+                        //Confirming existing friend request
+                        [currentUser.friends addObject:self.user];
                         [self.rightWidget setBackgroundImage:[UIImage imageNamed:@"confirmed"] forState:UIControlStateNormal];
                     }
                     else
                     {
-                        [currentUser.friends addObject:toAdd];
-                        [ self.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
+                        //Initiating new friend request
+                        [currentUser.pendingFriends addObject:self.user];
+                        [self.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
                     }
                     [User createOrUpdateInDefaultRealmWithValue:currentUser];
                 }

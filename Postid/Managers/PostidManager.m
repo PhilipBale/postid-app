@@ -54,7 +54,11 @@
     self.currentUser = nil;
     [self saveTokenToKeychain:nil];
     
+    [[RLMRealm defaultRealm] beginWriteTransaction];
+    {
     [[RLMRealm defaultRealm] deleteAllObjects];
+    }
+    [[RLMRealm defaultRealm] commitWriteTransaction];
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     UITabBarController *tabBarController = (UITabBarController *)appDelegate.window.rootViewController;

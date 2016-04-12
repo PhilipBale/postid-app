@@ -108,7 +108,7 @@ static BOOL phoneAuthenticated;
     [self searchForPhoneContacts];
 }
 
--(void) viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     NSLog(@"Search appeared");
     [super viewDidAppear:animated];
     
@@ -314,6 +314,7 @@ static BOOL phoneAuthenticated;
     cell.userFullName.text = user.name;
     cell.userUsername.text = user.username;
     cell.userId = user.userId;
+    cell.user = user;
     
     if ([user friendsWithPrimaryUser])
     {
@@ -322,13 +323,13 @@ static BOOL phoneAuthenticated;
     }
     else if ([user requestedFriendsWithPrimaryUser])
     {
-        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"request"] forState:UIControlStateNormal];
         [cell.rightWidget setEnabled:YES];
     }
     else if ([user pendingFriendsWithPrimaryUser])
     {
-        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"request"] forState:UIControlStateNormal];
-        [cell.rightWidget setEnabled:NO];
+        [cell.rightWidget setBackgroundImage:[UIImage imageNamed:@"pending"] forState:UIControlStateNormal];
+        [cell.rightWidget setEnabled:YES];
     }
     else
     {
