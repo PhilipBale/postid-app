@@ -147,6 +147,8 @@
 
 +  (void)fetchPostsWithMinId:(NSNumber *)minId completion:(void (^)(BOOL, NSArray *posts, NSNumber *maxId))completion
 {
+    if (minId == nil) minId = @(0);
+    
     NSDictionary *fetchPostsParams = @{@"post":@{ @"min_id":minId}};
     [[HTTPManager sharedManager] GET:kApiFetchPosts parameters:fetchPostsParams success:^(NSDictionary *responseObject)
      {
@@ -183,7 +185,7 @@
          
          if (completion) completion(YES, posts, maxId);
      } failure:^(NSError *error) {
-         if (completion) completion(NO, nil, nil);
+         if (completion) completion(NO, [[NSArray alloc] init], 0);
      }];
 }
 
@@ -373,31 +375,31 @@
     
     NSArray *postsUsers = [dictionary objectForKey:@"users"];
     for (NSDictionary *user in postsUsers) {
-        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        NSInteger userIdValue = [[user objectForKey:@"user_id"] integerValue];
         UserId *userIdModel = [[UserId alloc] init];
         userIdModel.userId = userIdValue;
         [post.postidForIds addObject:userIdModel];
     }
     
-    NSArray *heartUsers = [dictionary objectForKey:@"heart_users"];
+    NSArray *heartUsers = [dictionary objectForKey:@"hearts"];
     for (NSDictionary *user in heartUsers) {
-        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        NSInteger userIdValue = [[user objectForKey:@"user_id"] integerValue];
         UserId *userIdModel = [[UserId alloc] init];
         userIdModel.userId = userIdValue;
         [post.heartedIds addObject:userIdModel];
     }
     
-    NSArray *fireUsers = [dictionary objectForKey:@"fire_users"];
+    NSArray *fireUsers = [dictionary objectForKey:@"fires"];
     for (NSDictionary *user in fireUsers) {
-        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        NSInteger userIdValue = [[user objectForKey:@"user_id"] integerValue];
         UserId *userIdModel = [[UserId alloc] init];
         userIdModel.userId = userIdValue;
         [post.fireIds addObject:userIdModel];
     }
     
-    NSArray *smirkUsers = [dictionary objectForKey:@"smirk_users"];
+    NSArray *smirkUsers = [dictionary objectForKey:@"smirks"];
     for (NSDictionary *user in smirkUsers) {
-        NSInteger userIdValue = [[user objectForKey:@"id"] integerValue];
+        NSInteger userIdValue = [[user objectForKey:@"user_id"] integerValue];
         UserId *userIdModel = [[UserId alloc] init];
         userIdModel.userId = userIdValue;
         [post.smirkedIds addObject:userIdModel];

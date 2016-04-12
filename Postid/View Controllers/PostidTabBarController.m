@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissToCamera:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
@@ -45,6 +46,7 @@
     BOOL simulatePost = NO;
     
     [PostidApi fetchPostsWithMinId:0 completion:^(BOOL success, NSArray<Post> *posts, NSNumber *maxId) {
+  
         for (NSInteger i = 0; i < [posts count]; i++) {
             if (![posts[i] liked] || simulatePost) {
                 [self performSegueWithIdentifier:@"voting" sender:self];
